@@ -72,7 +72,7 @@ body {
   height: 100%; }
 
 body {
-  background: #fcfcfc;
+  background: #f1f1f1;
   border: 10px solid #bda488;
   overflow: hidden; }
 
@@ -114,10 +114,10 @@ a {
   width: 100%;
   height: 100%; }
   #hero .col-12 {
-    -webkit-animation: fadeIn 5s;
-    -moz-animation: fadeIn 5s;
-    -o-animation: fadeIn 5s;
-    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    animation: fadeIn 2s;
     -webkit-transform: translateZ(0%);
     -moz-transform: translateZ(0%);
     -o-transform: translateZ(0%);
@@ -133,8 +133,6 @@ a {
     text-align: center;
     font: 18px 'Merienda One', serif;
     margin-top: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -160,36 +158,31 @@ a {
 
 .dark {
   background: #bda488;
-  border: 10px solid #fcfcfc; }
+  border: 10px solid #f1f1f1; }
   .dark a:hover {
-    border-bottom: 1px solid #fcfcfc; }
+    border-bottom: 1px solid #f1f1f1; }
   .dark ::selection {
-    background: #fcfcfc;
+    background: #f1f1f1;
     color: #bda488; }
   .dark .col-12 {
-    
-    color: #fcfcfc; }
+    opacity: 0.8;
+    color: #f1f1f1; }
   .dark [class*="icon-"] {
     background-repeat: no-repeat !important;
     background-size: 100% !important; }
   .dark .socials li {
-    color: #fcfcfc; }
+    color: #f1f1f1; }
   .dark #hero .name { 
-  color: #fcfcfc; }
+  color: #f1f1f1; }
   .dark #hero .role {
-  color: #fcfcfc; }
+  color: #f1f1f1; }
 
 @media screen and (max-width: 999px) {
   * {
-    text-align: center !important; }
-
-    #hero .role {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+    text-align: left !important; }
 
   #hero, .socials {
-     }
+    padding-left: 30px; }
 
   body {
     border: none !important; }

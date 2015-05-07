@@ -1,3 +1,7 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 @font-face {
   font-family: "Flaticon";
   src: url("flaticon.eot");
@@ -11,7 +15,7 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
-        font-size: 23px;
+        font-size: 27px;
 font-style: normal;
 }.flaticon-blogging1:before {
   content: "\e000";
@@ -212,7 +216,7 @@ a {
   position: absolute;
   z-index: 9999;
   width: 100px;
-  left: 465%;
+  left: 400%;
   bottom: 100%;
   font-size: 17px;
   line-height: 1.4;
@@ -330,7 +334,7 @@ a {
   .col-12 {
     width: 100%; }
   }
-  
+
 @media screen and (max-width: 768px) {
   #hero .name {
     font-size: 27px; } }

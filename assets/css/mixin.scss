@@ -5,6 +5,24 @@
 	border-radius: $radius-top $radius-bottom;
 }
 
+@mixin border-radius-ext($border-radius) {
+	-webkit-border-radius: $border-radius;
+	-moz-border-radius: $border-radius;
+	border-radius: $border-radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+	-webkit-border-bottom-left-radius: $radius;
+	-moz-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+	-webkit-border-bottom-right-radius: $radius;
+	-moz-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
 @mixin transition($transition) {
 	-webkit-transition: $transition;
 	-moz-transition: $transition;

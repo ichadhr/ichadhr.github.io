@@ -1,8 +1,8 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
-var cp          = require('child_process');
+var gulp    = require('gulp'),
+browserSync = require('browser-sync'),
+cp          = require('child_process'),
+concat      = require('gulp-concat'),
+uglify      = require('gulp-uglify');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -18,6 +18,17 @@ gulp.task('jekyll-build', function (done) {
 });
 
 /**
+ * Uglfiy JS source
+ */
+gulp.task('uglify', function () {
+    gulp.src('assets/js/theme.js')
+        .pipe(uglify())
+        .pipe(concat('theme.min.js'))
+        .pipe(gulp.dest('assets/js'));
+});
+
+
+/**
  * Rebuild Jekyll & do page reload
  */
 gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
@@ -27,7 +38,7 @@ gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
+gulp.task('browser-sync', ['jekyll-build'], function() {
     browserSync({
         server: {
             baseDir: '_site'
@@ -36,27 +47,11 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
 });
 
 /**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
- */
-gulp.task('sass', function () {
-    return gulp.src('_scss/main.scss')
-        .pipe(sass({
-            includePaths: ['scss'],
-            onError: browserSync.notify
-        }))
-        .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest('_site/css'))
-        .pipe(browserSync.reload({stream:true}))
-        .pipe(gulp.dest('css'));
-});
-
-/**
- * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('_scss/*.scss', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['assets/js/*.js'], ['uglify']);
+    gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/js/*.js', 'assets/css/*.scss'], ['jekyll-rebuild']);
 });
 
 /**

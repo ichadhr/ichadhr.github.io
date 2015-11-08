@@ -36,13 +36,13 @@ layout: default
     <header class="wrapper">
         <h2>
         	{% for category in page.categories %}
-				{{ category }} 
+				{{ category }}
           	{% endfor %}
         </h2>
         <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
         <span>
-            Posted by <a href="{{ site.author_url }}" target="_blank">{{ site.author_name }}</a>
-                on <i class="fa fa-clock-o"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
+            Posted <!-- by <a href="{{ site.author_url }}" target="_blank">{{ site.author_name }}</a>
+                 -->on <i class="fa fa-clock-o"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
         </span>
     </header>
     <i class="fa fa-chevron-down movedown"></i>
@@ -50,18 +50,18 @@ layout: default
 
 <section class="posts wrapper">
     <article class="post {% if page.featured == true %} featured {% endif %}">
-        
+
         <header>
             <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
             <h2>
             	{% for category in page.categories %}
-					{{ category }} 
+					{{ category }}
           		{% endfor %}
             </h2>
             <h1 id="posttitle"><a href="#">{{ page.title }}</a></h1>
             <span>
-                Posted by <a href="{{author.website}}" target="_blank">{{ site.author_name }}</a>
-                on <i class="fa fa-clock-o"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
+                Posted <!-- by <a href="{{author.website}}" target="_blank">{{ site.author_name }}</a>
+                 -->on <i class="fa fa-clock-o"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
             </span>
         </header>
 
@@ -76,7 +76,7 @@ layout: default
             </ul>
         </footer>
 
-        <div class="postprofile">
+        <!-- <div class="postprofile">
             <img src="{{ site.author_image }}" class="author" alt="user">
             <div class="info">
                 <h4>{{ site.author_name }}</h4>
@@ -113,7 +113,7 @@ layout: default
                     <li><a href="{{ site.url }}/feed.xml" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         {% if page.comments %}
         <div class="comments">
@@ -126,3 +126,5 @@ layout: default
     </article>
 
 </section>
+
+<a href="javascript:;" class="backtotop"><i class="fa fa-chevron-up"></i></a>

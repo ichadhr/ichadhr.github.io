@@ -1,10 +1,10 @@
 pre{
-	background: #F8F8F8;
-	padding: 20px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
+	background: #f4f8fb;
+	padding: 17px 25px;
 	border-radius: 5px;
-	line-height: 28px;
+	line-height: 25px;
+	margin: 35px 0;
+	@include border-radius(4px, 4px);
 }
 
 pre code{
@@ -74,3 +74,42 @@ pre code{
 .highlight .vg { color: #008080 } /* Name.Variable.Global */
 .highlight .vi { color: #008080 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+/* GIST */
+
+/*.gist{
+  margin: 7px 0 !important;
+  font-size: 24px !important;
+}*/
+
+.gist .gist-data {
+    background: #f7fafb !important;
+    word-wrap: break-word;
+}
+
+.gist-file{
+  border: none !important;
+}
+
+.gist-meta{
+  border: 1px solid #e8e8e8 !important;
+  padding: 12px !important;
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
+  display: none;
+}
+
+.gist-data{
+  padding: 7px !important;
+  border: 1px solid #e8e8e8 !important;
+  @include border-radius-ext(5px);
+  /*border-bottom: none !important;*/
+}
+
+.gist .highlight {
+    background: #f7fafb !important;
+}
+
+.gist .blob-code-inner {
+    font-size: 13px !important;
+}

@@ -17,7 +17,7 @@ layout: default
 				<div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
 				<h2>
 					{% for category in post.categories %}
-					{{ category }} 
+					{{ category }}
 					{% endfor %}
 				</h2>
 				<h1><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h1>
@@ -28,7 +28,7 @@ layout: default
 					{% if post.content contains '<!--more-->' %}
 						{{ post.content | split:'<!--more-->' | first }}
 					{% else %}
-						{{ post.content }}   
+						{{ post.content }}
 					{% endif %}
 				</div>
 			</header>

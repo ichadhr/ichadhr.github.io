@@ -25,9 +25,9 @@ The Grunt ecosystem is huge and it's growing every day. With literally hundreds 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally. You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
 {% highlight bash %}
-	npm install -g grunt-cli
+npm install -g grunt-cli
 {% endhighlight %}
-    
+
 This will put the `grunt` command in your system path, allowing it to be run from any directory.
 
 Note that installing `grunt-cli` does not install the Grunt task runner! The job of the Grunt CLI is simple: run the version of Grunt which has been installed next to a `Gruntfile`. This allows multiple versions of Grunt to be installed on the same machine simultaneously.
@@ -65,25 +65,17 @@ A `Gruntfile` is comprised of the following parts:
 
 In the following Gruntfile, project metadata is imported into the Grunt config from the project's package.json file and the grunt-contrib-uglify plugin's uglify task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the uglify task will be run by default.
 
-{% highlight javascript %}
-module.exports = function(grunt) {
-
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-			build: {
-				src: 'src/<%= pkg.name %>.js',
-				dest: 'build/<%= pkg.name %>.min.js'
-			}
-		}
-	});
-
-};
+{% highlight ruby %}
+def show
+  puts "Outputting a very lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong line"
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
 {% endhighlight %}
-    
+
 Most Grunt tasks rely on configuration data defined in an object passed to the `grunt.initConfig` method.
 
 In this example, `grunt.file.readJSON('package.json')` imports the JSON metadata stored in `package.json` into the grunt config. Because `<% %>` template strings may reference any config properties, configuration data like filepaths and file lists may be specified this way to reduce repetition.
@@ -91,6 +83,8 @@ In this example, `grunt.file.readJSON('package.json')` imports the JSON metadata
 You may store any arbitrary data inside of the configuration object, and as long as it doesn't conflict with properties your tasks require, it will be otherwise ignored. Also, because this is JavaScript, you're not limited to JSON; you may use any valid JS here. You can even programmatically generate the configuration if necessary.
 
 Like most tasks, the `grunt-contrib-uglify` plugin's uglify task expects its configuration to be specified in a property of the same name. Here, the banner option is specified, along with a single uglify target named build that minifies a single source file to a single destination file.
+
+{% gist 97b76c9885d2a95fe5d8 %}
 
 ***
 

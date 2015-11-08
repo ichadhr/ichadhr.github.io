@@ -7,7 +7,7 @@ layout: default
     <header class="wrapper">
     	<h2>
             {% for category in post.categories %}
-                {{ category }} 
+                {{ category }}
             {% endfor %}
     	</h2>
     	<h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
@@ -16,12 +16,12 @@ layout: default
 
 <section class="posts wrapper">
   <article class="post {% if page.featured == true %} featured {% endif %}">
-	  
+
 	<header>
         <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
         <h2>
             {% for category in post.categories %}
-                {{ category }} 
+                {{ category }}
             {% endfor %}
         </h2>
         <h1 id="posttitle"><a href="#">{{ page.title }}</a></h1>
@@ -45,6 +45,8 @@ layout: default
 		<div id="g-comments"></div>
 	</div>
 	{% endif %}
-  
+
   </article>
 </section>
+
+<a href="javascript:;" class="backtotop"><i class="fa fa-chevron-up"></i></a>

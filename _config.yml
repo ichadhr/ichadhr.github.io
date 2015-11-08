@@ -13,7 +13,7 @@ paginate: 					5
 
 # Author Settings
 author_name: 				"ichadhr"
-author_url: 				"https://ichadhr.github.com"
+author_url: 				""
 author_bio: 				"It's okay to eat fish because they don't have any feelings."
 author_email: 				"ichadhr@gmail.com"
 author_image: 				"/assets/img/authorimage.jpg"
@@ -46,6 +46,8 @@ sass:
  sass_dir: "assets/css/"
  style: :compressed
 
+# Timezone
+timezone: Asia/Jakarta
 
 # Build Settings
 markdown: 					kramdown
@@ -53,4 +55,4 @@ permalink: 					pretty
 
 # Gems Plugin
 gems:
-    [jekyll-paginate]
+    [jekyll-paginate, jekyll-gist]

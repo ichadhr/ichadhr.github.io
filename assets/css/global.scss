@@ -50,7 +50,7 @@ h4{
 
 p{
 	margin:30px 0;
-	line-height:38px;
+	line-height:2em;
 	color:#333332;
 	word-wrap: break-word;
 }
@@ -75,10 +75,13 @@ hr{
 
 code{
 	padding:2px 6px;
-	margin:0 5px;
-	background:#f3f3f3;
-	border:1px solid #e6e6e6;
+	margin:0 2px;
+	background:#f4f8fb;
+	border:1px solid #e2e9ef;
 	@include border-radius(4px, 4px);
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-size: 14px;
+	color: #1e1e1f;
 }
 
 blockquote, q, cite{
@@ -125,7 +128,7 @@ input:not([type=submit]):not([type=file]):active, input:not([type=submit]):not([
 	z-index:200;
 	display:block;
 	padding:9px 12px 6px;
-	background:#36404a;
+	background:#424242;
 	color:#fff;
 	@include transition(background 0.6s ease-out);
 	border-radius: 3px 3px;
@@ -178,7 +181,7 @@ footer{
 	padding:25px 0;
 	text-align:center;
 	font:400 13px 'Open Sans', Serif;
-	line-height:34px;
+	line-height:24px;
 	color:#a6a6a6;
 
 	span{
@@ -254,3 +257,16 @@ footer{
 	opacity:1;
 }
 
+.backtotop {
+	display: none;
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	background: #ededed;
+	color: #989494;
+	height: 30px;
+	width: 38px;
+	padding-top: 10px;
+	text-align: center;
+	@include border-radius(4px, 4px);
+}

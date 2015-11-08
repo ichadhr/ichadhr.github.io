@@ -75,9 +75,9 @@
 })( window.jQuery || window.Zepto );
 
 ;(function ($, window, document, undefined) {
-  
+
   var pluginName = "readingTime";
-  
+
   var defaults = {
     bubble: '#scrollbubble'
   };
@@ -95,7 +95,7 @@
     init: function () {
       $(window).scroll($.proxy(this.updateTime, this));
       $('<div id="scrollbubble"></div>').appendTo("body");
-      $('<style>#scrollbubble{display:none;position:fixed;bottom:20px;right:20px;z-index:500;background-color:#F0F0F0;color:#808080;border-radius:3px;font-family:Georgia;font-size:12px;text-transform:uppercase;letter-spacing:1px;padding:10px 20px}#scrollbubble:after{content:" ";position:absolute;top:50%;right:-8px;height:0;width:0;margin-top:-4px;border:4px solid transparent;border-left-color:#F0F0F0}</style>').appendTo('body');
+      $('<style>#scrollbubble{display:none;position:fixed;bottom:20px;right:20px;z-index:500;background-color:#F0F0F0;color:#808080;border-radius:3px;font-family:Consolas, Courier, monospace;font-size:12px;letter-spacing:1px;padding:10px 20px}#scrollbubble:after{content:" ";position:absolute;top:50%;right:-8px;height:0;width:0;margin-top:-4px;border:4px solid transparent;border-left-color:#F0F0F0}</style>').appendTo('body');
     },
     updateTime: function () {
       var total_reading_time = 0,
@@ -112,7 +112,7 @@
       if(total_reading_time_remaining > 1) {
         text = total_reading_time_remaining + ' minutes left';
       } else if(progress >= 1) {
-        text = 'Thanks for reading';
+        text = 'You\'re done';
       } else if (total_reading_time_remaining <= 1) {
         text = '1 minute left';
       }
@@ -688,34 +688,28 @@ jQuery(document).ready(function(){
 	// PROFILE WAYPOINTS
 	if($('#cover').hasClass("featured")){
 		$('.posts').waypoint(function(direction) {
-			if(direction === "down"){ $('.profile').addClass("stuck").removeClass("featured"); $('.index').fadeIn(400);}
-			if(direction === "up"){ $('.profile').removeClass("stuck").addClass("featured"); $('.index').fadeOut(400);}
+			if(direction === "down"){ $('.profile').addClass("stuck").removeClass("featured"); $('.index').fadeIn(400); $('.backtotop').fadeIn();}
+			if(direction === "up"){ $('.profile').removeClass("stuck").addClass("featured"); $('.index').fadeOut(400); $('.backtotop').fadeOut();}
 		});
 	}else{
 		$('#posttitle, .first').waypoint(function(direction) {
-			if(direction === "down"){ $('.profile').addClass("stuck"); $('.index').fadeIn(400);}
-			if(direction === "up"){ $('.profile').removeClass("stuck"); $('.index').fadeOut(400);}
+			if(direction === "down"){ $('.profile').addClass("stuck"); $('.index').fadeIn(400); $('.backtotop').fadeIn(); }
+			if(direction === "up"){ $('.profile').removeClass("stuck"); $('.index').fadeOut(400); $('.backtotop').fadeOut(); }
 		});
 	}
-
-	$('.postprofile').waypoint(function(direction) {
-		if(direction === "down"){ $('.profile').addClass("hide"); };
-		if(direction === "up"){ $('.profile').removeClass("hide"); };
-	}, { offset: '100%' });
-
 
 	// INDEX WAYPOINTS
 	if($('#posttitle').length){
 		var list = [];
 		$('.postbody h2').waypoint(function(direction) {
 			var e = $(this);
-			if(direction === "down"){ 
+			if(direction === "down"){
 				$('.index h2').fadeOut(function() {
 					list.push($('.index h2').text());
 	  				$(this).text($(e).text()).fadeIn();
 				});
 			};
-			if(direction === "up"){ 
+			if(direction === "up"){
 				$('.index h2').fadeOut(function() {
 	  				$(this).text(list.pop()).fadeIn();
 				});
@@ -727,7 +721,7 @@ jQuery(document).ready(function(){
 	// FITVIDS
 	jQuery(".postbody").fitVids();
   jQuery(".excerpt").fitVids();
-	
+
 
 	// COMMENTS
 	if(config.disqus_shortname != '' && config.disqus_shortname != null && config.disqus_shortname != undefined || config.google_comments == true){
@@ -748,7 +742,7 @@ jQuery(document).ready(function(){
 			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 			})();
 		}else if(config.google_comments == true){
-			
+
 			$.getScript("https://apis.google.com/js/plusone.js")
 			.done(function(script, textStatus ) {
 				gapi.comments.render('g-comments', {
@@ -789,7 +783,14 @@ jQuery(document).ready(function(){
   // FEATURE SCROLL
   $(".movedown").click(function(){
     $("html, body").animate({scrollTop: $('.cover').height()}, 1000);
-  }); 
-    
+  });
+
+  // BACK TO TOP
+  jQuery('.backtotop').click(function(){
+    jQuery('html, body').animate({
+      scrollTop: jQuery("body").offset().top
+    }, 1000);
+  });
+
 
 });

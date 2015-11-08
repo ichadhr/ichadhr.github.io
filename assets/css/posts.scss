@@ -21,9 +21,9 @@
 		width:100%;
 		top:0;
 		left:0;
-		opacity:0.6;
+		opacity:0.5;
 		background-size:cover;
-		background-position:fixed;
+		background-attachment:fixed;
 	}
 	&.featured{
 		display:block;
@@ -31,14 +31,15 @@
 	header{
 		position:relative;
 		width:90%;
-		top:35%;
+		top:30%;
 		max-width:760px;
 		left:auto;
 		h2{
 			font:600 22px 'Open Sans', Serif;
-			color:#e4e4e4;
-			opacity:0.6;
+			color:#f8f8f8;
+			opacity:0.8;
 			text-transform:capitalize;
+			@include transition(opacity 0.2s ease-out);
 		}
 		h1 a{
 			color:#ffffff;

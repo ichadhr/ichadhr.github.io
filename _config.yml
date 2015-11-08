@@ -1,24 +1,56 @@
-# Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
-relative_permalinks: false
 
-# Setup
-title:               Lanyon
-tagline:             'A Jekyll theme'
-description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://lanyon.getpoole.com
-baseurl:             ''
-paginate:            5
-gems :
-    - jekyll-paginate
 
-# About/contact
-author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+# Site Settings
+title: 						"ichadhr"
+email: 						"ichadhr@gmail.com"
+description: 				"Naturally and artificially flavoured."
+baseurl: 					""
+url: 						"/"
+logourl: 					"/assets/img/bloglogo.jpg"
+fa-logo: 					"fa-bookmark-o"
+paginate: 					5
 
-# Custom vars
-#version:             1.0.0
+
+# Author Settings
+author_name: 				"ichadhr"
+author_url: 				"https://ichadhr.github.com"
+author_bio: 				"Harvey Specter has built a career and reputation by breaking the rules. Harvey's shoot-from-the-hip style has made him an effective lawyer and a slick character."
+author_email: 				"ichadhr@gmail.com"
+author_image: 				"/assets/img/authorimage.jpg"
+
+
+# Social Settings
+twitter_url: 				"https://twitter.com/ichadhr"
+facebook_url: 				""
+github_url:  				"https://github.com/ichadhr"
+youtube_url:  				""
+dribbble_url:  				""
+googleplus_url: 			""
+instagram_url:  			""
+pinterest_url:  			""
+linkedin_url:  				""
+
+
+# Theme Settings
+theme_disqus_shortname: 	""
+theme_google_comments: 		false
+theme_analytics_id: 		""
+theme_analytics_domain: 	""
+theme_reading_time: 		true
+theme_autoload_comments: 	false
+theme_always_show_nav: 		false
+
+
+# SASS Settings
+sass:
+ sass_dir: "assets/css/"
+ style: :compressed
+
+
+# Build Settings
+markdown: 					kramdown
+permalink: 					pretty
+
+# Gems Plugin
+gems:
+    [jekyll-paginate]

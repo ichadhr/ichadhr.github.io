@@ -1,30 +1,25 @@
 ---
 layout: page
 title: About
+permalink: /about/
+comments: false
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+Astro is a content focused responsive theme for the Ghost blogging platform. Designed from the bottom up to be high performance, user friendly, and accessible on all platforms. Astro adapts to the users device, so it looks great on smartphones, tablets, TVs, and even the latest 4K monitors. Taking advantage of the ghost platform, Astro has two different post styles. The standard style is great for smaller update posts and short articles, while featured posts have full page titles with image backdrops, which works great with large articles, tutorials and other documentation. Supports the latest features added in the latest Ghost 0.4.0 release and includes compatibility support for future versions.
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+## Features
 
-There are currently two themes built on Poole:
+#### <i class="fa fa-arrows-h"></i> Fully Responsive
+Optimized for Mobile, Tablets, Notebooks, and Desktop Devices. Developed on iPhone, iPad, and Desktop.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+#### <i class="fa fa-expand"></i> High Resolution Support
+CSS3 elements & SVG icons scale perfectly on all resolutions, including high resolution devices such mobile phones, retina displays, and 4K monitors.
 
-Learn more and contribute on [GitHub](https://github.com/poole).
+#### <i class="fa fa-cog"></i> Featured Posts
+Feature posts have a full page title design with customizable image header. Make your articles and guides stand out.
 
-## Setup
+#### <i class="fa fa-spinner"></i> High Performance
+Optimized for fast page load times, completely imageless layout, javascript degrading, and CSS3 styling. Google Speed Test score of 94.
 
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+#### <i class="fa fa-sort-amount-desc"></i> Article Flow Bar
+Navigating large articles is made simple with the floating article bar which activates as you scroll down the post. It will update to show the current header section.

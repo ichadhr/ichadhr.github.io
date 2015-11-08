@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Astro Jekyll Theme"
+title:  "Jekyll Theme"
 date:   2014-07-17 04:07:49
 categories: Jekyll Themes
 banner_image: ""

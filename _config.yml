@@ -5,7 +5,7 @@ title: 						"ichadhr"
 email: 						"ichadhr@gmail.com"
 description: 				"Naturally and artificially flavoured."
 baseurl: 					""
-url: 						"/"
+url: 						"https://ichadhr.github.io"
 logourl: 					"/assets/img/bloglogo.jpg"
 fa-logo: 					"fa-bookmark-o"
 paginate: 					5
@@ -55,4 +55,4 @@ permalink: 					pretty
 
 # Gems Plugin
 gems:
-    [jekyll-paginate, jekyll-gist]
+    ['jekyll-paginate', 'jekyll-gist', 'kramdown', 'rouge']

@@ -1,4 +1,4 @@
-ichadhr..github.io
+ichadhr.github.io
 ==================
 
 [View site, hosted on Github Pages](https://ichadhr.github.io/)

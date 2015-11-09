@@ -56,3 +56,7 @@ permalink: 					/post/:year/:title
 # Gems Plugin
 gems:
     ['jekyll-paginate', 'jekyll-gist', 'kramdown', 'rouge']
+
+
+# SSL Better :)
+enforce_ssl: ichadhr.github.io

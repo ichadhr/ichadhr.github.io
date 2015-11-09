@@ -38,3 +38,9 @@
     50% { opacity: 6.0;}
     100% { opacity: 0.4;}
 }
+
+@mixin inner-shadow ($x: 0, $y: 1px, $blur: 2px, $spread: 0, $alpha: 0.25) {
+    -webkit-box-shadow: inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+    -moz-box-shadow:    inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+    box-shadow:         inset $x $y $blur $spread rgba(0, 0, 0, $alpha);
+}

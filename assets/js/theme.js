@@ -71,6 +71,7 @@
       });
     });
   };
+
 // Works with either jQuery or Zepto
 })( window.jQuery || window.Zepto );
 
@@ -775,9 +776,12 @@ jQuery(document).ready(function(){
 
 
 	// READING TIME
-	if(config.readingtime == true){
-		$(".postbody").readingTime();
-	}
+  jQuery(".postbody").readingTime();
+
+  jQuery(".inlinemenu ul").hide();
+  jQuery(".inlinemenu .graybar").click(function(){
+    jQuery(".inlinemenu ul").slideToggle();
+  });
 
 
   // FEATURE SCROLL

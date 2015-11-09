@@ -1,9 +1,10 @@
 pre{
-	background: #f4f8fb;
+	background: #fefefe;
 	padding: 17px 25px;
 	border-radius: 5px;
-	line-height: 25px;
+	line-height: 23px;
 	margin: 35px 0;
+  border: 1px solid #efefef;
 	@include border-radius(4px, 4px);
 }
 
@@ -83,8 +84,9 @@ pre code{
 }*/
 
 .gist .gist-data {
-    background: #f7fafb !important;
+    background: #fefefe !important;
     word-wrap: break-word;
+    border-radius: 4px !important;
 }
 
 .gist-file{
@@ -92,22 +94,19 @@ pre code{
 }
 
 .gist-meta{
-  border: 1px solid #e8e8e8 !important;
+  border: 1px solid #efefef !important;
   padding: 12px !important;
-  @include border-bottom-left-radius(5px);
-  @include border-bottom-right-radius(5px);
   display: none;
 }
 
 .gist-data{
   padding: 7px !important;
-  border: 1px solid #e8e8e8 !important;
-  @include border-radius-ext(5px);
+  border: 1px solid #efefef !important;
   /*border-bottom: none !important;*/
 }
 
 .gist .highlight {
-    background: #f7fafb !important;
+    background: #fefefe !important;
 }
 
 .gist .blob-code-inner {

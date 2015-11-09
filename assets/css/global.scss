@@ -51,7 +51,7 @@ h4{
 p{
 	margin:30px 0;
 	line-height:2em;
-	color:#333332;
+	color:#4e4d4d;
 	word-wrap: break-word;
 }
 
@@ -79,7 +79,7 @@ code{
 	background:#f4f8fb;
 	border:1px solid #e2e9ef;
 	@include border-radius(4px, 4px);
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	font-size: 14px;
 	color: #1e1e1f;
 }

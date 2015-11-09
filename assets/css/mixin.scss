@@ -5,12 +5,6 @@
 	border-radius: $radius-top $radius-bottom;
 }
 
-@mixin border-radius-ext($border-radius) {
-	-webkit-border-radius: $border-radius;
-	-moz-border-radius: $border-radius;
-	border-radius: $border-radius;
-}
-
 @mixin border-bottom-left-radius($radius) {
 	-webkit-border-bottom-left-radius: $radius;
 	-moz-border-bottom-left-radius: $radius;

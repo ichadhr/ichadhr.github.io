@@ -59,4 +59,4 @@ gems:
 
 
 # SSL Better :)
-enforce_ssl: ichadhr.github.io
+#enforce_ssl: ichadhr.github.io

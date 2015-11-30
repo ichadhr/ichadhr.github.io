@@ -10,7 +10,11 @@
 	padding:20px 0 20px;
 	margin:0;
 	color:#ececf1;
-	background-color:#404040;
+	background-color:#ffffff;
+    background-color: rgba(#ffffff, 0.92);
+    @include background-image(linear-gradient(rgba(#ffffff, 0.5), rgba(#ffffff, 0.5)));
+    /*  additional */
+    @include box-shadow(0 1px 1px 0 rgba(#000000, .07));
 	/*background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(39, 39, 39, 0.9)), color-stop(100%, rgba(56, 56, 56, 0.9)));
 	background-image: -webkit-linear-gradient(rgba(39, 39, 39, 0.9), rgba(56, 56, 56, 0.9));
 	background-image: -moz-linear-gradient(rgba(39, 39, 39, 0.9), rgba(56, 56, 56, 0.9));

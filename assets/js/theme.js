@@ -113,7 +113,7 @@
       if(total_reading_time_remaining > 1) {
         text = total_reading_time_remaining + ' minutes left';
       } else if(progress >= 1) {
-        text = 'You\'re done';
+        text = 'You\'re good';
       } else if (total_reading_time_remaining <= 1) {
         text = '1 minute left';
       }

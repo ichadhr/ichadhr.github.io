@@ -5,7 +5,7 @@ title: 						"ichadhr"
 email: 						"ichadhr@gmail.com"
 description: 				"Naturally and artificially flavoured."
 baseurl: 					""
-url: 						"https://ichadhr.github.io"
+url: 						"https://ichadhr.tk"
 logourl: 					"/assets/img/bloglogo.jpg"
 fa-logo: 					"fa-bookmark-o"
 paginate: 					5
@@ -13,7 +13,7 @@ paginate: 					5
 
 # Author Settings
 author_name: 				"ichadhr"
-author_url: 				""
+author_url: 				"https://ichadhr.tk"
 author_bio: 				"It's okay to eat fish because they don't have any feelings."
 author_email: 				"ichadhr@gmail.com"
 author_image: 				"/assets/img/authorimage.jpg"

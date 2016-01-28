@@ -4,7 +4,7 @@
   "description": "ichadhr blog with jekyll",
   "main": "index.html",
   "scripts": {
-    "run": "gulp"
+    "start": "gulp"
   },
   "repository": {
     "type": "git",

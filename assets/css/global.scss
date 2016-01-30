@@ -111,19 +111,19 @@ input:not([type=submit]):not([type=file]):active, input:not([type=submit]):not([
 
 ::-moz-selection {
     color: #fff;
-    background: #2d75a2;
+    background: #888888;
     text-shadow: none;
 }
 
 ::selection {
     color: #fff;
-    background: #2d75a2;
+    background: #888888;
     text-shadow: none;
 }
 
 .title a{
 	position:fixed;
-	top:13px;
+	top:7px;
 	left:13px;
 	z-index:200;
 	display:block;

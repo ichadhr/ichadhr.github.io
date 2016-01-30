@@ -7,7 +7,7 @@
 	top:0;
 	left:0;
 	z-index:100;
-	padding:20px 0 20px;
+	padding:15px 0 15px;
 	margin:0;
 	color:#ececf1;
 	background-color:#888888;
@@ -48,11 +48,11 @@
 
 @font-face {
   font-family: 'strum';
-  src: url('../font/strum.eot?66541979');
-  src: url('../font/strum.eot?66541979#iefix') format('embedded-opentype'),
-       url('../font/strum.woff?66541979') format('woff'),
-       url('../font/strum.ttf?66541979') format('truetype'),
-       url('../font/strum.svg?66541979#strum') format('svg');
+  src: url('../fonts/strum.eot?93225107');
+  src: url('../fonts/strum.eot?93225107#iefix') format('embedded-opentype'),
+       url('../fonts/strum.woff?93225107') format('woff'),
+       url('../fonts/strum.ttf?93225107') format('truetype'),
+       url('../fonts/strum.svg?93225107#strum') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -62,7 +62,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'strum';
-    src: url('../font/strum.svg?66541979#strum') format('svg');
+    src: url('../font/strum.svg?93225107#strum') format('svg');
   }
 }
 */
@@ -76,7 +76,6 @@
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
-  margin-right: .2em;
   text-align: center;
   /* opacity: .8; */
 
@@ -89,7 +88,7 @@
 
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
-  margin-left: .2em;
+  // margin-left: .2em;
 
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
@@ -102,10 +101,20 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.i-nd:before { content: '\e800'; } /* '' */
-.i-nc:before { content: '\e801'; } /* '' */
-.i-cc:before { content: '\e802'; } /* '' */
-.i-by:before { content: '\e803'; } /* '' */
+.i-by:before { content: '\e800'; } /* '' */
+.i-cc:before { content: '\e801'; } /* '' */
+.i-nc:before { content: '\e802'; } /* '' */
+.i-nd:before { content: '\e803'; } /* '' */
+.i-logo:before { content: '\e804'; } /* '' */
+
+.logo-font {
+    line-height: .75em;
+    vertical-align: -15%;
+}
+
+.cpyrght {
+    margin-right: .5em;
+}
 
 /*License*/
 .license a {

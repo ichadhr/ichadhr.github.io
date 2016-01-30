@@ -7,7 +7,7 @@ description: 				"Naturally and artificially flavoured."
 baseurl: 					""
 url: 						"https://ichadhr.tk"
 logourl: 					"/assets/img/bloglogo.jpg"
-fa-logo: 					"fa-bookmark-o"
+fa-logo: 					"i-logo"
 paginate: 					5
 
 

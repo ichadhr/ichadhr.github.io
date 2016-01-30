@@ -33,6 +33,26 @@
 		}
 	}
 
+	&.twshare{
+		border:2px solid #e0e0e0;
+		background:#fff;
+		color:#888888;
+		&:hover{
+			border:2px solid #55acee;
+			color:#55acee;
+		}
+	}
+
+	&.pkshare{
+		border:2px solid #e0e0e0;
+		background:#fff;
+		color:#888888;
+		&:hover{
+			border:2px solid #ee4056;
+			color:#ee4056;
+		}
+	}
+
 	&.solidgray{
 		border:2px solid #edebf3;
 		background:#edebf3;

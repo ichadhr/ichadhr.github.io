@@ -197,6 +197,10 @@ footer{
 		@media screen and (max-width: 906px) {
 			display:block;
 		}
+		.list-inline{display:block; padding-left:10px;}
+		.list-inline li{display:inline-block;}
+		.list-inline li:after{content:'|'; margin:0 7px;}
+		.list-inline li:last-child:after {content: '';}
 	}
 
 }

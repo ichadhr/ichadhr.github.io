@@ -1,8 +1,10 @@
 <footer class="wrapper">
     <div class="smallnav">
+    <ul class="list-inline">
     	{% for page in site.pages %}
-        	{% if page.title %}<a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> &bull;{% endif %}
+        	{% if page.title %}<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}
         {% endfor %}
+    </ul>
     </div>
     <div>
         All content &copy; {{ 'now' | date: "%Y" }} {{ site.title }}

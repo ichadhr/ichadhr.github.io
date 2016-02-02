@@ -48,7 +48,7 @@ The most common approach to achieving this is by defining a JavaScript function 
 
 <div class="container">
 
-{% highlight javascript linenos %}
+{% highlight javascript %}
 function Car( model ) {
 	this.model = model;
     this.color = "silver";
@@ -64,7 +64,7 @@ function Car( model ) {
 <p>This is an example of a code annotation in Astro.</p>
 </div>
 </div>
-    
+
 ***
 
 This extract of text has been used as a demonstration of the Astro Ghost Theme.

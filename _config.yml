@@ -66,7 +66,7 @@ permalink: 					/post/:year/:title
 
 # Gems Plugin
 gems:
-    ['jekyll-paginate', 'jekyll-gist', 'kramdown', 'rouge']
+    ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed', 'kramdown', 'rouge']
 
 
 # SSL Better :)

@@ -42,9 +42,9 @@ theme_always_show_nav: 		false
 
 # HTML Settings
 compress_html:
-  clippings: all
+  clippings: [div, p, ul, td, h1, h2]
   comments: ["<!-- ", " -->"]
-  endings: all
+  endings: []
   ignore:
     envs: []
   blanklines: false

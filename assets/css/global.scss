@@ -131,7 +131,7 @@ input:not([type=submit]):not([type=file]):active, input:not([type=submit]):not([
 	background:#888888;
 	color:#fff;
 	@include transition(background 0.6s ease-out);
-	border-radius: 3px 3px;
+	border-radius: 4px;
 	&:hover{
 		background:#f05050;
 	}

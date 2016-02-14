@@ -1,3 +1,25 @@
+a.i-share {
+	display: inline-block;
+	color: #c7c7c7;
+	padding-left: 2px;
+	@include transition(all 0.2s ease-in-out);
+
+	&.twt {
+		font-size: 28px;
+		&:hover {
+			color:#55acee;
+			text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		}
+	}
+
+	&.pkt {
+		font-size: 25px;
+		&:hover {
+			color:#ee4056;
+			text-shadow: 0 1px 1px rgba(0,0,0,.3);
+		}
+	}
+}
 
 .smallbutton{
 

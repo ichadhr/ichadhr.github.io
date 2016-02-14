@@ -123,15 +123,15 @@ input:not([type=submit]):not([type=file]):active, input:not([type=submit]):not([
 
 .title a{
 	position:fixed;
-	top:6px;
+	top:9px;
 	left:13px;
 	z-index:200;
 	display:block;
-	padding:9px 12px 6px;
+	padding:6px 9px 4px;
 	background:#888888;
 	color:#fff;
 	@include transition(background 0.6s ease-out);
-	border-radius: 4px;
+	border-radius: 3px;
 	&:hover{
 		background:#f05050;
 	}

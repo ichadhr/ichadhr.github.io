@@ -34,11 +34,11 @@ layout: default
 <div id="cover" class="cover {% if page.featured == true %} featured {% endif %}">
     <div class="background" style="background-image:url('{{ page.banner_image }}');"></div>
     <header class="wrapper">
-        <h2>
+        <span class="category">
         	{% for category in page.categories %}
 				{{ category }}
           	{% endfor %}
-        </h2>
+        </span>
         <h1><a href="#">{{ page.title }}</a></h1>
         <span>
             Posted <!-- by <a href="{{ site.author_url }}" target="_blank">{{ site.author_name }}</a>
@@ -53,11 +53,11 @@ layout: default
 
         <header>
             <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
-            <h2>
+            <span class="category">
             	{% for category in page.categories %}
 					{{ category }}
           		{% endfor %}
-            </h2>
+            </span>
             <h1 id="posttitle"><a href="#">{{ page.title }}</a></h1>
             <span>
                 Posted <!-- by <a href="{{author.website}}" target="_blank">{{ site.author_name }}</a>

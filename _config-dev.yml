@@ -64,7 +64,7 @@ timezone: Asia/Jakarta
 
 # Build Settings
 markdown: 					kramdown
-permalink: 					/post/:year/:title/
+permalink: 					/:year/:title/
 
 # Gems Plugin
 gems:

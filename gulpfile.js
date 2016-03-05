@@ -11,9 +11,9 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', function (done) {
+gulp.task('jekyll-build', ['copy'], function (done) {
     browserSync.notify(messages.jekyllBuild);
-    return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
+    return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', '_config-dev.yml'], {stdio: 'inherit'})
         .on('close', done);
 });
 
@@ -27,6 +27,11 @@ gulp.task('uglify', function () {
         .pipe(gulp.dest('assets/js'));
 });
 
+/* fix bug jekyll not copy js file */
+gulp.task('copy', function () {
+  return gulp.src('assets/js/theme.min.js')
+        .pipe(gulp.dest('_site/assets/js'));
+});
 
 /**
  * Rebuild Jekyll & do page reload
@@ -51,7 +56,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
  */
 gulp.task('watch', function () {
     gulp.watch(['assets/js/*.js'], ['uglify']);
-    gulp.watch(['_config.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/js/*.js', 'assets/css/*.scss'], ['jekyll-rebuild']);
+    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.scss', 'assets/js/*.js'], ['jekyll-rebuild']);
 });
 
 /**

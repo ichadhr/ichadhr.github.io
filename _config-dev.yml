@@ -70,5 +70,15 @@ permalink: 					/post/:year/:title/
 gems:
     ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed', 'kramdown', 'rouge']
 
+exclude:
+    - node_modules
+    - assets/js
+    - CNAME
+    - Gemfile
+    - Gemfile.lock
+    - gulpfile.js
+    - package.json
+    - README.md
+
 # SSL Better :)
 #enforce_ssl: ichadhr.github.io

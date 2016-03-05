@@ -6,14 +6,14 @@ email: 						"ichadhr@gmail.com"
 description: 			"Naturally and artificially flavoured."
 baseurl: 					""
 url:              "https://ichadhr.tk"
-enable_logo:      true
+enable_logo:      false
 logourl: 					"/assets/img/bloglogo.jpg"
 fa-logo: 					"i-logo"
 paginate: 				5
 
 
 # Author Settings
-enable_author:      true
+enable_author:      false
 author_name: 				"ichadhr"
 author_url: 				"https://ichadhr.tk"
 author_bio: 				"It's okay to eat fish because they don't have any feelings."

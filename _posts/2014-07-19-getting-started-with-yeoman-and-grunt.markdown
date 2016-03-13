@@ -24,9 +24,9 @@ The Grunt ecosystem is huge and it's growing every day. With literally hundreds 
 
 In order to get started, you'll want to install Grunt's command line interface (CLI) globally. You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.
 
-{% highlight shell %}
+```shell
 $ npm install -g grunt-cli
-{% endhighlight %}
+```
 
 This will put the `grunt` command in your system path, allowing it to be run from any directory.
 
@@ -65,7 +65,7 @@ A `Gruntfile` is comprised of the following parts:
 
 In the following Gruntfile, project metadata is imported into the Grunt config from the project's package.json file and the grunt-contrib-uglify plugin's uglify task is configured to minify a source file and generate a banner comment dynamically using that metadata. When grunt is run on the command line, the uglify task will be run by default.
 
-{% highlight ruby %}
+```ruby
 def show
   puts "Outputting a very lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong lo-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-ong line"
   @widget = Widget(params[:id])
@@ -74,7 +74,7 @@ def show
     format.json { render json: @widget }
   end
 end
-{% endhighlight %}
+```
 
 Most Grunt tasks rely on configuration data defined in an object passed to the `grunt.initConfig` method.
 

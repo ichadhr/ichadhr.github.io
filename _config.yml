@@ -63,8 +63,11 @@ sass:
 timezone: Asia/Jakarta
 
 # Build Settings
-markdown: 					kramdown
-permalink: 					/:year/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+  highlighter: rouge
+permalink: /:year/:title/
 
 # Gems Plugin
 gems:

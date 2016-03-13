@@ -30,11 +30,11 @@ Phasellus id risus id ligula iaculis elementum vel quis risus. Donec nunc purus,
 
 In feugiat enim quis lectus rutrum vulputate. Duis iaculis dignissim justo in volutpat. Aliquam vitae velit eu nisl fermentum tincidunt non sit amet metus.
 
-{% highlight css %}
+```css
 p{
     margin:30px 0;
     font:400 16px 'Merriweather', Serif;
     line-height:34px;
     color:#1a1a1a;
 }
-{% endhighlight %}
+```

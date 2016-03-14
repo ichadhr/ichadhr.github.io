@@ -88,4 +88,4 @@ Like most tasks, the `grunt-contrib-uglify` plugin's uglify task expects its con
 
 ***
 
-This extract of text has been used as a demonstration of the Astro Ghost Theme. For more information on Grunt, see http://gruntjs.com.
+This extract of text has been used as a demonstration of the Theme. For more information on Grunt, see http://gruntjs.com.

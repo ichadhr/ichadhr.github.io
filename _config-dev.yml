@@ -67,7 +67,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   highlighter: rouge
-permalink: /:year/:title/
+permalink: /:year/:month/:day/:title/
 
 # Gems Plugin
 gems:

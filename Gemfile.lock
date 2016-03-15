@@ -127,6 +127,7 @@ DEPENDENCIES
   jekyll-feed
   jekyll-gist
   jekyll-paginate
+  jekyll-sitemap
   kramdown
   rouge
 

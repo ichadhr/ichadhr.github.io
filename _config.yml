@@ -67,12 +67,12 @@ markdown: kramdown
 kramdown:
   input: GFM
   highlighter: rouge
-paginate_path: /pages/:num
+paginate_path: /pages/:num/
 permalink: /:year/:month/:day/:title/
 
 # Gems Plugin
 gems:
-    ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed', 'kramdown', 'rouge']
+    ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed', 'jekyll-sitemap', 'kramdown', 'rouge']
 
 # SSL Better :)
 #enforce_ssl: ichadhr.github.io

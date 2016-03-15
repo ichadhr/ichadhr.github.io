@@ -51,7 +51,7 @@ layout: compress
       <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
       <link rel="stylesheet" href="{{ "/assets/css/init.css" | prepend: site.baseurl }}">
-      <link href='//fonts.googleapis.com/css?family=Domine:700%7cOpen+Sans:400,600' rel='stylesheet' type='text/css'>
+
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
@@ -62,7 +62,7 @@ layout: compress
 
     {% include footer.html %}
 
-    <script async src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script async type="text/javascript" src="{{ "/assets/js/vendor/jquery-1.10.2.min.js" | prepend: site.baseurl }}"></script>
     <script type="text/javascript">
       var config = {
         'disqus_shortname': '{{ site.theme_disqus_shortname }}',

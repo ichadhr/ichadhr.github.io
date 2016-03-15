@@ -73,8 +73,8 @@ layout: default
 
         <footer>
             <ul class="share left">
-                <li><a href="https://getpocket.com/edit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'save-pocket','width=580,height=296');return false;" class="i-share pkt"><i class="fa fa-get-pocket"></i></a></li>
-                <li><a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="i-share twt"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://getpocket.com/edit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'save-pocket','width=580,height=296');return false;" title="Save to Pocket" class="tooltips i-share pkt"><i class="fa fa-get-pocket"></i></a></li>
+                <li><a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter" class="tooltips i-share twt"><i class="fa fa-twitter"></i></a></li>
             </ul>
         </footer>
 

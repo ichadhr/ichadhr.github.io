@@ -29,7 +29,7 @@ gulp.task('uglify', function () {
 
 /* fix bug jekyll not copy js file */
 gulp.task('copy', function () {
-  return gulp.src('assets/js/theme.min.js')
+  return gulp.src('assets/js/**/*')
         .pipe(gulp.dest('_site/assets/js'));
 });
 

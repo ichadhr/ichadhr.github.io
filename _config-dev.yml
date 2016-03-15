@@ -67,6 +67,7 @@ markdown: kramdown
 kramdown:
   input: GFM
   highlighter: rouge
+paginate_path: /pages/:num
 permalink: /:year/:month/:day/:title/
 
 # Gems Plugin

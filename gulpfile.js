@@ -2,6 +2,7 @@ var gulp    = require('gulp'),
 browserSync = require('browser-sync'),
 cp          = require('child_process'),
 concat      = require('gulp-concat'),
+sourcemaps  = require('gulp-sourcemaps')
 uglify      = require('gulp-uglify');
 
 var messages = {
@@ -11,7 +12,7 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['copy'], function (done) {
+gulp.task('jekyll-build', ['uglify', 'copy'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', '_config-dev.yml'], {stdio: 'inherit'})
         .on('close', done);
@@ -21,9 +22,11 @@ gulp.task('jekyll-build', ['copy'], function (done) {
  * Uglfiy JS source
  */
 gulp.task('uglify', function () {
-    gulp.src('assets/js/theme.js')
-        .pipe(uglify())
-        .pipe(concat('theme.min.js'))
+    gulp.src('assets/js/src/*.js')
+        .pipe(sourcemaps.init())
+         .pipe(concat('theme.min.js'))
+         .pipe(uglify())
+         .pipe(sourcemaps.write('/'))
         .pipe(gulp.dest('assets/js'));
 });
 
@@ -55,8 +58,8 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch(['assets/js/*.js'], ['uglify']);
-    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.scss', 'assets/js/*.js'], ['jekyll-rebuild']);
+    gulp.watch(['assets/js/src/*.js'], ['uglify']);
+    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.scss', 'assets/js/src/*.js'], ['jekyll-rebuild']);
 });
 
 /**

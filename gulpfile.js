@@ -12,7 +12,7 @@ var messages = {
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['uglify', 'copy'], function (done) {
+gulp.task('jekyll-build', ['uglify', 'copyjs', 'copyemoji'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', '_config-dev.yml'], {stdio: 'inherit'})
         .on('close', done);
@@ -31,9 +31,15 @@ gulp.task('uglify', function () {
 });
 
 /* fix bug jekyll not copy js file */
-gulp.task('copy', function () {
+gulp.task('copyjs', function () {
   return gulp.src('assets/js/**/*')
         .pipe(gulp.dest('_site/assets/js'));
+});
+
+/* speed up jekyll build for emoji */
+gulp.task('copyemoji', function () {
+  return gulp.src('assets/img/emoji/**/*')
+        .pipe(gulp.dest('_site/assets/img/emoji'));
 });
 
 /**

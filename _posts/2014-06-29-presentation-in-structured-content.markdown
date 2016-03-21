@@ -3,7 +3,7 @@ layout: post
 title:  "Presentation In Structured Content"
 date:   2014-06-19 04:07:49
 categories: Frontend Development
-banner_image: "/media/station.jpg"
+banner_image: "/media/posts/2014-06-29-presentation-in-structured-content/cover.jpg"
 featured: true
 comments: false
 ---

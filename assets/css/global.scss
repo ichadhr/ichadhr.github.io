@@ -44,11 +44,14 @@ body, html{
 	height:100%;
 	background:#fff;
 	font:400 16px "Open Sans", serif;
-	letter-spacing: .2px;
+	letter-spacing: .3px;
 	color:#3b3b3b;
 	padding:0;
 	margin:0;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	direction: ltr;
 }
 
 a{
@@ -93,7 +96,7 @@ h4{
 
 p{
 	margin:30px 0;
-	line-height:2em;
+	line-height:1.9;
 	color:#4e4d4d;
 	word-wrap: break-word;
 }
@@ -106,6 +109,12 @@ img{
 	margin:30px 0;
 	max-width:100%;
 	@include border-radius(4px, 4px);
+
+	&.center{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 hr{
@@ -124,7 +133,7 @@ code{
 	@include border-radius(4px, 4px);
 	font-style: normal;
 	font-family: 'Consolas', 'Liberation Mono', Menlo, 'Courier New', Courier, monospace;
-	font-size: 0.88em;
+	font-size: 0.9em;
 	color: #3790a7;
 }
 

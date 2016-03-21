@@ -3,7 +3,7 @@ layout: post
 title:  "JavaScript Design Patterns: Introduction"
 date:   2014-07-19 04:07:49
 categories: Programming Patterns
-banner_image: "/media/desert.jpg"
+banner_image: "/media/posts/2014-07-19-javascript-design-patterns-introduction/cover.jpg"
 featured: true
 comments: true
 ---
@@ -17,6 +17,8 @@ In the first part of this book, we will explore the history and importance of de
 Design patterns can be traced back to the early work of an architect named Christopher Alexander. He would often write publications about his experience in solving design issues and how they related to buildings and towns. One day, it occurred to Alexander that when used time and time again, certain design constructs lead to a desired optimal effect.
 
 In collaboration with Sara Ishikawa and Murray Silverstein, Alexander produced a pattern language that would help empower anyone wishing to design and build at any scale. This was published back in 1977 in a paper titled "A Pattern Language", which was later released as a complete hardcover book.
+
+{% include helpers/image.html name="smartlayers.png" align="center" alt="Smart-Layer" %}
 
 Some 30 years ago, software engineers began to incorporate the principles Alexander had written about into the first documentation about design patterns, which was to be a guide for novice developers looking to improve their coding skills. It's important to note that the concepts behind design patterns have actually been around in the programming industry since its inception, albeit in a less formalized form.
 

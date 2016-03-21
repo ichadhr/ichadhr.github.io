@@ -1,4 +1,56 @@
 
+@-webkit-keyframes scroll {
+    0% {
+        opacity: 0
+    }
+    10% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+}
+@-moz-keyframes scroll {
+    0% {
+        opacity: 0
+    }
+    10% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+}
+@keyframes scroll {
+    0% {
+        opacity: 0
+    }
+    10% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+}
+
 .excerpt{
 	clear:both;
 	p a:hover {
@@ -26,7 +78,8 @@
 		left:0;
 		opacity:0.5;
 		background-size:cover;
-		background-attachment:fixed;
+		background-position: 50% 0;
+		background-repeat: no-repeat;
 		@include inner-shadow(0, -50px, 50px, -50px, 0.7);
 	}
 	&.featured{
@@ -66,15 +119,37 @@
 		}
 	}
 	.movedown{
-		font-size: 30px;
-		color: #eee;
+		width: 25px;
+		height: 36px;
+		border-radius: 15px;
+		border: 2px solid rgba(243, 243, 243, 0.6);
+		z-index: 10000;
+		// font-size: 30px;
+		// color: #eee;
 		position: absolute;
 		bottom: 5%;
 		left: 50%;
-		opacity: 0.6;
+		// @include transition(all 0.2s ease-in-out);
 		-webkit-animation: pulsate 4s ease-out;
-    	-webkit-animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
     	cursor:pointer;
+    	.scroll{
+    		display: block;
+    		margin: 6px auto;
+    		width: 3px;
+    		height: 6px;
+    		border-radius: 4px;
+    		background: #5d9cec;
+    		-webkit-animation-duration: 2s;
+    		-moz-animation-duration: 2s;
+    		animation-duration: 2s;
+    		-webkit-animation-name: scroll;
+    		-moz-animation-name: scroll;
+    		animation-name: scroll;
+    		-webkit-animation-iteration-count: infinite;
+    		-moz-animation-iteration-count: infinite;
+    		animation-iteration-count: infinite
+    	}
 	}
 	@media screen and (max-width: 595px) {
 		height:auto;

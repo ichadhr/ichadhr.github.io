@@ -6,4 +6,5 @@ bundle install
 gem install html-proofer
 
 # Install node dep
+npm install gulp -g
 npm install

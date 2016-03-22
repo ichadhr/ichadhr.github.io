@@ -9,11 +9,14 @@ rvm:
 nvm:
   - 4.1.2
 
-before_script:
- - bash scripts/dep.sh
+before_install:
+ - gem install bundler
 
 install:
  - bash scripts/dep-i.sh
+
+before_script:
+ - bash emoji.sh
 
 script: gulp --gulpfile scripts/build.js
 

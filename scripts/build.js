@@ -18,4 +18,9 @@ gulp.task('uglify', function () {
         .pipe(gulp.dest('assets/js'));
 });
 
-gulp.task('default', ['jekyll-build']);
+gulp.task('htmlproofer', function (done) {
+    return cp.spawn('htmlproofer', ['/_site'], {stdio: 'inherit'})
+        .on('close', done);
+});
+
+gulp.task('default', ['jekyll-build', 'htmlproofer']);

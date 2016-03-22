@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-cd ..
-
 # Install jekyll dep
 bundle install
+
+gem install html-proofer
 
 # Install node dep
 npm install

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo -e "GET https://github.com HTTP/1.0\n\n" | nc github.com 80 > /dev/null 2>&1
 
@@ -53,4 +53,5 @@ if [ $? -eq 0 ]; then
      fi
 else
     echo "GitHub not reachable"
+    exit 1
 fi

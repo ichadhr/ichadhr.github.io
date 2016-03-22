@@ -5,7 +5,6 @@ sourcemaps  = require('gulp-sourcemaps')
 uglify      = require('gulp-uglify');
 
 gulp.task('jekyll-build', ['uglify'], function (done) {
-    browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build'], {stdio: 'inherit'})
         .on('close', done);
 });

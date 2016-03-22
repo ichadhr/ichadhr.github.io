@@ -74,5 +74,8 @@ permalink: /:year/:month/:day/:title/
 gems:
     ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed', 'jekyll-sitemap', 'kramdown', 'rouge']
 
+exclude:
+  - assets/img/emoji/.svn
+
 # SSL Better :)
 #enforce_ssl: ichadhr.github.io

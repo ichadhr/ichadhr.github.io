@@ -77,7 +77,7 @@ gems:
 exclude:
     - node_modules
     - assets/js
-    - assets/img/emoji
+    - assets/img/emoji/.svn
     - CNAME
     - Gemfile
     - Gemfile.lock

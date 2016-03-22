@@ -76,6 +76,9 @@ gems:
 
 exclude:
   - assets/img/emoji/.svn
+  - scripts
+  - emoji.sh
+  - README.md
 
 # SSL Better :)
 #enforce_ssl: ichadhr.github.io

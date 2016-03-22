@@ -1,0 +1,23 @@
+sudo: required
+dist: trusty
+cache: bundler
+
+language: ruby
+
+rvm:
+  - 2.2.3
+
+nvm:
+  - 4.1.2
+
+before_script:
+ - chmod +x scripts/dep.sh
+
+install:
+  - chmod +x scripts/dep-i.sh
+
+script: gulp --gulpfile scripts/build.js
+
+branches:
+  only:
+    - master

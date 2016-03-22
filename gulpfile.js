@@ -2,7 +2,9 @@ var gulp    = require('gulp'),
 browserSync = require('browser-sync'),
 cp          = require('child_process'),
 concat      = require('gulp-concat'),
-sourcemaps  = require('gulp-sourcemaps')
+sourcemaps  = require('gulp-sourcemaps'),
+imagemin    = require('gulp-imagemin'),
+pngquant    = require('imagemin-pngquant'),
 uglify      = require('gulp-uglify');
 
 var messages = {
@@ -36,6 +38,20 @@ gulp.task('copyjs', function () {
         .pipe(gulp.dest('_site/assets/js'));
 });
 
+/* Minifiy image size */
+gulp.task('image', function () {
+    return gulp.src('media/posts/**/*', {base: './'})
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [
+                {removeViewBox: false},
+                {cleanupIDs: false}
+            ],
+            use: [pngquant({quality: '65-80', speed: 4})]
+        }))
+        .pipe(gulp.dest('./'));
+});
+
 /**
  * Rebuild Jekyll & do page reload
  */
@@ -59,7 +75,7 @@ gulp.task('browser-sync', ['jekyll-build'], function() {
  */
 gulp.task('watch', function () {
     gulp.watch(['assets/js/src/*.js'], ['uglify']);
-    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.scss', 'assets/js/src/*.js'], ['jekyll-rebuild']);
+    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.scss', 'assets/js/src/*.js', 'media/posts/*'], ['jekyll-rebuild']);
 });
 
 /**

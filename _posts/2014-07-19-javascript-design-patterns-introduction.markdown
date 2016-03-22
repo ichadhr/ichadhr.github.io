@@ -52,11 +52,11 @@ The most common approach to achieving this is by defining a JavaScript function 
 
 {% highlight javascript %}
 function Car( model ) {
-	this.model = model;
+    this.model = model;
     this.color = "silver";
     this.year  = "2012";
     this.getInfo = function () {
-    	return this.model + " " + this.year;
+        return this.model + " " + this.year;
     };
 }
 {% endhighlight %}

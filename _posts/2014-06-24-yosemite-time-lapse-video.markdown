@@ -12,7 +12,7 @@ This video is a collaboration between Sheldon Neill and Colin Delehanty. All tim
 
 <!--more-->
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZwzY1o_hB5Y" frameborder="0" allowfullscreen></iframe>
-<br/>
+
 This whole project has been an amazing experience. The two of us became friends through Vimeo and explored a shared interest in timelapsing Yosemite National Park over an extended period of time. We'd like to expand this idea to other locations and would appreciate any suggestions for a future project.
 
 Project Yosemite Website: http://projectyose.com

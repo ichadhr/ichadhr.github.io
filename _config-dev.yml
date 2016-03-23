@@ -5,7 +5,7 @@ title:            "ichadhr"
 email: 						"ichadhr@gmail.com"
 description: 			"Naturally and artificially flavoured."
 baseurl: 					""
-url:              "https://ichadhr.tk"
+url:              "http://localhost:3000"
 enable_logo:      false
 logourl: 					"/assets/img/bloglogo.jpg"
 fa-logo: 					"i-logo"

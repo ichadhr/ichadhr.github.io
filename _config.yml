@@ -79,6 +79,8 @@ exclude:
   - scripts
   - emoji.sh
   - README.md
+  - gulpfile.js
+  - package.json
 
 # SSL Better :)
 #enforce_ssl: ichadhr.github.io

@@ -4,39 +4,57 @@ layout: default
 
 {% if site.enable_logo == true %}
 <div class="profile">
-	{% if site.logourl != "" %}<img src="{{ site.logourl }}" class="profileimage" alt="user">{% endif %}
-	<h4>{{ site.title }}</h4>
-	<p>{{ site.description }}</p>
-	<hr>
+    {% if site.logourl != "" %}<img src="{{ site.logourl }}" class="profileimage" alt="user">{% endif %}
+    <h4>{{ site.title }}</h4>
+    <p>{{ site.description }}</p>
+    <hr>
 </div>
 {% endif %}
 
-<section class="posts postindex wrapper">
+{% if paginator.page %}
+  {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
+  {% assign currentPage = paginator.page %}
+{% else %}
+  {% assign offset = 0 %}
+  {% assign currentPage = 1 %}
+{% endif %}
 
-	{% for post in paginator.posts %}
-		<article class="post {% if post.featured == true %} featured {% endif %}">
-			<header>
-				<div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
-				<span class="category">
-					{% for category in post.categories %}
-					{{ category }}
-					{% endfor %}
-				</span>
-				<h1><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h1>
-				<span>
-					Posted on <i class="fa fa-clock-o"></i><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time>.
-				</span>
-				<div class="excerpt">
-					{% if post.content contains '<!--more-->' %}
-						{{ post.content | split:'<!--more-->' | first }}
-					{% else %}
-						{{ post.content }}
-					{% endif %}
-				</div>
-			</header>
-		</article>
-	{% endfor %}
+<section id="postIndex" class="posts postindex wrapper" data-page="{{ currentPage }}" data-page-total="{{ paginator.total_pages }}">
 
-	{% include pagination.html %}
+    {% for post in site.posts limit:site.paginate offset:offset %}
+
+        <article class="post {% if post.featured == true %} featured {% endif %}">
+            <header>
+                <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
+                <span class="category">
+                    {% for category in post.categories %}
+                    {{ category }}
+                    {% endfor %}
+                </span>
+                <h1><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+                <span>
+                    Posted on <i class="fa fa-clock-o"></i><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time>.
+                </span>
+                <div class="excerpt">
+                    {% if post.content contains '<!--more-->' %}
+                        {{ post.content | split:'<!--more-->' | first }}
+                    {% else %}
+                        {{ post.content }}
+                    {% endif %}
+                </div>
+            </header>
+        </article>
+
+    {% endfor %}
+
+    {% assign postCount = site.posts | size %}
+    {% assign postsCovered = site.paginate | plus:offset %}
 
 </section>
+<div class="wrapper">
+{% if postsCovered < postCount %}
+    <div class="moreposts">
+        <a href="#moreposts" class="loadmore smallbutton lightgray"><span>Load More..</span></a>
+	</div>
+{% endif %}
+</div>

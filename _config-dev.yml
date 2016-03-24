@@ -7,8 +7,8 @@ description: 			"Naturally and artificially flavoured."
 baseurl: 					""
 url:              "http://localhost:3000"
 enable_logo:      false
-logourl: 					"/assets/img/bloglogo.jpg"
-fa-logo: 					"i-logo"
+logourl: 					"/assets/img/logo.png"
+i-logo: 					"i-logo"
 paginate: 				5
 
 
@@ -18,7 +18,7 @@ author_name: 				"ichadhr"
 author_url: 				"https://ichadhr.tk"
 author_bio: 				"It's okay to eat fish because they don't have any feelings."
 author_email: 			"ichadhr@gmail.com"
-author_image: 			"/assets/img/authorimage.jpg"
+author_image: 			"/assets/img/author.jpg"
 
 
 # Social Settings

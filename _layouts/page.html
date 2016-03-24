@@ -18,7 +18,7 @@ layout: default
   <article class="post {% if page.featured == true %} featured {% endif %}">
 
 	<header>
-        <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
+        <div class="feature"><span>Featured</span><i class="i-bookmark i-lg"></i></div>
         <h2>
             {% for category in post.categories %}
                 {{ category }}
@@ -33,14 +33,14 @@ layout: default
 
 	<footer>
 		<!-- <ul class="share left">
-			<li><a href="https://twitter.com/share?text={{ page.title }}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" class="smallbutton lightgray"><i class="fa fa-twitter"></i>Twitter</a></li>
-			<li><a href="https://getpocket.com/edit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'save-pocket','width=580,height=296');return false;" class="smallbutton lightgray"><i class="fa fa-get-pocket"></i>Pocket</a></li>
+			<li><a href="https://getpocket.com/edit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'save-pocket','width=580,height=296');return false;" title="Save to Pocket" class="tooltips i-share pkt"><i class="i-pocket-s"></i></a></li>
+            <li><a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter" class="tooltips i-share twt"><i class="i-twitter-s"></i></a></li>
 		</ul> -->
 	</footer>
 
 	{% if page.comments %}
 	<div class="comments">
-		<a href="javascript:;" class="readmore smallbutton blue"><i class="fa fa-comments"></i>View Comments...</a>
+		<a href="javascript:;" class="readmore smallbutton blue"><i class="i-comments"></i>View Comments...</a>
 		<div id="disqus_thread"></div>
 		<div id="g-comments"></div>
 	</div>
@@ -49,4 +49,4 @@ layout: default
   </article>
 </section>
 
-<a href="javascript:;" class="backtotop"><i class="fa fa-chevron-up"></i></a>
+<a href="javascript:;" class="backtotop"><i class="i-up"></i></a>

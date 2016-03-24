@@ -1,0 +1,25 @@
+    {% for post in site.posts limit:site.paginate offset:offset %}
+
+        <article class="post {% if post.featured == true %} featured {% endif %}">
+            <header>
+                <div class="feature"><span>Featured</span><i class="i-bookmark i-lg"></i></div>
+                <span class="category">
+                    {% for category in post.categories %}
+                    {{ category }}
+                    {% endfor %}
+                </span>
+                <h1><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h1>
+                <span>
+                    Posted on<i class="i-clock"></i><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time>.
+                </span>
+                <div class="excerpt">
+                    {% if post.content contains '<!--more-->' %}
+                        {{ post.content | split:'<!--more-->' | first }}
+                    {% else %}
+                        {{ post.content }}
+                    {% endif %}
+                </div>
+            </header>
+        </article>
+
+    {% endfor %}

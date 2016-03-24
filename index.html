@@ -20,37 +20,16 @@ layout: default
 {% endif %}
 
 <section id="postIndex" class="posts postindex wrapper" data-page="{{ currentPage }}" data-page-total="{{ paginator.total_pages }}">
-
-    {% for post in site.posts limit:site.paginate offset:offset %}
-
-        <article class="post {% if post.featured == true %} featured {% endif %}">
-            <header>
-                <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
-                <span class="category">
-                    {% for category in post.categories %}
-                    {{ category }}
-                    {% endfor %}
-                </span>
-                <h1><a href="{{ post.url | prepend: site.baseurl }}" title="{{ post.title }}">{{ post.title }}</a></h1>
-                <span>
-                    Posted on <i class="fa fa-clock-o"></i><time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%B %-d, %Y" }}</time>.
-                </span>
-                <div class="excerpt">
-                    {% if post.content contains '<!--more-->' %}
-                        {{ post.content | split:'<!--more-->' | first }}
-                    {% else %}
-                        {{ post.content }}
-                    {% endif %}
-                </div>
-            </header>
-        </article>
-
-    {% endfor %}
-
-    {% assign postCount = site.posts | size %}
-    {% assign postsCovered = site.paginate | plus:offset %}
-
+    {% if paginator.page != 1 %}
+        {% include custom/list-small.html %}
+    {% else %}
+        {% include custom/list-full.html %}
+    {% endif %}
 </section>
+
+{% assign postCount = site.posts | size %}
+{% assign postsCovered = site.paginate | plus:offset %}
+
 <div class="wrapper">
 {% if postsCovered < postCount %}
     <div class="moreposts">

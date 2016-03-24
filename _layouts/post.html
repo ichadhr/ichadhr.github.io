@@ -15,18 +15,18 @@ layout: default
     <h4>{{ site.author_name }}</h4>
     <ul>
     	{% if site.twitter_url != '' %}
-        <li><a href="{{ site.twitter_url }}" class="smallsocialbutton twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="{{ site.twitter_url }}" class="smallsocialbutton twitter" target="_blank"><i class="i-twitter"></i></a></li>
         {% endif %}
         {% if site.facebook_url != '' %}
-        <li><a href="{{ site.facebook_url }}" class="smallsocialbutton facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="{{ site.facebook_url }}" class="smallsocialbutton facebook" target="_blank"><i class="i-facebook"></i></a></li>
         {% endif %}
         {% if site.github_url != '' %}
-        <li><a href="{{ site.github_url }}" class="smallsocialbutton github" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="{{ site.github_url }}" class="smallsocialbutton github" target="_blank"><i class="i-github-circled"></i></a></li>
         {% endif %}
         {% if site.instagram_url != '' %}
-        <li><a href="{{ site.instagram_url }}" class="smallsocialbutton instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+        <li><a href="{{ site.instagram_url }}" class="smallsocialbutton instagram" target="_blank"><i class="i-instagram"></i></a></li>
         {% endif %}
-        <li><a href="{{ site.url }}/feed.xml" class="smallsocialbutton rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a href="{{ site.url }}/feed.xml" class="smallsocialbutton rss" target="_blank"><i class="i-rss"></i></a></li>
     </ul>
     <p>{{ site.author_bio }}</p>
     <hr>
@@ -44,7 +44,7 @@ layout: default
         <h1><span class="title-cover">{{ page.title }}</a></h1>
         <span>
             Posted <!-- by <a href="{{ site.author_url }}" target="_blank">{{ site.author_name }}</a>
-                 -->on <i class="fa fa-clock-o"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
+                 -->on <i class="i-clock"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
         </span>
     </header>
     <div class="movedown">
@@ -56,7 +56,7 @@ layout: default
     <article class="post {% if page.featured == true %} featured {% endif %}">
 
         <header>
-            <div class="feature"><span>Featured</span><i class="fa fa-bookmark fa-lg"></i></div>
+            <div class="feature"><span>Featured</span><i class="i-bookmark i-lg"></i></div>
             <span class="category">
             	{% for category in page.categories %}
 					{{ category }}
@@ -65,7 +65,7 @@ layout: default
             <h1 id="posttitle"><span class="title">{{ page.title }}</a></h1>
             <span>
                 Posted <!-- by <a href="{{author.website}}" target="_blank">{{ site.author_name }}</a>
-                 -->on <i class="fa fa-clock-o"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
+                 -->on<i class="i-clock"></i><time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
             </span>
         </header>
 
@@ -75,8 +75,8 @@ layout: default
 
         <footer>
             <ul class="share left">
-                <li><a href="https://getpocket.com/edit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'save-pocket','width=580,height=296');return false;" title="Save to Pocket" class="tooltips i-share pkt"><i class="fa fa-get-pocket"></i></a></li>
-                <li><a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter" class="tooltips i-share twt"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://getpocket.com/edit?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'save-pocket','width=580,height=296');return false;" title="Save to Pocket" class="tooltips i-share pkt"><i class="i-pocket-s"></i></a></li>
+                <li><a href="https://twitter.com/share?text={{ page.title | url_encode }}&url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter" class="tooltips i-share twt"><i class="i-twitter-s"></i></a></li>
             </ul>
         </footer>
 
@@ -89,33 +89,33 @@ layout: default
                 <p>{{ site.author_bio }}</p>
                 <ul class="social">
        				{% if site.twitter_url != '' %}
-                    <li><a href="{{ site.twitter_url }}" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="{{ site.twitter_url }}" class="twitter" target="_blank"><i class="i-twitter"></i></a></li>
                     {% endif %}
 					{% if site.facebook_url != '' %}
-                    <li><a href="{{ site.facebook_url }}" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="{{ site.facebook_url }}" class="facebook" target="_blank"><i class="i-facebook"></i></a></li>
                     {% endif %}
 					{% if site.github_url != '' %}
-                    <li><a href="{{ site.github_url }}" class="github" target="_blank"><i class="fa fa-github-alt"></i></a></li>
+                    <li><a href="{{ site.github_url }}" class="github" target="_blank"><i class="i-github-circled"></i></a></li>
                     {% endif %}
 					{% if site.youtube_url != '' %}
-                    <li><a href="{{ site.youtube_url }}" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="{{ site.youtube_url }}" class="youtube" target="_blank"><i class="i-youtube"></i></a></li>
 					{% endif %}
 					{% if site.dribbble_url != '' %}
-                    <li><a href="{{ site.dribbble_url }}" class="dribbble" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                    <li><a href="{{ site.dribbble_url }}" class="dribbble" target="_blank"><i class="i-dribbble"></i></a></li>
 					{% endif %}
 					{% if site.googleplus_url != '' %}
-                    <li><a href="{{ site.googleplus_url }}" class="googleplus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="{{ site.googleplus_url }}" class="googleplus" target="_blank"><i class="i-gplus"></i></a></li>
 					{% endif %}
 					{% if site.instagram_url != '' %}
-                    <li><a href="{{ site.instagram_url }}" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="{{ site.instagram_url }}" class="instagram" target="_blank"><i class="i-instagram"></i></a></li>
 					{% endif %}
 					{% if site.pinterest_url != '' %}
-                    <li><a href="{{ site.pinterest_url }}" class="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                    <li><a href="{{ site.pinterest_url }}" class="pinterest" target="_blank"><i class="i-pinterest"></i></a></li>
 					{% endif %}
 					{% if site.linkedin_url != '' %}
-                    <li><a href="{{ site.linkedin_url }}" class="linkedin" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="{{ site.linkedin_url }}" class="linkedin" target="_blank"><i class="i-linkedin"></i></a></li>
 					{% endif %}
-                    <li><a href="{{ site.url }}/feed.xml" class="rss" target="_blank"><i class="fa fa-rss"></i></a></li>
+                    <li><a href="{{ site.url }}/feed.xml" class="rss" target="_blank"><i class="i-rss"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -123,7 +123,7 @@ layout: default
 
         {% if page.comments %}
         <div class="comments">
-            <a href="javascript:;" class="readmore smallbutton blue"><i class="fa fa-comments"></i>View Comments...</a>
+            <a href="javascript:;" class="readmore smallbutton blue"><i class="i-comments"></i>View Comments...</a>
             <div id="disqus_thread"></div>
             <div id="g-comments"></div>
         </div>
@@ -133,13 +133,15 @@ layout: default
 
     <div class="pagination">
         {% if page.previous.url %}
-            <a href="{{ page.previous.url }}" class="smallbutton lightgray left"><i class="fa fa-chevron-left"></i><span>Older Posts</span></a>
+            <a href="{{ page.previous.url }}" class="smallbutton lightgray left"><i class="i-left"></i><span>Older Posts</span></a>
         {% endif %}
         {% if page.next.url %}
-            <a href="{{ page.next.url }}" class="smallbutton lightgray right"><span>Newer Posts</span><i class="fa fa-chevron-right"></i></a>
+            <a href="{{ page.next.url }}" class="smallbutton lightgray right"><span>Newer Posts</span><i class="i-right"></i></a>
         {% endif %}
-        </div>
+    </div>
 
 </section>
 
-<a href="javascript:;" class="backtotop"><i class="fa fa-chevron-up"></i></a>
+
+
+<a href="javascript:;" class="backtotop"><i class="i-up"></i></a>

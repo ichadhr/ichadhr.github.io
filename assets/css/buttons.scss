@@ -49,12 +49,12 @@
 
 a.i-share {
     display: inline-block;
+    font-size: 20px;
     color: #d5d5d5;
     padding-left: 2px;
     @include transition(all 0.2s ease-in-out);
 
     &.twt {
-        font-size: 28px;
         &:hover {
             color:#55acee;
             text-shadow: 0 1px 1px rgba(0,0,0,.3);
@@ -62,7 +62,6 @@ a.i-share {
     }
 
     &.pkt {
-        font-size: 24px;
         &:hover {
             color:#ee4056;
             text-shadow: 0 1px 1px rgba(0,0,0,.3);

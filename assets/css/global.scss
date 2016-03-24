@@ -126,15 +126,15 @@ hr{
 }
 
 code{
-	//padding:2px 6px;
-	margin:0 2px;
-	//background:#f4f8fb;
+	padding:4px 8px;
+	//margin:0 2px;
+	background:#f7f7f7;
 	//border:1px solid #e2e9ef;
-	@include border-radius(4px, 4px);
+	@include border-radius(3px, 3px);
 	font-style: normal;
 	font-family: 'Consolas', 'Liberation Mono', Menlo, 'Courier New', Courier, monospace;
-	font-size: 0.9em;
-	color: #3790a7;
+	font-size: .85em;
+	color: #ce5050;
 }
 
 blockquote, q, cite{

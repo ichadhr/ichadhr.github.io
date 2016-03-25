@@ -77,7 +77,7 @@ gems:
 exclude:
   - assets/img/emoji/.svn
   - assets/fonts/icons/css
-  - js/src
+  - assets/js/src
   - scripts
   - emoji.sh
   - README.md

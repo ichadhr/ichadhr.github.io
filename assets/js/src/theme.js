@@ -1721,7 +1721,6 @@ jQuery(document).ready(function(){
   // AJAX LOAD MORE POSTS
   $('.loadmore').click(function() {
     $(this).hide();
-    $(".moreposts").append("<div class='loading'></div>");
 
     MorePosts((function () {
         $(this).show("slow");
@@ -1753,9 +1752,10 @@ jQuery(document).ready(function(){
         url: '/pages/' + nextPage + '/',
         dataType: "html",
         beforeSend: function(xhr, options) {
+            $(".moreposts").append("<div class='loading'></div>");
             setTimeout(function() {
                 $.ajax($.extend(options, {beforeSend: $.noop}));
-            }, 2000);
+            }, 1500);
             return false;
         },
         success: function(response) {

@@ -1720,14 +1720,15 @@ jQuery(document).ready(function(){
 
   // AJAX LOAD MORE POSTS
   $('.loadmore').click(function() {
-    $(this).hide("fast").parent(".moreposts").append("<div class='loading'></div>");
+    $(this).hide();
+    $(".moreposts").append("<div class='loading'></div>");
 
     MorePosts((function () {
         $(this).show("slow");
         $(this).parent(".moreposts").children(".loading").remove();
     }).bind(this));
 
-    sendGAEvent('Articles', 'Load more..');
+    // sendGAEvent('Articles', 'Load more..');
 
     return false;
   });
@@ -1747,27 +1748,20 @@ jQuery(document).ready(function(){
         noMorePosts();
     }
 
-    // $.get("/pages/" + nextPage + '/', function (response) {
-    //     var html = $.parseHTML(response);
-    //     var posts = $(html).filter("#postIndex").children();
-
-    //     // Append posts
-    //     $postIndex.append(posts)
-
-    //     // Update
-    //     $postIndex.attr("data-page", nextPage);
-
-    //     callback();
-    // });
-
     $.ajax({
         type: "GET",
         url: '/pages/' + nextPage + '/',
         dataType: "html",
+        beforeSend: function(xhr, options) {
+            setTimeout(function() {
+                $.ajax($.extend(options, {beforeSend: $.noop}));
+            }, 2000);
+            return false;
+        },
         success: function(response) {
             var posts = $(response).filter("#postIndex").children();
             // Append posts
-            $postIndex.append(posts)
+            $postIndex.append(posts);
 
             // Update
             $postIndex.attr("data-page", nextPage);
@@ -1791,9 +1785,11 @@ jQuery(document).ready(function(){
   }
 
   function noMorePosts() {
-    var $mr = $('.moreposts');
-    $mr.parent('.wrapper').css('padding', '30px 0');
-    $mr.remove();
+    setTimeout(function(){
+        $('.loadmore').remove();
+        $('.loading').remove();
+        $('.moreposts').css('margin-top', '-50px');
+    }, 2000);
   }
 
   function sendGAEvent(primary, secondary) {

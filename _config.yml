@@ -78,6 +78,7 @@ exclude:
   - assets/img/emoji/.svn
   - assets/fonts/icons/css
   - assets/js/src
+  - assets/js/theme.min.js.map
   - scripts
   - emoji.sh
   - README.md

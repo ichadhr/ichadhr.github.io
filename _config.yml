@@ -81,7 +81,7 @@ gems:
   - jemoji
 
 emoji:
-  src: "/assets/img/emoji"
+  src: "/assets/img/png"
   ext: "svg"
 
 exclude:

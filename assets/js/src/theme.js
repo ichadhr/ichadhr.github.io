@@ -1638,7 +1638,7 @@ jQuery(document).ready(function(){
 
     // FITVIDS
     jQuery(".postbody").fitVids();
-  jQuery(".excerpt").fitVids();
+    jQuery(".excerpt").fitVids();
 
 
     // COMMENTS
@@ -1718,12 +1718,17 @@ jQuery(document).ready(function(){
         'background_color': '#545454'
   });
 
+  // Remove align=absmiddle
+  $('.emoji').each(function(){
+    $(this).load().removeAttr('align');
+  });
+
   // AJAX LOAD MORE POSTS
   $('.loadmore').click(function() {
     $(this).hide();
 
     MorePosts((function () {
-        $(this).show("slow");
+        $(this).fadeIn("slow");
         $(this).parent(".moreposts").children(".loading").remove();
     }).bind(this));
 
@@ -1759,7 +1764,7 @@ jQuery(document).ready(function(){
             return false;
         },
         success: function(response) {
-            var posts = $(response).filter("#postIndex").children();
+            var posts = $(response).filter("#postIndex").children().fadeIn(700);
             // Append posts
             $postIndex.append(posts);
 
@@ -1771,14 +1776,14 @@ jQuery(document).ready(function(){
         error: function( xhr, stat, er ) {
             $('.loading').remove();
             if(xhr.status === 0) {
-                $(".moreposts").append("<div class='loading-error'>Please check network connections [0]</div>");
+                $(".moreposts").append("<div class='loading-error'><i class='i-cancel-circled'></i> Please check network connections [0]</div>");
             } else if (xhr.status === 404) {
-                $(".moreposts").append("<div class='loading-error'>Requested URL not found [404]</div>");
+                $(".moreposts").append("<div class='loading-error'><i class='i-cancel-circled'></i> Requested URL not found [404]</div>");
             } else if (xhr.status === 500) {
-                $(".moreposts").append("<div class='loading-error'>Internal Server Error [500]</div>");
+                $(".moreposts").append("<div class='loading-error'><i class='i-cancel-circled'></i> Internal Server Error [500]</div>");
             } else {
                 var unk = 'Unknown Error.\n' + xhr.stat;
-                $(".moreposts").append('<div class="loading">'+ unk +'</div>');
+                $(".moreposts").append('<div class="loading"><i class="i-cancel-circled"></i> '+ unk +'</div>');
             }
         }
     });
@@ -1802,7 +1807,7 @@ jQuery(document).ready(function(){
     }
   }
 
-});
+}); // ready
 
 
 /**

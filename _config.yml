@@ -72,7 +72,17 @@ permalink: /:year/:month/:day/:title/
 
 # Gems Plugin
 gems:
-    ['jekyll-paginate', 'jekyll-gist', 'jekyll-feed', 'jekyll-sitemap', 'kramdown', 'rouge']
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-sitemap
+  - kramdown
+  - rouge
+  - jemoji
+
+emoji:
+  src: "/assets/img/emoji"
+  ext: "svg"
 
 exclude:
   - assets/img/emoji/.svn

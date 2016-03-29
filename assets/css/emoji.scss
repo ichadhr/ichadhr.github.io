@@ -1,3 +1,9 @@
+// fix margin
+img.emoji{
+	margin:auto;
+	vertical-align:sub;
+}
+
 [class*=emo-] {
 	display: inline-block;
 	width: 1em;

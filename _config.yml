@@ -81,11 +81,10 @@ gems:
   - jemoji
 
 emoji:
-  src: "/assets/img/png"
-  ext: "svg"
+  src: "/assets/img"
 
 exclude:
-  - assets/img/emoji/.svn
+  - assets/img/emoji/unicode/.svn
   - assets/fonts/icons/css
   - assets/js/src
   - assets/js/theme.min.js.map

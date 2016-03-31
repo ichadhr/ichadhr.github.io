@@ -81,14 +81,12 @@ gems:
   - jemoji
 
 emoji:
-  src: "/assets/img/png"
-  ext: "svg"
+  src: "/assets/img"
 
 exclude:
     - node_modules
     - assets/js
     - assets/img/emoji
-    - assets/img/png/emoji/unicode
     - assets/fonts/icons/webfont
     - CNAME
     - Gemfile

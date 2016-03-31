@@ -42,7 +42,7 @@
 
 body, html{
 	height:100%;
-	background:#fff;
+	background:#fcfcfc;
 	font:400 16px "Open Sans", serif;
 	letter-spacing: .3px;
 	color:#3b3b3b;
@@ -128,7 +128,7 @@ hr{
 code{
 	padding:4px 8px;
 	//margin:0 2px;
-	background:#f7f7f7;
+	background:#f6f6f6;
 	//border:1px solid #e2e9ef;
 	@include border-radius(3px, 3px);
 	font-style: normal;

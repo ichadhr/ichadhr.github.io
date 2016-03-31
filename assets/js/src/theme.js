@@ -1793,7 +1793,7 @@ jQuery(document).ready(function(){
     setTimeout(function(){
         $('.loadmore').remove();
         $('.loading').remove();
-        $('.moreposts').css('margin-top', '-50px');
+        $('.moreposts').css('margin-top', '-100px');
     }, 2000);
   }
 

@@ -14,7 +14,7 @@ Why use Grunt? In one word: automation. The less work you have to do when perfor
 
 > Grunt is a task-based command line build tool for JavaScript projects.
 
-The Grunt ecosystem is huge and it's growing every day {% include emoji.html name="sob" %} :sob:. With literally hundreds of plugins :skull: to choose from, you can use Grunt to automate just about anything with a minimum of effort. If someone hasn't already built what you need, authoring and publishing your own Grunt plugin to npm is a breeze.
+The Grunt ecosystem is huge and it's growing every day :sob:. With literally hundreds of plugins :skull: to choose from, you can use Grunt to automate just about anything with a minimum of effort. If someone hasn't already built what you need, authoring and publishing your own Grunt plugin to npm is a breeze.
 
 {% include image_caption.html name="gruntjs.jpg" alt="GruntJS" title="GruntJS" description="Grunt is built on Node.js, and it’s available as a package via the Node package manager (npm)." %}
 

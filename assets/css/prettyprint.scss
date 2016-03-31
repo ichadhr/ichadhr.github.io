@@ -4,11 +4,11 @@ figure {
 }
 
 pre{
-	background: #f9f9f9;
+	background: #f6f6f6;
 	padding: 17px 25px;
 	border-radius: 5px;
 	line-height: 23px;
-	margin: 35px 0;
+	margin: 0;
   overflow: auto;
 }
 
@@ -19,7 +19,7 @@ pre code{
 	margin:0;
 }
 
-.highlight  { background: #f9f9f9; @include border-radius(4px, 4px) }
+.highlight  { background: #f6f6f6; @include border-radius(4px, 4px) }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { color:#1e1e1f; font-weight: bold } /* Keyword */
@@ -93,7 +93,7 @@ pre code{
 }*/
 
 .gist .gist-data {
-    background: #fafafa !important;
+    background: #f6f6f6 !important;
     word-wrap: break-word;
     border-radius: 4px !important;
     border-bottom: none !important;
@@ -116,7 +116,7 @@ pre code{
 }
 
 .gist .highlight {
-    background: #f9f9f9 !important;
+    background: #f6f6f6 !important;
 }
 
 .gist .blob-code-inner {

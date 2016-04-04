@@ -1,4 +1,10 @@
 
+// fix margin icon emoji
+img.emoji{
+  margin:auto;
+  vertical-align:sub;
+}
+
 @font-face {
   font-family: 'strum';
   src: url('../fonts/icons/webfont/strum.eot?435345345');

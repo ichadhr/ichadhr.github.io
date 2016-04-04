@@ -41,7 +41,9 @@ layout: default
 				{{ category }}
           	{% endfor %}
         </span>
-        <h1><span class="title-cover">{{ page.title }}</a></h1>
+        <h1>
+            <span class="title-cover"> {{ page.title }} </span>
+        </h1>
         <span>
             Posted <!-- by <a href="{{ site.author_url }}" target="_blank">{{ site.author_name }}</a>
                  -->on <i class="i-clock"></i> <time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.
@@ -62,7 +64,9 @@ layout: default
 					{{ category }}
           		{% endfor %}
             </span>
-            <h1 id="posttitle"><span class="title">{{ page.title }}</a></h1>
+            <h1 id="posttitle">
+                <span class="title"> {{ page.title }} </span>
+            </h1>
             <span>
                 Posted <!-- by <a href="{{author.website}}" target="_blank">{{ site.author_name }}</a>
                  -->on<i class="i-clock"></i><time datetime="{{ page.date| date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>.

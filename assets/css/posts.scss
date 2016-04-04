@@ -106,7 +106,7 @@
 			@include transition(opacity 0.2s ease-out);
 			&:hover{
 				border-bottom:3px solid rgba(#fff, 0.2);
-				cursor:default;
+				cursor:cell;
 			}
 		}
 		span{

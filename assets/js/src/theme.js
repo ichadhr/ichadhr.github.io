@@ -1729,7 +1729,7 @@ jQuery(document).ready(function(){
 
     MorePosts((function () {
         $(this).fadeIn("slow");
-        $(this).parent(".moreposts").children(".loading").remove();
+        //$(this).parent(".moreposts").children(".loading").remove();
     }).bind(this));
 
     // sendGAEvent('Articles', 'Load more..');
@@ -1755,6 +1755,7 @@ jQuery(document).ready(function(){
     $.ajax({
         type: "GET",
         url: '/pages/' + nextPage + '/',
+        cache: false,
         dataType: "html",
         beforeSend: function(xhr, options) {
             $(".moreposts").append("<div class='loading'></div>");
@@ -1772,6 +1773,9 @@ jQuery(document).ready(function(){
             $postIndex.attr("data-page", nextPage);
 
             callback();
+        },
+        complete: function() {
+            $(".moreposts").children(".loading").remove();
         },
         error: function( xhr, stat, er ) {
             $('.loading').remove();

@@ -91,6 +91,14 @@ a {
 }
 
 /**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
 
@@ -174,7 +182,7 @@ samp {
  */
 
 pre {
-    white-space: pre-wrap;
+    white-space: pre;
 }
 
 /**
@@ -242,7 +250,7 @@ svg:not(:root) {
  */
 
 figure {
-    margin: 1em 40px;
+    margin: 0;
 }
 
 /* ==========================================================================
@@ -250,15 +258,14 @@ figure {
    ========================================================================== */
 
 /**
- * 1. Define consistent border, margin, and padding.
- * 2. Address width being affected by wide descendants in Chrome and Firefox.
+ * Define consistent border, margin, and padding.
  */
 
 fieldset {
-    border: 1px solid #c0c0c0; /* 1 */
-    margin: 0 2px; /* 1 */
-    min-width: 0; /* 2 */
-    padding: 0.35em 0.625em 0.75em; /* 1 */
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    min-width: 0;
+    padding: 0.35em 0.625em 0.75em;
 }
 
 /**
@@ -272,9 +279,8 @@ legend {
 }
 
 /**
- * 1. Correct color not being inherited in all browsers.
- *    Known issue: `select` will not inherit color in Chrome and Safari on OS X.
- * 2. Correct font properties not being inherited in all browsers.
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
  * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
  */
 
@@ -283,8 +289,10 @@ input,
 optgroup,
 select,
 textarea {
-    color: inherit; /* 1 */
-    font: inherit; /* 2 */
+    color: inherit;
+    font: inherit;
+    font-family: inherit; /* 1 */
+    font-size: inherit; /* 2 */
     margin: 0; /* 3 */
 }
 

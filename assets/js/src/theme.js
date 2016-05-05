@@ -1729,7 +1729,6 @@ jQuery(document).ready(function(){
 
     MorePosts((function () {
         $(this).fadeIn("slow");
-        //$(this).parent(".moreposts").children(".loading").remove();
     }).bind(this));
 
     // sendGAEvent('Articles', 'Load more..');
@@ -1775,7 +1774,7 @@ jQuery(document).ready(function(){
             callback();
         },
         complete: function() {
-            $(".moreposts").children(".loading").remove();
+            $(".loading").remove();
         },
         error: function( xhr, stat, er ) {
             $('.loading').remove();

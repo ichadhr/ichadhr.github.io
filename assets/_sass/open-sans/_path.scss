@@ -1,0 +1,32 @@
+/* Font Version */
+$font-version: "v13" !default;
+$path-normal: "../fonts/open-sans/open-sans-v13-greek_latin-ext_cyrillic_latin_greek-ext_vietnamese_cyrillic-ext-regular";
+$path-700: "../fonts/open-sans/open-sans-v13-greek_latin-ext_cyrillic_latin_greek-ext_vietnamese_cyrillic-ext-700";
+
+
+/* open-sans-regular - greek_latin-ext_cyrillic_latin_greek-ext_vietnamese_cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$path-normal}.eot?v=#{$font-version}'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('OpenSans'),
+       url('#{$path-normal}.eot?#iefix&v=#{$font-version}') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$path-normal}.woff2?v=#{$font-version}') format('woff2'), /* Super Modern Browsers */
+       url('#{$path-normal}.woff?v=#{$font-version}') format('woff'), /* Modern Browsers */
+       url('#{$path-normal}.ttf?v=#{$font-version}') format('truetype'), /* Safari, Android, iOS */
+       url('#{$path-normal}.svg?v=#{$font-version}#OpenSans') format('svg'); /* Legacy iOS */
+}
+/* open-sans-700 - greek_latin-ext_cyrillic_latin_greek-ext_vietnamese_cyrillic-ext */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('#{$path-700}.eot?v=#{$font-version}'); /* IE9 Compat Modes */
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('#{$path-700}.eot?#iefix&v=#{$font-version}') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$path-700}.woff2?v=#{$font-version}') format('woff2'), /* Super Modern Browsers */
+       url('#{$path-700}.woff?v=#{$font-version}') format('woff'), /* Modern Browsers */
+       url('#{$path-700}.ttf?v=#{$font-version}') format('truetype'), /* Safari, Android, iOS */
+       url('#{$path-700}.svg?v=#{$font-version}#OpenSans') format('svg'); /* Legacy iOS */
+}

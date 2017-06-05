@@ -1,0 +1,58 @@
+---
+layout: default
+title: Articles - J. Thomas
+nav: articles
+---
+
+<div class="articles">
+  <aside class="controls">
+    <ul class="filters">
+      <li><a class="on" data-view="post">All</a></li>
+      <li><a data-view="recommended">Recommended</a></li>
+    </ul>
+    <ul class="categories">
+      <li><a class="on">All</a></li>
+      <li><a data-view="ui">UI</a></li>
+      <li><a data-view="ux">UX</a></li>
+      <li><a data-view="thoughts">Thoughts</a></li>
+    </ul>
+    <ul class="introductions">
+      <li><a class="on">Introductions</a></li>
+    </ul>
+  </aside>
+  <div class="list">
+    {% for post in site.posts %}
+      {% capture currentyear %}
+        {{ post.date | date: "%Y" }}
+      {% endcapture %}
+
+      {% assign month = post.date | date: "%-m" %}
+
+      {% capture currentseason %}{% case month %}{% when "1" %}win{% when "2" %}win{% when "3" %}win{% when "4" %}spr{% when "5" %}spr{% when "6" %}spr{% when "7" %}sum{% when "8" %}sum{% when "9" %}sum{% when "10" %}aut{% when "11" %}aut{% when "12" %}aut{% endcase %}{% endcapture %}
+
+      {% if currentseason != season %}
+        {% if currentyear != year %}
+          <section class="year">{{ currentyear }}</section>
+          {% capture year %}{{ currentyear }}{% endcapture %}
+        {% endif %}
+        <section class="season season-{{ currentseason }}" >{{ currentseason }}</section>
+        <hr>
+        {% capture season %}{{ currentseason }}{% endcapture %}
+      {% endif %}
+
+      <article class="post {{ post.category | downcase }}{% if post.recommended == true %} recommended{% endif %}">
+        {% if post.recommended == true %}<img class="post-star" src="/images/star.png">{% endif %}
+        <p class="post-info">
+          <em class="post-date">{{ post.date | date_to_string }}</em>
+          <strong class="post-category">{{ post.category }}</strong>
+        </p>
+        <h2 class="post-title">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h2>
+        {% if post.introduction %}
+          <p class="post-introduction">{{ post.introduction }}</p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</div>

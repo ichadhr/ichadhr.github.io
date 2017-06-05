@@ -1,0 +1,54 @@
+{% for post in site.posts %}
+  {% capture currentyear %}
+    {{ post.date | date: "%Y" }}
+  {% endcapture %}
+
+  {% assign month = post.date | date: "%-m" %}
+
+  {% capture dryseason %}{% case month %}{% when "4" %}dry{% when "5" %}dry{% when "6" %}dry{% when "7" %}dry{% when "8" %}dry{% when "9" %}dry{% endcase %}{% endcapture %}
+
+  {% capture rainyseason %}{% case month %}{% when "1" %}wet{% when "2" %}wet{% when "3" %}wet{% when "10" %}wet{% when "11" %}wet{% when "12" %}wet{% endcase %}{% endcapture %}
+
+  {% if currentyear != year %}
+    {% if rainyseason %}
+      <section class="period year">{{ currentyear }}</section>
+      {% capture year %}{{ currentyear }}{% endcapture %}
+    {% endif %}
+      {% if rainyseason != '' %}
+        <section class="period season season-{{ rainyseason }}">{{ rainyseason }}</section>
+        <hr>
+      {% endif %}
+  {% endif %}
+
+  {% if dryseason != seasondry %}
+    {% if dryseason != '' %}
+      <section class="period season season-{{ dryseason }}">{{ dryseason }}</section>
+      <hr>
+    {% endif %}
+    {% capture seasondry %}{{ dryseason }}{% endcapture %}
+  {% endif %}
+
+  {% if rainyseason != seasonrainy %}
+    {% if rainyseason != '' %}
+      <section class="period season season-{{ rainyseason }}">{{ rainyseason }}</section>
+      <hr>
+    {% endif %}
+    {% capture seasonrainy %}{{ rainyseason }}{% endcapture %}
+  {% endif %}
+
+  <article class="article {{ post.category | downcase }}{% if post.recommended == true %} recommended{% endif %}">
+    {% if post.recommended == true %}
+      <i class="fa fa-star"></i>
+    {% endif %}
+    <p class="info">
+      <span class="date">{{ post.date | date_to_string }}</em>
+      <strong class="category">{{ post.category }}</strong>
+    </p>
+    <h2 class="title">
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </h2>
+    {% if post.introduction %}
+      <p class="introduction">{{ post.introduction }}</p>
+    {% endif %}
+  </article>
+{% endfor %}

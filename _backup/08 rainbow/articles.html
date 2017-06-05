@@ -1,0 +1,49 @@
+---
+layout: default
+title: Articles - J. Thomas
+nav: articles
+---
+
+<div id="articles" class="wrap">
+	<aside id="side">
+		<section>
+			<em>Posts:</em>
+			<ul id="filters">
+				<li><a class="on" data-view="post">All</a></li>
+				<li><a data-view="recommended">Recommended</a></li>
+			</ul>
+		</section>
+		<section>
+			<em>Categories:</em>
+			<ul id="categories">
+				<li><a class="on">All</a></li>
+				<li><a data-view="ui">UI</a></li>
+				<li><a data-view="ux">UX</a></li>
+				<li><a data-view="thoughts">Thoughts</a></li>
+			</ul>
+		</section>
+		<section>
+			<em>Intro:</em>
+			<ul id="introductions">
+				<li><a class="on">Yes</a></li>
+				<li><a>No</a></li>
+			</ul>
+		</section>
+	</aside>
+	<div id="list">
+		{% for post in site.posts %}
+			<article class="post {{ post.category | downcase }}{% if post.recommended == true %} recommended{% endif %}">
+				<p class="post-info">
+					<time class="post-date">{{ post.date | date_to_string }}</time>
+					<strong class="post-category">{{ post.category }}</strong>
+				</p>
+				<h3 class="post-title">
+					<a href="{{ post.url }}">{{ post.title }}</a>
+				</h3>
+				{% if post.introduction %}
+					<p class="post-introduction">{{ post.introduction }}</p>
+				{% endif %}
+			</article>
+		{% endfor %}
+	</div>
+</div>

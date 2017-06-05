@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>{{ page.title }}</title>
+    <meta name="author" content="J. Thomas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="jgthms">
+		<link rel="icon" href="/jt.ico">
+	</head>
+  <body>
+    {{ content }}
+    <div style="clear: both;"></div>
+    <script src="/jquery-1.10.1.min.js"></script>
+    <script src="/jquery.easing.min.js"></script>
+    <script>
+    $(document).ready( function() {
+
+      var all = $('#all');
+      var recommended = $('#recommended');
+      var articles = $('#articles li').not('.recommended');
+
+      recommended.click( function() {
+        articles.stop().slideUp(500, 'easeOutExpo');
+        all.removeClass('on');
+        $(this).addClass('on');
+      });
+
+      all.click( function() {
+        articles.stop().slideDown(500, 'easeOutExpo');
+        recommended.removeClass('on');
+        $(this).addClass('on');
+      });
+
+      var test = $('#test');
+      var viewer = $('#viewer');
+      var reel = $('#viewer strong');
+      var images = $('#viewer img');
+      var links = $('#portfolio ul li a');
+      var position = viewer.offset();
+      var count = images.size();
+      var i = 0;
+
+      reel.css('width', 220 * count);
+
+      function Display(i) {
+        reel.stop().animate({
+          left: -(220 * i)
+        }, 500, 'easeOutExpo');
+        links.removeClass('on');
+        links.eq(i).addClass('on');
+        link = links.eq(i).attr('href');
+        viewer.attr('href', link);
+      }
+
+      viewer.mousemove( function(e) {
+        var x = e.pageX - position.left;
+        var n = Math.round(x * (count - 1) / 220);
+        clearInterval(timer);
+        Display(n);
+      });
+
+      links.hover( function(){
+        current = links.index(this);
+        clearInterval(timer);
+        Display(current);
+      });
+
+      timer = setInterval( function() {
+        i = (i + 1) % count;
+        Display(i);
+      }, 5000);
+
+      R = function(s) {
+          return R13(R5(s));
+      }
+
+      R5 = function(s) {
+        var b = [],c,i = s.length,a = '0'.charCodeAt(),z = a + 10;
+        while (i--) { 
+          c = s.charCodeAt(i);
+          if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+          else { b[i] = s.charAt(i); }
+        }
+        return b.join('');
+      }
+
+      R13 = function(s) {
+        var b = [],c,i = s.length,a = 'a'.charCodeAt(),z = a + 26,A = 'A'.charCodeAt(),Z = A + 26;
+        while (i--) {
+          c = s.charCodeAt(i);
+          if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+          else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+          else { b[i] = s.charAt(i); }
+        }
+        return b.join('');
+      }
+      
+      var c = $('#contact');
+      var t = 'znvygb:'
+      var m = 'ookqrfvta@tznvy.pbz';
+      c.attr('title', R(t+m));
+      c.attr('href', R(t+m));
+        
+    });
+    </script>
+	</body>
+</html>

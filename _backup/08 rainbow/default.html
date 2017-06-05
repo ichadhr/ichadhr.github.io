@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>{{ page.title }}</title>
+		<meta name="author" content="J. Thomas">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,800,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/icons/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="/open-sans.css" type="text/css">
+		<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="J. Thomas Blog">
+		<link rel="icon" href="/favicon.ico">
+	</head>
+	<body class="{{ page.nav }}">
+		<header id="header">
+			<a id="logo" href="/">
+				<strong>JT</strong>
+			</a>
+			<nav id="nav">
+				<ul>
+					<li{% if page.nav == 'home' %} class="on"{% endif %}><a id="nav-home" data-page="home" href="/"><i class="fa fa-home"></i>Home</a></li><li{% if page.nav == 'articles' %} class="on"{% endif %}><a id="nav-articles" data-page="articles" href="/articles.html"><i class="fa fa-bookmark"></i>Articles</a></li><li{% if page.nav == 'favorites' %} class="on"{% endif %}><a id="nav-favorites" data-page="favorites" href="/favorites.html"><i class="fa fa-heart"></i>Favorites</a></li><li{% if page.nav == 'repositories' %} class="on"{% endif %}><a id="nav-repositories" data-page="repositories" href="/repositories.html"><i class="fa fa-code"></i>Repositories</a></li>
+				</ul>
+			</nav>
+		</header>
+		{{ content }}
+		<script src="/javascript/jquery-1.10.1.min.js"></script>
+		<script src="/javascript/jquery.easing.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready( function() {
+
+				// Contact
+
+				function R(s) {
+					return R13(R5(s));
+				}
+
+				function R5(s) {
+					var b = [], c, i = s.length, a = '0'.charCodeAt(), z = a + 10;
+					while (i--) { 
+						c = s.charCodeAt(i);
+						if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+						else { b[i] = s.charAt(i); }
+					}
+					return b.join('');
+				}
+
+				function R13(s) {
+					var b = [], c, i = s.length, a = 'a'.charCodeAt(), z = a + 26, A = 'A'.charCodeAt(), Z = A + 26;
+					while (i--) {
+						c = s.charCodeAt(i);
+						if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+						else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+						else { b[i] = s.charAt(i); }
+					}
+					return b.join('');
+				}
+				
+				var $c = $('#contact');
+				var t = 'znvygb:'
+				var m = 'ookqrfvta@tznvy.pbz';
+				$c.each( function() {
+					$(this).attr('title', R(t+m));
+					$(this).attr('href', R(t+m));
+				})
+
+				// Filters
+
+				var $posts = $('#list article');
+				var $filters = $('#filters li a');
+				var $categories = $('#categories li a');
+				var $introductions = $('#introductions a');
+				var displayed = ['.post', ''];
+				var animating = false;
+
+				function Sort(target) {
+					animating = true;
+					$posts.not(displayed.join('')).slideUp(500, 'easeOutExpo');;
+					$posts.filter(displayed.join('')).slideDown(500, 'easeOutExpo');
+					target.parent().siblings().find('a').removeClass('on');
+					target.addClass('on');
+					setTimeout(function(){ animating = false; }, 700);
+				}
+
+				$introductions.click( function() {
+					if (animating) {
+						return;
+					}
+					if (!$(this).hasClass('on')) {
+						$posts.find('.post-introduction').slideToggle(500, 'easeOutExpo');
+						$introductions.toggleClass('on');
+					}
+				});
+
+				$filters.click( function() {
+					if (animating) {
+						return;
+					}
+					displayed[0] = '.' + $(this).data('view');
+					Sort($(this));
+				});
+
+				$categories.click( function() {
+					if (animating) {
+						return;
+					}
+					var view = ($(this).data('view')) ? '.' + $(this).data('view') : '';
+					displayed[1] = view;
+					Sort($(this));
+				});
+
+			});
+		</script>
+	</body>
+</html>

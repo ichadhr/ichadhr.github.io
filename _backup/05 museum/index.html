@@ -1,0 +1,78 @@
+---
+layout: default
+title: J. Thomas (thoughts of a keen designer)
+---
+
+<header>
+  <a id="logo" class="animated" href="/">
+    <strong>JT</strong>
+    <em>thoughts of a keen designer</em>
+  </a>
+</header>
+<div id="articles" class="animated">
+  <p id="toggle">
+    <a id="all" class="on">All</a>
+    <a id="recommended">Recommended</a>
+  </p>
+  <h2>Articles</h2>
+  <ul>
+  {% for post in site.posts %}
+    <li{% if post.recommended == true %} class="recommended"{% endif %}>
+      <time>{{ post.date | date_to_string }}</time>
+      <h3>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h3>
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+<aside>
+  <div id="music" class="animated">
+    <h2>Music</h2>
+    <div id="player">
+      <object height="200" width="200">
+        <param name="movie" value="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2522196&amp;color=cc3333&amp;auto_play=false&amp;player_type=artwork"></param>
+        <param name="allowscriptaccess" value="always"></param>
+        <embed allowscriptaccess="always" width="200" height="200" src="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2522196&amp;color=cc3333&amp;auto_play=false&amp;player_type=artwork" type="application/x-shockwave-flash"></embed>
+      </object>
+    </div>
+    <p>And <a href="http://soundcloud.com/jgthms">more...</a></p>
+  </div>
+  <div id="portfolio" class="animated">
+    <h2>Portfolio</h2>
+    <a id="viewer" href="http://www.cambodiavietnam2010.com">
+      <strong>
+        <img src="cambodia-vietnam.png" alt="Cambodia Vietnam 2010">
+        <img src="jthomas.png" alt="JThomas">
+        <img src="la-compagnie-de-bordeaux.png" alt="La Compagnie de Bordeaux">
+        <img src="editions-magellan.png" alt="Editions Magellan">
+        <img src="australie-trip.png" alt="Australie Trip">
+        <img src="bbxdesign.png" alt="bbxdesign">
+        <img src="task-this.png" alt="Task This">
+        <img src="wordpress-le-tutoriel.png" alt="WordPress : le Tutoriel">
+      </strong>
+      <span></span>
+    </a>
+    <ul>
+      <li><a class="on" href="http://www.cambodiavietnam2010.com">Cambodia Vietnam 2010</a></li>
+      <li><a href="http://jthom.as">JThomas</a></li>
+      <li><a href="http://bbxdesign.com/cdb/home.html">La Compagnie de Bordeaux</a></li>
+      <li><a href="http://www.editions-magellan.com">Editions Magellan</a></li>
+      <li><a href="http://www.australietrip.fr">Australie Trip</a></li>
+      <li><a href="http://bbxdesign.com">bbxdesign</a></li>
+      <li><a href="http://www.task-this.com/en/">Task This</a></li>
+      <li><a href="http://wordpress.bbxdesign.com">WordPress: le Tutoriel</a></li>
+    </ul>
+  </div>
+  <footer class="animated">
+    <h2>Info</h2>
+    <p>I'm a former front-end developer and graphic designer.</p>
+    <p>I quit my job in summer 2011 but remain connected to the web world and occasionally write about it.</p>
+    <ul>
+      <li>Contact me via <a id="contact" title="Please enable JavaScript to view my email">email</a></li>
+      <li>Subscribe to the <a href="/atom.xml">RSS feed</a></li>
+      <li>Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a></li>
+      <li>Hosted on <a href="https://github.com/jgthms/jgthms.github.com">GitHub</a></li>
+    </ul>
+  </footer>
+</aside>

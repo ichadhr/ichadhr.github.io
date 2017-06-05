@@ -1,0 +1,13 @@
+<footer class="wrapper">
+    <div class="smallnav">
+    <ul class="list-inline">
+    	{% for page in site.pages %}
+        	{% if page.title %}<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}
+        {% endfor %}
+    </ul>
+    </div>
+    <div>
+        &copy; {{ 'now' | date: "%Y" }} {{ site.title }}
+        <span class="jekyll">Published with Jekyll</span>
+    </div>
+</footer>

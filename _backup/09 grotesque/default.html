@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>{{ page.title }}</title>
+    <meta name="author" content="J. Thomas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/fonts/brandon-grotesque.css" type="text/css">
+    <link rel="stylesheet" href="/icons/jgthms.css" type="text/css">
+    <link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="J. Thomas Blog">
+    <link rel="icon" href="/favicon.ico">
+  </head>
+  <body>
+    <header class="header">
+      <a class="logo" href="/">
+        <img src="/images/logo.svg" alt="JT logo">
+      </a>
+      <nav class="nav">
+        <ul>
+          <li{% if page.nav == 'home' %} class="here"{% endif %}><a id="nav-home" data-page="home" href="/">J. Thomas</a></li><li{% if page.nav == 'articles' %} class="here"{% endif %}><a id="nav-articles" data-page="articles" href="/articles.html">Articles</a></li><li{% if page.nav == 'ideas' %} class="here"{% endif %}><a id="nav-ideas" data-page="ideas" href="/ideas.html">Ideas</a></li>
+        </ul>
+      </nav>
+      <ul class="icons">
+        <li><a class="twitter" href="https://twitter.com/jgthms" data-toggle="tooltip" title="Twitter"><i class="icon-twitter"></i></a></li>
+        <li><a class="github" href="https://github.com/jgthms" data-toggle="tooltip" title="Github"><i class="icon-github"></i></a></li>
+        <li><a class="soundcloud" href="https://soundcloud.com/jgthms" data-toggle="tooltip" title="Soundcloud"><i class="icon-soundcloud"></i></a></li>
+        <li><a class="hn" href="https://news.ycombinator.com/user?id=bbx" data-toggle="tooltip" title="Hacker News"><i class="icon-hn"></i></a></li>
+        <li><a class="rss" href="/atom.xml" data-toggle="tooltip" title="RSS"><i class="icon-rss"></i></a></li>
+        <li><a class="contact" data-toggle="tooltip" title="Email"><i class="icon-gmail"></i></a></li>
+      </ul>
+    </header>
+    {{ content }}
+    <script src="/javascript/jquery-1.11.0.min.js"></script>
+    <script src="/javascript/jquery.easing.min.js"></script>
+    <script src="/javascript/affix.js"></script>
+    <script src="/javascript/tooltip.js"></script>
+    <script type="text/javascript">
+      $(document).ready( function() {
+
+        // Contact
+
+        function R(s) {
+          return R13(R5(s));
+        }
+
+        function R5(s) {
+          var b = [], c, i = s.length, a = '0'.charCodeAt(), z = a + 10;
+          while (i--) { 
+            c = s.charCodeAt(i);
+            if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+            else { b[i] = s.charAt(i); }
+          }
+          return b.join('');
+        }
+
+        function R13(s) {
+          var b = [], c, i = s.length, a = 'a'.charCodeAt(), z = a + 26, A = 'A'.charCodeAt(), Z = A + 26;
+          while (i--) {
+            c = s.charCodeAt(i);
+            if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+            else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+            else { b[i] = s.charAt(i); }
+          }
+          return b.join('');
+        }
+        
+        var $c = $('.contact');
+        var t = 'znvygb:'
+        var m = 'ookqrfvta@tznvy.pbz';
+        $c.attr('href', R(t+m));
+
+        // Filters
+
+        var $posts = $('.list article');
+        var $filters = $('.filters li a');
+        var $categories = $('.categories li a');
+        var $introductions = $('.introductions li a');
+        var displayed = ['.post', ''];
+        var animating = false;
+
+        function Sort(target) {
+          animating = true;
+          $posts.not(displayed.join('')).slideUp(250, 'easeOutExpo');;
+          $posts.filter(displayed.join('')).slideDown(250, 'easeOutExpo');
+          target.parent().siblings().find('a').removeClass('on');
+          target.addClass('on');
+          setTimeout(function(){ animating = false; }, 300);
+        }
+
+        $introductions.click( function() {
+          $posts.toggleClass('compact');
+          $(this).toggleClass('on');
+        });
+
+        $filters.click( function() {
+          if (animating) {
+            return;
+          }
+          displayed[0] = '.' + $(this).data('view');
+          Sort($(this));
+        });
+
+        $categories.click( function() {
+          if (animating) {
+            return;
+          }
+          var view = ($(this).data('view')) ? '.' + $(this).data('view') : '';
+          displayed[1] = view;
+          Sort($(this));
+        });
+
+        // Periods
+
+        $('.year, .season').each( function() {
+          $(this).affix({
+            offset: {
+              top: $(this).offset().top
+            }
+          });
+        });
+
+        // Tooltips
+
+        $('.icons a').tooltip();
+
+      });
+    </script>
+  </body>
+</html>

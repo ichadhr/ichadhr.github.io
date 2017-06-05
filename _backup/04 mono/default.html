@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>{{ page.title }}</title>
+    <meta name="author" content="J. Thomas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="jgthms">
+		<link rel="icon" href="/favicon.ico">
+	</head>
+  <body id="top">
+    <header>
+      <a id="logo" href="/">
+        <img src="/logo.png" alt="JT">
+      </a>
+      <nav>
+        {% if page.nav == 'portfolio' %}
+          <a title="Thoughts about the Web" href="/"># Articles</a><a class="c" href="portfolio.html" title="Selected works"># Portfolio</a><a href="music.html" title="Electronic sound waves"># Music</a>
+        {% elsif page.nav == 'music' %}
+          <a title="Thoughts about the Web" href="/"># Articles</a><a href="portfolio.html" title="Selected works"># Portfolio</a><a class="c" href="music.html" title="Electronic sound waves"># Music</a>
+        {% else %}
+          <a class="c" title="Thoughts about the Web" href="/"># Articles</a><a href="portfolio.html" title="Selected works"># Portfolio</a><a href="music.html" title="Electronic sound waves"># Music</a>
+        {% endif %}
+      </nav>
+      <a id="i" title="Profile, RSS, and source repo" href="#info"># Info</a>
+      <a id="c" title="Please enable JavaScript"># Contact</a>
+    </header>
+    {{ content }}
+		<footer id="info">
+      <p>I'm a former front-end developer and graphic designer.<br>
+      I quit my job in summer 2011 but remain connected to the web world and occasionally write about it.</p>
+      <p><a href="/atom.xml">RSS feed</a>. Powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>. Hosted on <a href="https://github.com/jgthms/jgthms.github.com">GitHub</a>. <a href="#top">Back to the top</a></p>
+    </footer>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+      var n = $('nav');
+      var na = $('nav a');
+      var nts = []; 
+      
+      na.hover(
+        function() {
+          ni = $(this).index();
+          nt = $(this).attr('title');
+          if (nt) {
+            nts[ni] = nt;
+            $(this).removeAttr('title');
+          }
+          nc = $(this).text().toLowerCase();
+          ns = true;
+          no = n.offset();
+          nw = n.innerWidth();
+          if (nts[ni] && ns) {
+            x = $('<b/>', {
+              text: nts[ni]
+            });
+            $('body').append(x);
+            xw = x.innerWidth();
+            x.css('left', no.left + (nw/2) - (xw/2));
+            x.css('top', no.top + 18);
+            x.css('opacity', 0);
+            x.animate({opacity: 1, top: no.top + 28}, 125);
+          }
+        },
+        function() {
+          x.remove();
+        }
+      );
+
+      R = function(s) {
+          return R13(R5(s));
+      }
+
+      R5 = function(s) {
+          var b = [],c,i = s.length,a = '0'.charCodeAt(),z = a + 10;
+          while (i--) { 
+              c = s.charCodeAt(i);
+              if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+              else { b[i] = s.charAt(i); }
+          }
+          return b.join('');
+      }
+
+      R13 = function(s) {
+          var b = [],c,i = s.length,a = 'a'.charCodeAt(),z = a + 26,A = 'A'.charCodeAt(),Z = A + 26;
+          while (i--) {
+              c = s.charCodeAt(i);
+              if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+              else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+              else { b[i] = s.charAt(i); }
+          }
+          return b.join('');
+      }
+      
+      var c = $('#c');
+      var t = 'znvygb:'
+      var m = 'ookqrfvta@tznvy.pbz';
+      var a = $('<a/>', {
+        href: R(t+m),
+        title: 'Contact me',
+        text: R(m)
+      });
+      c.attr('title', R(t+m));
+      c.attr('href', R(t+m));
+      
+      $('a[href=#top]').click(function() {
+        $('html, body').animate({scrollTop: 0}, 'slow');
+        return false;
+      });
+        
+      $('a[href=#info]').click(function() {
+        $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+        $('footer').css({'border-top-color': '#000', 'color': '#000'});
+        return false;
+      });
+        
+    });
+    </script>
+	</body>
+</html>

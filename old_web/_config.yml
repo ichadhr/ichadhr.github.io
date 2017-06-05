@@ -1,0 +1,98 @@
+
+
+# Site Settings
+title:            "ichadhr"
+email: 						"ichadhr@gmail.com"
+description: 			"Naturally and artificially flavoured."
+baseurl: 					""
+url:              "https://ichadhr.tk"
+enable_logo:      false
+logourl: 					"/assets/img/logo.png"
+i-logo: 					"i-logo"
+paginate: 				5
+
+
+# Author Settings
+enable_author:      false
+author_name: 				"ichadhr"
+author_url: 				"https://ichadhr.tk"
+author_bio: 				"It's okay to eat fish because they don't have any feelings."
+author_email: 			"ichadhr@gmail.com"
+author_image: 			"/assets/img/author.jpg"
+
+
+# Social Settings
+twitter_url: 				"https://twitter.com/ichadhr"
+facebook_url: 			""
+github_url:  				"https://github.com/ichadhr"
+youtube_url:  			""
+dribbble_url:  			""
+googleplus_url: 		""
+instagram_url:  		""
+pinterest_url:  		""
+linkedin_url:  			""
+
+
+# Theme Settings
+theme_disqus_shortname: 	""
+theme_google_comments: 		false
+theme_analytics_id: 		  ""
+theme_analytics_domain: 	""
+theme_reading_time: 		  true
+theme_autoload_comments: 	false
+theme_always_show_nav: 		false
+
+# HTML Minifiy Settings
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+
+
+# SASS Settings
+sass:
+ sass_dir: "assets/css/"
+ style: :compressed
+
+# Timezone
+timezone: Asia/Jakarta
+
+# Build Settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  highlighter: rouge
+paginate_path: /pages/:num/
+permalink: /:year/:month/:day/:title/
+
+# Gems Plugin
+gems:
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-sitemap
+  - kramdown
+  - rouge
+  - jemoji
+
+emoji:
+  src: "/assets/img"
+
+exclude:
+  - assets/img/emoji/unicode/.svn
+  - assets/fonts/icons/css
+  - assets/js/src
+  - assets/js/theme.min.js.map
+  - scripts
+  - emoji.sh
+  - README.md
+  - gulpfile.js
+  - package.json
+
+# SSL Better :)
+#enforce_ssl: ichadhr.github.io

@@ -1,0 +1,174 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td{ margin: 0; padding: 0;}
+table{ border-collapse: collapse; border-spacing: 0;}
+fieldset, img{ border: 0;}
+address, caption, cite, code, dfn, var{ font-style: normal; font-weight: normal;}
+ol, ul{ list-style: none;}
+caption, th{ text-align: left;}
+h1, h2, h3, h4, h5, h6{ font-size: 100%; font-weight: normal;}
+q:before, q:after{ content: '';}
+abbr, acronym{ border: 0;}
+
+html{ overflow-y: scroll;}
+body{ background: #f7f7f7 url(debut_light.png) repeat; border-top: 2px solid #449fdb; color: #333; font: 16px/1.5 'Open Sans', Verdana, Arial, sans-serif; padding-bottom: 4em;}
+a{ border-bottom: 2px solid #ddd; color: #449fdb; cursor: pointer; text-decoration: none;}
+a:hover{ background: yellow; border-bottom-color: yellow; color: #333;}
+a:visited{ color: #999;}
+img{ max-width: 100%;}
+
+/* Common */
+
+#logo{ overflow: hidden; text-indent: -290486px;}
+h1,
+.recommended .post-title,
+.post-content h2,
+.item h2{ font-weight: 800; letter-spacing: -0.05em; line-height: 1.125;}
+
+/* Header */
+
+#header{ margin-bottom: 4em; text-align: center;}
+#logo{ background: #db4e44 url(/jt.png) no-repeat center center; border-bottom: none; border-radius: 50px; display: none; height: 100px; margin-bottom: 30px; width: 100px;}
+body.articles #logo{ background-color: #449fdb;}
+body.favorites #logo{ background-color: #57b037;}
+#nav li{ display: inline; margin: 0 0.5em;}
+#nav a{ color: #999; display: inline-block; font-weight: 800; padding: 0.5em 1em; text-transform: uppercase;}
+#nav a:hover{ background: white; color: #666;}
+#nav .on,
+#nav .on:hover{ border-bottom-color: yellow; color: white; text-decoration: none;}
+#nav #nav-home.on{ background: #db4e44;}
+#nav #nav-articles.on{ background: #449fdb;}
+#nav #nav-articles.on{ background: #57b037;}
+#nav #nav-favorites.on{ background: #57b037;}
+#nav #nav-music.on{ background: #db8d44;}
+#nav #nav-timeline.on{ background: #db44d1;}
+#nav #nav-colophon.on{ background: #dbc81f;}
+#nav #nav-repositories.on{ background: #4183c4;}
+#nav .fa{ font-size: 18px; margin-right: 10px;}
+#nav-home .fa{ font-size: 20px;}
+
+#nav #nav-favorites.on{ background: #db44d1;}
+
+/* 01 Home */
+
+body.home{ border-top-color: #db4e44;}
+
+#home{ padding: 0 1em;}
+#home a{ color: #db4e44;}
+#home a:hover{ color: #333;}
+#home h1{ font-size: 3em;}
+#home h1 strong{ font-weight: 800;}
+#home h1 span{ color: yellow;}
+#home p{ color: #666; font-size: 1.5em; line-height: 1.25; margin-top: 2em;}
+#home p:last-child{ font-size: 1em; margin-top: 3em;}
+/*#home p a{ border: dotted #ccc; border-width: 1px 0; display: block; margin-bottom: -1px; padding: 1em 0;}*/
+#home p span{ color: #ccc; display: none; float: right; font-size: 0.8em; line-height: 1.25;}
+
+#home .icons a{ border: none; border-radius: 50%; color: #f60; float: right; font-size: 20px; height: 30px; line-height: 30px; margin: 0; padding: 5px; text-align: center; width: 30px;}
+#home .icons a:hover{ background: #f60; color: white !important;}
+#home #contact,
+#home #icon-rss{ float: left;}
+#home #contact{ color: #db4e44;}
+#home #contact:hover{ background: #db4e44;}
+#home #icon-github{ color: #333;}
+#home #icon-github:hover{ background: #333;}
+#home #icon-hn{ font-size: 14px;}
+#home #icon-hn:hover{ background: #f60;}
+#home #icon-instagram{ color: #3f729b;}
+#home #icon-instagram:hover{ background: #3f729b;}
+#home #icon-twitter{ color: #55acee;}
+#home #icon-twitter:hover{ background: #55acee;}
+
+/* 02 Articles */
+
+#side{ display: none; font-size: 0.85em; min-height: 2em; padding-bottom: 2em;}
+#side section{ float: left; margin-right: 1em;}
+#side section:first-child{ margin-left: 0;}
+#side ul, #side li, #side a{ display: inline;}
+#side em{ color: #ccc; float: left; font-style: normal; padding: 0.25em 0.5em 0.25em 0;}
+#side a{ border-bottom: none; color: #999; float: left; font-weight: 700; padding: 0.25em 0.75em;}
+#side a:hover{ background: white; border-bottom-color: yellow; color: #333;}
+#side .on,
+#side .on:hover{ background: #449fdb; border-bottom-color: yellow; color: white; cursor: default; text-decoration: none;}
+
+.post{ border: dotted #ccc; border-width: 1px 0; font-size: 0.8em; margin-bottom: -1px; padding: 1.5em 1.5em 1.625em; position: relative;}
+.post:hover{ background: white; border-color: #333; border-style: solid; z-index: 1;}
+.post-date{ color: #ccc; font-size: 1.125em; font-weight: 800; text-transform: uppercase;}
+.post-category{ background: #449fdb; color: white; float: right; font-size: 0.9em; font-weight: 700; padding: 0.25em 0.75em;}
+.post-title{ font-size: 2em; font-weight: 700; letter-spacing: -0.025em; line-height: 1.125;}
+.post-title a{ border-bottom: none; color: #333;}
+.post-introduction{ color: #666; font-size: 1.25em; font-weight: 400; line-height: 1.25em; margin-top: 0.5em;}
+.post-header{ border-left: 1em solid #449fdb; padding-left: 2em; position: relative; right: 3em;}
+
+.recommended,
+.recommended:hover{ background: lightyellow;}
+.recommended{ font-size: 1em;}
+.recommended .post-title{ letter-spacing: -0.05em;}
+
+#single{ padding: 0 1em;}
+#single .post-date{ font-size: 1.5em;}
+#single .post-title{ font-size: 3em; font-weight: 800; letter-spacing: -0.05em; margin: 0.5em 0;}
+#single .post-introduction{ font-size: 1.5em; font-weight: 700; letter-spacing: -0.025em;}
+
+.post-content{ margin-top: 3em;}
+.post-content h2,
+.post-content h3{ font-size: 2em; margin-top: 2em;}
+.post-content h3{ font-size: 1.5em; margin-top: 0;}
+.post-content p,
+.post-content ul,
+.post-content ol{ margin: 1.5em 0;}
+.post-content figure{ margin: 2em; text-align: center;}
+.post-content figcaption{ color: #999; font-size: 0.9em; margin-top: 1em;}
+.post-content ul li{ position:relative;}
+.post-content ul li:before{ color: #ccc; content: '*'; left: -20px; position: absolute; top: 5px;}
+.post-content blockquote{ background: white; border-left: 0.5em solid #ccc; color: #999; font-style: italic; padding: 1em 2em; position: relative;}
+.post-content blockquote p{ margin: 0;}
+.post-content table{ width: 100%;}
+.post-content th,
+.post-content td{ border: 2px solid #eee; padding: 0.5em;}
+.post-content th{ background: #eee; color: #666;}
+.post-content td{ background: #f7f7f7;}
+.post-content .empty{ background: none; border: none;}
+.post-content pre,
+.post-content code{ background: lightyellow; color: cadetblue; font-size: 0.9em;}
+.post-content pre{ padding: 0.5em;}
+
+/* 03 Favorites */
+
+body.favorites{ border-top-color: #57b037;}
+
+#favorites a{ color: #57b037;}
+
+#tabs{ font-size: 1.25em; margin-bottom: 2em; text-align: center;}
+#tabs li{ display: inline-block; margin: 0 1em;}
+#tabs .active a,
+#tabs .active a:hover{ background: none; border-bottom: none; color: #333; cursor: default; font-weight: bold;}
+
+.item{ border-bottom: 1px dotted #ccc; margin-bottom: 2em; padding-bottom: 2em; position: relative;}
+.items h2{ font-size: 3em; font-weight: 800;}
+.item em{ display: block; font-style: normal;}
+.item p{ margin-top: 1em;}
+
+/* Fancy stuff */
+
+a, .post-info{
+  transition: background 250ms ease-out, border 250ms ease-out, color 250ms ease-out;
+  -webkit-transition: background 250ms ease-out, border 250ms ease-out, color 250ms ease-out;
+}
+
+.post{
+  transition: border 250ms ease-out;
+  -webkit-transition: border 250ms ease-out;
+}
+
+::selection{ background: yellow; color: #333;}
+::-moz-selection{ background: yellow; color: #333;}
+
+/* Responsiveness */
+
+@media only screen and (min-width: 53em) {
+  .wrap{ margin: 0 auto; width: 50em;}
+  #home, #single{ padding: 0;}
+  #home p a{ border-bottom: 2px solid #ddd; border-top: none; display: inline; margin: 0 1em 0 0; padding: 0;}
+  #home p a:hover{ border-bottom-color: yellow;}
+  #side{ display: block;}
+}
+

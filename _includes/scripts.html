@@ -1,0 +1,25 @@
+<noscript>
+  <style type="text/css">
+    #contact{ display: none;}
+  </style>
+</noscript>
+
+<!-- <script type="text/javascript" src="/javascript/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/javascript/jquery.easing.min.js"></script>
+<script type="text/javascript" src="/javascript/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="/javascript/affix.js"></script>
+<script type="text/javascript" src="/javascript/jgthms.js"></script> -->
+
+<script type="text/javascript" src="/assets/js/core.min.js"></script>
+
+{% if page.route == 'index' %}
+  <script type="text/javascript" src="/assets/js/index.min.js"></script>
+{% endif %}
+
+{% if page.route == 'articles' %}
+  <script type="text/javascript" src="/assets/js/articles.min.js"></script>
+{% endif %}
+
+{% if page.layout == 'post' %}
+  <script type="text/javascript" src="/assets/js/post.min.js"></script>
+{% endif %}

@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>{{ page.title }}</title>
+    <meta name="author" content="J. Thomas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=Bitter:400,400italic,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="jgthms">
+		<link rel="icon" href="/jt.ico">
+	</head>
+  <body>
+    <header class="wrap">
+      <a id="logo" href="/">
+        <strong>JT</strong>
+      </a>
+      <nav>
+        <a data-page="home" href="/" id="nav-home"{% if page.nav == 'home' %} class="on"{% endif %}>Home</a>
+        <a data-page="articles" href="/articles.html" id="nav-articles"{% if page.nav == 'articles' %} class="on"{% endif %}>Articles</a>
+        <a data-page="portfolio" href="/portfolio.html" id="nav-portfolio"{% if page.nav == 'portfolio' %} class="on"{% endif %}>Portfolio</a>
+        <a data-page="music" href="/music.html" id="nav-music"{% if page.nav == 'music' %} class="on"{% endif %}>Music</a>
+        <a data-page="info" href="/info.html" id="nav-info"{% if page.nav == 'info' %} class="on"{% endif %}>Info</a>
+      </nav>
+      <a id="contact" title="Please enable JavaScript to view my email">Contact</a>
+    </header>
+    {{ content }}
+    <div style="clear: both;"></div>
+    <div id="loader"></div>
+    <script src="/jquery-1.10.1.min.js"></script>
+    <script src="/jquery.easing.min.js"></script>
+    <script>
+    $(document).ready( function() {
+
+      /*
+      var navigating = false;
+
+      IsArticle = function(url) {
+        if (url == '/articles.html') {
+          Articles();
+        }
+      }
+
+      Display = function(url) {
+        $('#logo').addClass('loading');
+        $('#content').fadeOut(500, 'easeOutExpo', function() {
+          $('#content').load(url + ' .page', function() {
+            $('#logo').removeClass('loading');
+            $('#content').fadeIn(500, 'easeOutExpo');
+            document.title = $('#content').find('.page').data('title');
+            navigating = true;
+            IsArticle(url);
+          });
+        });
+      }
+
+      // Articles
+
+      Articles = function() {
+        var posts = $('#list section');
+        var titles = $('#list .post-title a');
+        var filters = $('#filters li a');
+        var categories = $('#categories li a');
+        var introductions = $('#introductions');
+        var displayed = ['.post', ''];
+        Sort = function(target) {
+          posts.not(displayed.join('')).stop().slideUp(500, 'easeOutExpo');;
+          posts.filter(displayed.join('')).stop().slideDown(500, 'easeOutExpo');
+          target.parent().siblings().find('a').removeClass('on');
+          target.addClass('on');
+        }
+        titles.click( function() {
+          var url = $(this).attr('href');
+          history.pushState(null, '', url);
+          Display(url);
+          return false;
+        });
+        filters.click( function() {
+          displayed[0] = '.' + $(this).data('view');
+          Sort($(this));
+        });
+        categories.click( function() {
+          var view = ($(this).data('view')) ? '.' + $(this).data('view') : '';
+          displayed[1] = view;
+          Sort($(this));
+        });
+        introductions.click( function() {
+          posts.find('.post-introduction').slideToggle(500, 'easeOutExpo');
+          introductions.toggleClass('on');
+        });
+      }
+
+      IsArticle(window.location.pathname);
+
+      // Navigation
+
+      $('nav a').click( function() {
+        $(this).siblings().removeClass('on');
+        $(this).addClass('on');
+        var url = $(this).attr('href');
+        history.pushState(null, '', url);
+        Display(url);
+        return false;
+      });
+
+      */
+
+      // Sidebar
+
+      var posts = $('#list section');
+      var titles = $('#list .post-title a');
+      var filters = $('#filters li a');
+      var categories = $('#categories li a');
+      var introductions = $('#introductions');
+      var displayed = ['.post', ''];
+
+      introductions.click( function() {
+        posts.find('.post-introduction').slideToggle(500, 'easeOutExpo');
+        introductions.toggleClass('on');
+      });
+
+      Sort = function(target) {
+        posts.not(displayed.join('')).stop().slideUp(500, 'easeOutExpo');;
+        posts.filter(displayed.join('')).stop().slideDown(500, 'easeOutExpo');
+        target.parent().siblings().find('a').removeClass('on');
+        target.addClass('on');
+      }
+
+      filters.click( function() {
+        displayed[0] = '.' + $(this).data('view');
+        Sort($(this));
+      });
+      categories.click( function() {
+        var view = ($(this).data('view')) ? '.' + $(this).data('view') : '';
+        displayed[1] = view;
+        Sort($(this));
+      });
+
+      // Contact
+
+      R = function(s) {
+        return R13(R5(s));
+      }
+
+      R5 = function(s) {
+        var b = [], c, i = s.length, a = '0'.charCodeAt(), z = a + 10;
+        while (i--) { 
+          c = s.charCodeAt(i);
+          if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+          else { b[i] = s.charAt(i); }
+        }
+        return b.join('');
+      }
+
+      R13 = function(s) {
+        var b = [], c, i = s.length, a = 'a'.charCodeAt(), z = a + 26, A = 'A'.charCodeAt(), Z = A + 26;
+        while (i--) {
+          c = s.charCodeAt(i);
+          if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+          else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+          else { b[i] = s.charAt(i); }
+        }
+        return b.join('');
+      }
+      
+      var c = $('#contact');
+      var t = 'znvygb:'
+      var m = 'ookqrfvta@tznvy.pbz';
+      c.attr('title', R(t+m));
+      c.attr('href', R(t+m));
+
+      $(window).bind('popstate', function() {
+        if (navigating) {
+          Display(window.location.pathname);
+        }
+      });
+        
+    });
+    </script>
+	</body>
+</html>

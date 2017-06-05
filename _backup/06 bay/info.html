@@ -1,0 +1,23 @@
+---
+layout: default
+title: Info - J. Thomas
+nav: info
+---
+
+<div id="info" class="wrap" data-title="Info - J. Thomas">
+  <p>Hi, my name is Jeremy Thomas.<br>
+  I'm a Front-End Developer from Bordeaux, France.</p>
+  <p>I quit my job in summer 2011 but remain connected to the web world and occasionally write about it.</p>
+  <p>You're currently browsing the 6th version of this website.<br>
+  It's powered by <a href="http://jekyllrb.com/">Jekyll</a>, hosted on <a href="https://help.github.com/articles/using-jekyll-with-pages">GitHub</a>, and always subject to radical changes.</p>
+  <p>All source code, for this version as well as for the previous ones, is available on my <a href="https://github.com/jgthms/jgthms.github.io">jgthms.github.io</a> repository.</p>
+</div>
+
+<div id="versions" class="wrap">
+  {% for version in site.versions %}
+    <a class="version" href="/v/jgthms-{{ version.slug }}.png">
+      <h2 class="version-name"><em class="version-number">v{{ forloop.rindex }}</em> {{ version.name }}</h2>
+      <img class="version-image" src="/v/{{ version.slug }}.png" alt="{{ version.name }}">
+    </a>
+  {% endfor %}
+</div>

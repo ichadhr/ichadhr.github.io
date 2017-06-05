@@ -1,4 +1,6 @@
+Thumbs.db
+.DS_Store
+.sass-cache/
 _site/
 node_modules/
-.sass-cache/
 .jekyll-metadata

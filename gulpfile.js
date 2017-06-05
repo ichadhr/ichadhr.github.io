@@ -1,20 +1,40 @@
 var gulp    = require('gulp'),
 browserSync = require('browser-sync'),
 cp          = require('child_process'),
+rename      = require('gulp-rename'),
 concat      = require('gulp-concat'),
 sourcemaps  = require('gulp-sourcemaps'),
-imagemin    = require('gulp-imagemin'),
-pngquant    = require('imagemin-pngquant'),
 uglify      = require('gulp-uglify');
 
 var messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
 };
 
+var copyme = function() {
+    copyjs();
+    copymap();
+    copylogo();
+};
+
+var copylogo = function() {
+    return gulp.src('assets/img/*.svg')
+        .pipe(gulp.dest('_site/assets/img'))
+};
+
+var copyjs = function() {
+    return gulp.src('assets/js/*.js')
+        .pipe(gulp.dest('_site/assets/js'));
+};
+
+var copymap = function() {
+    return gulp.src('assets/js/maps/*.map')
+        .pipe(gulp.dest('_site/assets/js/maps'));
+};
+
 /**
  * Build the Jekyll Site
  */
-gulp.task('jekyll-build', ['uglify', 'copyjs'], function (done) {
+gulp.task('generate-jekyll', ['pagejs', 'corejs'], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', '_config-dev.yml'], {stdio: 'inherit'})
         .on('close', done);
@@ -23,18 +43,32 @@ gulp.task('jekyll-build', ['uglify', 'copyjs'], function (done) {
 /**
  * Uglfiy JS source
  */
-gulp.task('uglify', function () {
-    gulp.src('assets/js/src/*.js')
+gulp.task('corejs', function () {
+    return gulp.src(['assets/js/src/core/vendor/*.js', 'assets/js/src/core/*.js'], { base: 'assets/js/src' })
         .pipe(sourcemaps.init())
-         .pipe(concat('theme.min.js'))
-         .pipe(uglify())
-         .pipe(sourcemaps.write('/'))
+        .pipe(concat('core.js'))
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('/maps'))
+        .pipe(gulp.dest('assets/js'));
+});
+
+gulp.task('pagejs', function () {
+    return gulp.src('assets/js/src/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(uglify())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('/maps'))
         .pipe(gulp.dest('assets/js'));
 });
 
 /* fix bug jekyll not copy js file */
 gulp.task('copyjs', function () {
-  return gulp.src('assets/js/**/*')
+  return gulp.src(['assets/js/**/*.js', 'assets/js/maps/*.map'])
         .pipe(gulp.dest('_site/assets/js'));
 });
 
@@ -55,27 +89,46 @@ gulp.task('image', function () {
 /**
  * Rebuild Jekyll & do page reload
  */
-gulp.task('jekyll-rebuild', ['jekyll-build'], function () {
+gulp.task('jekyll-rebuild', ['generate-jekyll'], function () {
     browserSync.reload();
+
+    copyme();
+});
+
+/**
+ * Reload browser without rebuild jekyll
+ */
+gulp.task('corejs-reload', ['corejs'], function () {
+    browserSync.reload();
+    copyme();
+});
+
+gulp.task('pagejs-reload', ['pagejs'], function () {
+    browserSync.reload();
+    copyme();
 });
 
 /**
  * Wait for jekyll-build, then launch the Server
  */
-gulp.task('browser-sync', ['jekyll-build'], function() {
+gulp.task('browser-sync', ['generate-jekyll'], function() {
     browserSync({
         server: {
             baseDir: '_site'
         }
     });
+
+    copyme();
+
 });
 
 /**
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch(['assets/js/src/*.js'], ['uglify']);
-    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.scss', 'assets/js/src/*.js', 'media/posts/*'], ['jekyll-rebuild']);
+    gulp.watch(['assets/js/src/core/**/*.js'], ['corejs-reload']);
+    gulp.watch(['assets/js/src/*.js'], ['pagejs-reload']);
+    gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.sass', 'assets/_sass/**/*', 'media/posts/*'], ['jekyll-rebuild']);
 });
 
 /**

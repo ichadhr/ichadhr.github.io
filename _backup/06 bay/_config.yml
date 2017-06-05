@@ -1,0 +1,79 @@
+permalink: /:title.html
+projects:
+  - name: JT.ms
+    image: /jtms.png
+    url: http://jt.ms/
+    description: Digital Card
+  - name: Cambodia Vietnam 2010
+    image: /cambodia-vietnam.png
+    url: http://www.cambodiavietnam2010.com/
+    description: Trip Summary
+  - name: JThomas
+    image: /jthomas.png
+    url: http://jthom.as
+    description: Confidential Haven
+  - name: Australie Trip
+    image: /australietrip.png
+    url: http://www.australietrip.fr/
+    description: Adventure Blog
+  - name: WordPress
+    image: /wordpress.png
+    url: http://wordpress.bbxdesign.com/
+    description: Free Tutorial
+  - name: La Compagnie de Bordeaux
+    image: /cdb.png
+    url: http://bbxdesign.com/cdb/home.html
+    description: Wine Journeys
+  - name: Editions Magellan
+    image: /magellan.png
+    url: http://www.editions-magellan.com
+    description: Travel Books Publisher
+  - name: Yeek
+    image: /yeek.png
+    url: http://yeek.fr/
+    description: Geek Gifts
+  - name: Task This
+    image: /task-this.png
+    url: http://www.task-this.com/en/
+    description: iPhone App
+  - name: bbxdesign
+    image: /bbxdesign.png
+    url: http://bbxdesign.com/
+    description: Retired Blog
+  - name: JukePod
+    image: /jukepod.png
+    url: http://jukepod.bbxdesign.com/
+    description: The Ideal Music Library
+  - name: bbxtumblr
+    image: /bbxtumblr.png
+    url: http://www.tumblr.com/theme/6487
+    description: Free Tumblr Theme
+sets:
+  - name: Reach the Throne
+    slug: reach-the-throne
+    id: 2522196
+    color: cc3333
+  - name: A reminder
+    slug: a-reminder
+    id: 2842952
+    color: 35666a
+  - name: Confidential Undertones
+    slug: confidential-undertones
+    id: 6378722
+    color: '003051'
+  - name: Le coeur a ses saisons
+    slug: le-coeur-a-ses-saisons
+    id: 6702622
+    color: 956841
+versions:
+  - name: Museum
+    slug: 05-museum
+  - name: Mono
+    slug: 04-mono
+  - name: Hurricane
+    slug: 03-hurricane
+  - name: Wings
+    slug: 02-wings
+  - name: Verdana
+    slug: 01-verdana
+

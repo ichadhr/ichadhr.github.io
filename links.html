@@ -1,0 +1,132 @@
+---
+layout: default
+title: "Links of ichadhr"
+route: links
+
+links:
+
+# 2016
+
+- name: What Colour are your bits?
+  url: http://ansuz.sooke.bc.ca/entry/23
+  category: science
+  description: The blurred lines between binary data and intellectual property
+
+- name: The Hunt for the Death Valley Germans
+  url: http://www.otherhand.org/home-page/search-and-rescue/the-hunt-for-the-death-valley-germans/
+  category: life
+  description: A personal quest to solve a mysterious death
+
+- name: In Search of a Tough Problem
+  url: http://cs.nyu.edu/shasha/outofmind/mccarthypuzzle.html
+  category: science
+  description: How do you explain one-way functions?
+
+- name: Why Britain banned mobile apps
+  url: https://govinsider.asia/smart-gov/why-britain-banned-mobile-apps/
+  category: design
+  description: Why the Web can conquer as a sustainable platform
+
+- name: How Technology Hijacks People’s Minds — from a Magician and Google’s Design Ethicist
+  url: https://medium.com/swlh/how-technology-hijacks-peoples-minds-from-a-magician-and-google-s-design-ethicist-56d62ef5edf3#.j8yptlt5r
+  category: life
+  description: The subtle gamification of apps
+
+- name: -2000 Lines Of Code
+  url: http://www.folklore.org/StoryView.py?project=Macintosh&story=Negative_2000_Lines_Of_Code.txt
+  category: programming
+  description: How do you track a programmer's performance?
+
+- name: The Wrong Abstraction
+  url: http://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction
+  category: programming
+  description: When DRY code hurts
+
+- name: What happens when pirates play a game development simulator and then go bankrupt because of piracy?
+  url: http://www.greenheartgames.com/2013/04/29/what-happens-when-pirates-play-a-game-development-simulator-and-then-go-bankrupt-because-of-piracy/
+  category: gaming
+  description: How to educate gamers through the mirror of piracy
+
+- name: Are Your Programmers Working Hard, Or Are They Lazy?
+  url: http://mikehadlow.blogspot.co.uk/2013/12/are-your-programmers-working-hard-or.html
+  category: programming
+  description: When working efficiently doesn't pay off
+
+- name: "Systems Past: the only 8 software innovations we actually use"
+  url: http://davidad.github.io/blog/2014/03/12/the-operating-system-is-out-of-date/
+  category: programming
+  description: A story of computer evolution
+
+- name: "World War II’s Strangest Battle: When Americans and Germans Fought Together"
+  url: http://www.thedailybeast.com/articles/2013/05/12/world-war-ii-s-strangest-battle-when-americans-and-germans-fought-together.html
+  category: life
+  description: A fight of common interest in the wake of World War II's end
+
+# 2015
+
+- name: Chat Wars
+  url: https://nplusonemag.com/issue-19/essays/chat-wars/
+  category: programming
+  description: Communicating via chat apps
+
+- name: My Hardest Bug Ever
+  url: http://www.gamasutra.com/blogs/DaveBaggett/20131031/203788/My_Hardest_Bug_Ever.php
+  category: gaming
+  description: ACrash Bandicoot developer's fight against a memory card
+
+# 2013
+
+- name: Simple versus easy
+  url: http://www.johndcook.com/blog/2011/11/11/simple-versus-easy/
+  category: life
+  description: Objective vs Subjective
+
+- name: What does randomness look like?
+  url: http://www.empiricalzeal.com/2012/12/21/what-does-randomness-look-like/
+  category: science
+  description: When data explains humans' flawed perceptions
+
+# Pre-2013
+
+- name: "Lumines: Killing The Fun, Part Two"
+  url: http://web.archive.org/web/20110718135718/http://caseyporn.com/blog/archives/000819.html
+  domain: caseyporn.com
+  category: gaming
+  description: A solved geometrical game
+
+- name: The Making of GoldenEye 007
+  url: http://web.archive.org/web/20140316234817/http://www.zoonami.com/briefing/2004-09-02.php
+  domain: zoonami.com
+  category: gaming
+  description: How inexperienced game developers went against the grain to create magic
+---
+
+<div class="container">
+  <hgroup class="heading">
+    <h1>Links</h1>
+      <h2>For insight and enlightenment</h2>
+  </hgroup>
+
+  {% for link in page.links %}
+    <article class="links-item">
+      <p class="links-category is-{{link.category}}">
+        <span>{{link.category}}</span>
+      </p>
+      <h2 class="links-title">
+        <a href="{{link.url}}" target="blank">
+          {{link.name}}
+        </a>
+      </h2>
+      <h3 class="links-domain">
+        {% if link.domain == nil or link.domain == "" %}
+          {{link.url | remove:'http://' | remove:'https://' | remove:'www.' | split:'/' | first}}
+        {% else %}
+          {{link.domain}}
+        {% endif %}
+      </h3>
+      <p class="links-description">
+        {{link.description}}
+      </p>
+    </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>{{ page.title }}</title>
+		<meta name="author" content="J. Thomas">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="http://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:400italic,700italic,400,700" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+		<link rel="alternate" href="/atom.xml" type="application/atom+xml" title="J. Thomas Blog">
+		<link rel="icon" href="/favicon.ico">
+	</head>
+	<body class="{{ page.nav }}">
+		<header id="header">
+			<a id="logo" href="/">
+				<strong>JT</strong>
+			</a>
+			<nav id="nav">
+				<ul>
+					<li><a id="nav-home"{% if page.nav == 'home' %} class="on"{% endif %} data-page="home" href="/">Home</a></li>
+					<li><a id="nav-articles"{% if page.nav == 'articles' %} class="on"{% endif %} data-page="articles" href="/articles.html">Articles</a></li>
+					<li><a id="nav-portfolio"{% if page.nav == 'portfolio' %} class="on"{% endif %} data-page="portfolio" href="/portfolio.html">Portfolio</a></li>
+					<li><a id="nav-music"{% if page.nav == 'music' %} class="on"{% endif %} data-page="music" href="/music.html">Music</a></li>
+					<li><a id="nav-colophon"{% if page.nav == 'colophon' %} class="on"{% endif %} data-page="colophon" href="/colophon.html">Colophon</a></li>
+				</ul>
+			</nav>
+			<ul id="links">
+				<li><a href="/atom.xml">RSS feed</a></li>
+				<li><a class="contact" title="Please enable JavaScript to view my email">Email</a></li>
+				<li><a href="https://github.com/jgthms">GitHub</a></li>
+				<li><a href="https://news.ycombinator.com/user?id=bbx">Hacker News</a></li>
+			</ul>
+		</header>
+		{{ content }}
+		<div style="clear: both;"></div>
+		<div id="loader"></div>
+		<script src="/jquery-1.10.1.min.js"></script>
+		<script src="/jquery.easing.min.js"></script>
+		<script src="/grid.js"></script>
+		<script>
+		$(document).ready( function() {
+
+			// Contact
+
+			function R(s) {
+				return R13(R5(s));
+			}
+
+			function R5(s) {
+				var b = [], c, i = s.length, a = '0'.charCodeAt(), z = a + 10;
+				while (i--) { 
+					c = s.charCodeAt(i);
+					if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+					else { b[i] = s.charAt(i); }
+				}
+				return b.join('');
+			}
+
+			function R13(s) {
+				var b = [], c, i = s.length, a = 'a'.charCodeAt(), z = a + 26, A = 'A'.charCodeAt(), Z = A + 26;
+				while (i--) {
+					c = s.charCodeAt(i);
+					if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+					else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+					else { b[i] = s.charAt(i); }
+				}
+				return b.join('');
+			}
+			
+			var $c = $('.contact');
+			var t = 'znvygb:'
+			var m = 'ookqrfvta@tznvy.pbz';
+			$c.each( function() {
+				$(this).attr('title', R(t+m));
+				$(this).attr('href', R(t+m));
+			})
+
+			// Filters
+
+			var $posts = $('#list article');
+			var $filters = $('#filters li a');
+			var $categories = $('#categories li a');
+			var $introductions = $('#introductions a');
+			var displayed = ['.post', ''];
+
+			function Sort(target) {
+				$posts.not(displayed.join('')).stop().slideUp(500, 'easeOutExpo');;
+				$posts.filter(displayed.join('')).stop().slideDown(500, 'easeOutExpo');
+				target.parent().siblings().find('a').removeClass('on');
+				target.addClass('on');
+			}
+
+			$introductions.click( function() {
+				if (!$(this).hasClass('on')) {
+					$posts.find('.post-introduction').slideToggle(500, 'easeOutExpo');
+					$introductions.toggleClass('on');
+				}
+			});
+
+			$filters.click( function() {
+				displayed[0] = '.' + $(this).data('view');
+				Sort($(this));
+			});
+			$categories.click( function() {
+				var view = ($(this).data('view')) ? '.' + $(this).data('view') : '';
+				displayed[1] = view;
+				Sort($(this));
+			});
+
+			// Portfolio
+
+			var $grid = $('#grid');
+			$grid.grid();
+
+		});
+		</script>
+	</body>
+</html>

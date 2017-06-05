@@ -1,0 +1,103 @@
+permalink: /:title.html
+projects:
+  - name: bbxdesign
+    slug: bbxdesign
+    url: http://bbxdesign.com/
+    excerpt: French Blog
+    description: My first blog/website, launched in 2007. It’s powered by WordPress and has gone through 8 custom themes before reaching (I hope) its final form. It also acts as my primary portfolio, through which I mainly obtain my freelance contacts.
+    background: 'f5574c'
+    color1: 'ffffff'
+    color2: 'eaf5ae'
+  - name: JT.ms
+    slug: jt-ms
+    url: http://jt.ms/
+    excerpt: Digital Card
+    description: The shortest domain I own. For a long time, it acted as a PHP url shortener, until I decided to turn it into a digital profile card that links to my main websites.
+    background: '3b2338'
+    color1: 'ffffff'
+    color2: 'ffbe32'
+  - name: Cambodia Vietnam 2010
+    slug: cambodia-vietnam-2010
+    url: http://www.cambodiavietnam2010.com/
+    excerpt: Trip Summary
+    description: When a friend of mine asked me to go to South-East Asia with her, I immediately had in mind a website that would recount our trip, where each city would be granted a different design. Like many projects of mine, it quickly reached 80% completion, then was left aside for almost 2 years, before being finally launched.
+    background: 'd2c7a9'
+    color1: '914839'
+    color2: '3b5757'
+  - name: JThomas
+    slug: jthomas
+    url: http://jthom.as
+    excerpt: Confidential Haven
+    description: A personal haven where I publish my music, share my cultural preferences, post random things of interest, and unveil original writings that are only partially fictitious.
+    background: 'f2f2f0'
+    color1: 'cc3333'
+    color2: '93a1a1'
+  - name: Australie Trip
+    slug: australie-trip
+    url: http://www.australietrip.fr/
+    excerpt: Adventure Blog
+    description: A friend decided to spend one year in Australia and asked me for a blog where she could share pictures and stories of her adventure. I ended up designing a simple WordPress theme and it remains to this day the first (and last) time I used Cufon to implement custom web fonts.
+    background: 'dfe1bc'
+    color1: 'a32f0b'
+    color2: '628359'
+  - name: WordPress le Tutoriel
+    slug: wordpress-le-tutoriel
+    url: http://wordpress.bbxdesign.com/
+    excerpt: Free Tutorial
+    description: I've been developing custom WordPress themes for more than 6 years, mostly blogs, portfolios, and corporate websites. Programmers can easily share and contribute to open source code. As a designer and front-end developer, my only option to give back to the community was to write a free tutorial for people to learn from.
+    background: '2992b4'
+    color1: 'ffffff'
+    color2: 'e1e9a4'
+  - name: Editions Magellan
+    slug: editions-magellan
+    url: http://www.editions-magellan.com
+    excerpt: Travel Books Publisher
+    description: A friend of mine worked as an intern for a Parisian travel books publisher. She introduced me to her boss who was looking to create a website. I was helped by a friend who took care of the programming part, while I was focused on the design and the front-end.
+    background: '932d00'
+    color1: 'ffffff'
+    color2: 'd89375'
+  - name: Yeek
+    slug: yeek
+    url: http://yeek.fr/
+    excerpt: Geek Gifts
+    description: With a friend, we had the idea to launch a directory of fun and interesting gifts. So I built a simple WordPress theme that ended up teaching me a lot about custom PHP functions.
+    background: 'edeef1'
+    color1: '040404'
+    color2: '0589f5'
+  - name: Task This
+    slug: task-this
+    url: http://task-this.bbxdesign.com/
+    excerpt: iPhone App
+    description: I always wanted to build an iPhone app website. As the opportunity didn't present itself, I contacted the author of an app I was using and offered to build his website for free. This single page website introduced me to writing my own jQuery functions.
+    background: '6e1003'
+    color1: 'efefef'
+    color2: 'f83703'
+sets:
+  - name: Reach the Throne
+    slug: reach-the-throne
+    id: 2522196
+    color: cc3333
+  - name: A reminder
+    slug: a-reminder
+    id: 2842952
+    color: 35666a
+  - name: Confidential Undertones
+    slug: confidential-undertones
+    id: 6378722
+    color: '003051'
+  - name: Le coeur a ses saisons
+    slug: le-coeur-a-ses-saisons
+    id: 6702622
+    color: 956841
+versions:
+  - name: Museum
+    slug: 05-museum
+  - name: Mono
+    slug: 04-mono
+  - name: Hurricane
+    slug: 03-hurricane
+  - name: Wings
+    slug: 02-wings
+  - name: Verdana
+    slug: 01-verdana
+

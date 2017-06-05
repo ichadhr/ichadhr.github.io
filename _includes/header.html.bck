@@ -1,0 +1,67 @@
+<header class="header">
+  <div class="container">
+    <a class="jt{% if page.route == 'index' %} active{% endif %}" href="/">
+      <span class="a">J</span>
+      <span class="b">e</span>
+      <span class="c">r</span>
+      <span class="d">e</span>
+      <span class="e">m</span>
+      <span class="f">y</span>
+      <span class="g"></span>
+      <span class="h">G</span>
+      <span class="i">.</span>
+      <span class="j"></span>
+      <span class="k">T</span>
+      <span class="l">h</span>
+      <span class="m">o</span>
+      <span class="n">m</span>
+      <span class="o">a</span>
+      <span class="p">s</span>
+    </a>
+
+    <a id="toggle-menu" class="toggle toggle-menu" href="javascript:;" data-target="menu">
+      <span>Menu</span>
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <a id="toggle-elsewhere" class="toggle toggle-elsewhere" href="javascript:;" data-target="elsewhere">
+      <span>Elsewhere</span>
+      <i class="fa fa-angle-down"></i>
+    </a>
+
+    <div id="overlay" class="overlay"></div>
+
+    <ul id="menu" class="dropdown dropdown-menu">
+      <li><a{% if page.route == 'index' %} class="active"{% endif %} href="/">Ichadhr</a></li>
+      <li><a{% if page.route == 'articles' or page.layout == 'post' %} class="active"{% endif %} href="/articles.html">Articles</a></li>
+      <li><a{% if page.route == 'favourites' %} class="active"{% endif %} href="/favourite-websites.html">Favourites</a></li>
+      <li><a{% if page.route == 'projects' %} class="active"{% endif %} href="/projects.html">Projects</a></li>
+      <li id="contact"><a>Email me</a></li>
+    </ul>
+
+    <ul id="elsewhere" class="dropdown dropdown-elsewhere">
+      {% if site.twitter_url != '' %}
+        <li><a class="twitter" href="{{ site.twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      {% endif %}
+      {% if site.facebook_url != '' %}
+        <li><a class="facebook" href="{{ site.facebook_url }}" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+      {% endif %}
+      {% if site.instagram_url != '' %}
+        <li><a class="instagram" href="{{ site.instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      {% endif %}
+      {% if site.github_url != '' %}
+        <li><a class="github" href="{{ site.github_url }}" target="_blank"><i class="fa fa-github"></i></a></li>
+      {% endif %}
+      {% if site.linkedin_url != '' %}
+        <li><a class="linkedin" href="{{ site.linkedin_url }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      {% endif %}
+      {% if site.lastfm_url != '' %}
+        <li><a class="lastfm" href="{{ site.lastfm_url }}" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+      {% endif %}
+      {% if site.soundcloud_url != '' %}
+        <li><a class="soundcloud" href="{{ site.soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+      {% endif %}
+      <li><a class="rss" href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+    </ul>
+  </div>
+</header>

@@ -1,12 +1,64 @@
-<header class="title">
-    <a href="{{ site.url }}"><i class="{{ site.i-logo }} logo-font"></i><span>{{ site.title }}</span></a>
-</header>
+<header class="header">
+  <div class="container">
+    <a class="rc" href="/">
+      <span>
+        <svg version="1.1" id="svg-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 600" preserveAspectratio="xMidYMid meet" style="enable-background:new 0 0 600 600;" xml:space="preserve">
+          <a xlink:href="/" target="_top">
+            <title>ichadhr</title>
+            <path class="c-fill" d="M300,591.5A291.5,291.5,0,0,1,93.88,93.88,291.5,291.5,0,0,1,506.12,506.12,289.6,289.6,0,0,1,300,591.5Z"/>
+            <path class="c-stroke" d="M300,17A283.08,283.08,0,0,1,410.15,560.77,283.08,283.08,0,0,1,189.85,39.23,281.21,281.21,0,0,1,300,17m0-17C134.31,0,0,134.31,0,300S134.31,600,300,600,600,465.69,600,300,465.69,0,300,0Z"/>
+            <path class="c-logo" d="M208.55,392.85q0,27.64-19.83,47.38t-47.47,19.83V299.67q0-66.46,47.84-113c31.93-31,70-46.73,114.3-46.73h94.48q0,26.39-18.62,45.05a61.49,61.49,0,0,1-45.05,18.62H303.4c-26.43,0-48.77,9.4-67.2,28.2s-27.64,41.42-27.64,67.86Z"/>
+            <path class="c-logo" d="M447.3,404H393.41v-162a10.57,10.57,0,0,0-10.52-10.52H284a10.57,10.57,0,0,0-10.52,10.52v35.09A10.57,10.57,0,0,0,284,287.67h53.24V449.53a10.57,10.57,0,0,0,10.52,10.52h99.5a10.57,10.57,0,0,0,10.52-10.52v-35A10.57,10.57,0,0,0,447.3,404Z"/>
+            <circle class="c-logo" cx="430.73" cy="188.07" r="28.02"/>
+          </a>
+        </svg>
+      </span>
+    </a>
 
-<nav class="wrapper {% if page.featured == true %} featured {% endif %} {% if site.theme_always_show_nav == true %} alwaysshow {% endif %}">
-    <a href="#" onclick="return false;"><i class="i-navicon i-lg-x"></i></a>
-    <ul>
-        {% for page in site.pages %}
-            {% if page.title %}<li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}
-        {% endfor %}
+    <a id="toggle-menu" class="toggle toggle-menu" href="javascript:;" data-target="menu">
+      <span>Menu</span>
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <a id="toggle-elsewhere" class="toggle toggle-elsewhere" href="javascript:;" data-target="elsewhere">
+      <span>Elsewhere</span>
+      <i class="fa fa-angle-down"></i>
+    </a>
+
+    <div id="overlay" class="overlay"></div>
+
+    <ul id="menu" class="dropdown dropdown-menu">
+      <!-- <li><a{% if page.route == 'index' %} class="active"{% endif %} href="/">Ichadhr</a></li> -->
+      <li><a{% if page.route == 'articles' or page.layout == 'post' %} class="active"{% endif %} href="/articles.html">Articles</a></li>
+      <li><a{% if page.route == 'favourites' %} class="active"{% endif %} href="/favourite-websites.html">Favourites</a></li>
+      <!-- <li><a{% if page.route == 'projects' %} class="active"{% endif %} href="/projects.html">Projects</a></li> -->
+      <li><a{% if page.route == 'links' %} class="active"{% endif %} href="/links.html">Links</a></li>
+      <li id="contact"><a>Email me</a></li>
     </ul>
-</nav>
+
+    <ul id="elsewhere" class="dropdown dropdown-elsewhere">
+      {% if site.twitter_url != '' %}
+        <li><a class="twitter" href="{{ site.twitter_url }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      {% endif %}
+      {% if site.facebook_url != '' %}
+        <li><a class="facebook" href="{{ site.facebook_url }}" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+      {% endif %}
+      {% if site.instagram_url != '' %}
+        <li><a class="instagram" href="{{ site.instagram_url }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+      {% endif %}
+      {% if site.github_url != '' %}
+        <li><a class="github" href="{{ site.github_url }}" target="_blank"><i class="fa fa-github"></i></a></li>
+      {% endif %}
+      {% if site.linkedin_url != '' %}
+        <li><a class="linkedin" href="{{ site.linkedin_url }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+      {% endif %}
+      {% if site.lastfm_url != '' %}
+        <li><a class="lastfm" href="{{ site.lastfm_url }}" target="_blank"><i class="fa fa-lastfm"></i></a></li>
+      {% endif %}
+      {% if site.soundcloud_url != '' %}
+        <li><a class="soundcloud" href="{{ site.soundcloud_url }}" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+      {% endif %}
+      <li><a class="rss" href="/atom.xml"><i class="fa fa-rss"></i></a></li>
+    </ul>
+  </div>
+</header>

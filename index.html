@@ -1,39 +1,37 @@
 ---
 layout: default
+title: "ichadhr – Personal Web"
+route: index
 ---
 
-{% if site.enable_logo == true %}
-<div class="profile">
-    {% if site.logourl != "" %}<img src="{{ site.logourl }}" class="profileimage" alt="user">{% endif %}
-    <h4>{{ site.title }}</h4>
-    <p>{{ site.description }}</p>
-    <hr>
-</div>
-{% endif %}
-
-{% if paginator.page %}
-  {% assign offset = paginator.page | minus:1 | times:paginator.per_page %}
-  {% assign currentPage = paginator.page %}
-{% else %}
-  {% assign offset = 0 %}
-  {% assign currentPage = 1 %}
-{% endif %}
-
-<section id="postIndex" class="posts postindex wrapper" data-page="{{ currentPage }}" data-page-total="{{ paginator.total_pages }}">
-    {% if paginator.page != 1 %}
-        {% include custom/list-small.html %}
-    {% else %}
-        {% include custom/list-full.html %}
-    {% endif %}
+<section id="follow" class="hello hello-follow">
+  <div class="hello-content">
+    <p class="hello-previous">
+      <a>Ivan Ballini Estates</a>
+    </p>
+    <div class="hello-text">
+      <div class="follow">
+        <p class="title">
+          @<strong>ichadhr</strong>
+        </p>
+        <a class="twitter" href="//twitter.com/ichadhr" target="_blank">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a class="github" href="//github.com/ichadhr" target="_blank">
+          <i class="fa fa-github"></i>
+        </a>
+        <a class="lastfm" href="//www.last.fm/user/ichadhr" target="_blank">
+          <i class="fa fa-lastfm"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-{% assign postCount = site.posts | size %}
-{% assign postsCovered = site.paginate | plus:offset %}
-
-<div class="wrapper">
-{% if postsCovered < postCount %}
-    <div class="moreposts">
-        <a href="#moreposts" class="loadmore smallbutton lightgray"><span>Load More..</span></a>
-	</div>
-{% endif %}
-</div>
+<nav id="dots" class="dots">
+  <ul>
+    <li>
+      <a>Follow</a>
+    </li>
+  </ul>
+</nav>

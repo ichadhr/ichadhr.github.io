@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>{{ page.title }}</title>
+    <meta name="author" content="J. Thomas">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="alternate" href="/atom.xml" type="application/atom+xml" title="jgthms">
+		<link rel="icon" href="favicon.ico">
+	</head>
+  <body>
+    <a id="h" href="/">JT</a>
+    {{ content }}
+    <i></i>
+    <aside>
+      <section>
+        <h3>Portfolio</h3>
+        <p>
+          <a href="http://www.cambodiavietnam2010.com/" title="Cambodia Vietnam 2010"><img src="i/cambodia-vietnam.png" alt="Cambodia Vietnam 2010"></a>
+          <a href="http://jthom.as" title="JThomas"><img src="i/jthomas.png" alt="JT"></a>
+          <a href="http://australietrip.fr" title="Australie Trip"><img src="i/australie-trip.png" alt="Australie Trip"></a>
+          <a href="http://www.editions-magellan.com/" title="Editions Magellan"><img src="i/magellan.png" alt="Editions Magellan"></a>
+          <a href="http://wordpress.bbxdesign.com/" title="Le Tutoriel WordPress"><img src="i/wordpress.png" alt="WordPress"></a>
+          <a href="http://bbxdesign.com/" title="bbxdesign"><img src="i/bbxdesign.png" alt="bbxdesign"></a>
+        </p>
+        <div style="clear:left"></div>
+      </section>
+      <section>
+        <h3>Music</h3>
+        <p>
+          <a href="http://reachthethrone.com/">Reach The Throne</a>
+          <em>(full album featuring samples from Jay-Z & Kanye West)</em>
+          <object height="18" width="100%">
+            <param name="movie" value="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2522196&amp;auto_play=false&amp;player_type=tiny&amp;font=Arial&amp;color=d33682"></param>
+            <param name="allowscriptaccess" value="always"></param> <param name="wmode" value="transparent"></param>
+            <embed wmode="transparent" allowscriptaccess="always" height="18" src="https://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F2522196&amp;auto_play=false&amp;player_type=tiny&amp;font=Arial&amp;color=d33682" type="application/x-shockwave-flash" width="100%"></embed>
+          </object>   
+        </p>
+      </section>
+      <section>
+        <h3>About</h3>
+        <p>I'm a former front-end developer and graphic designer. I quit my job in summer 2011 but remain connected to the web world and occasionally write about it.<br>
+        You can also <a href="/atom.xml">subscribe to the RSS feed</a>.</p>
+      </section>
+      <section>
+        <h3>Contact</h3>
+        <p id="c">Please enable JavaScript to view my email.</p>
+      </section>
+      <footer>
+        Published with <a href="https://github.com/mojombo/jekyll">Jekyll</a>. Hosted on <a href="https://github.com/jgthms/jgthms.github.com">GitHub</a>.
+      </footer>
+    </aside>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+    
+        R = function(s) {
+            return R13(R5(s));
+        }
+
+        R5 = function(s) {
+            var b = [],c,i = s.length,a = '0'.charCodeAt(),z = a + 10;
+            while (i--) { 
+                c = s.charCodeAt(i);
+                if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 5) % (10)) + a); }
+                else { b[i] = s.charAt(i); }
+            }
+            return b.join('');
+        }
+
+        R13 = function(s) {
+            var b = [],c,i = s.length,a = 'a'.charCodeAt(),z = a + 26,A = 'A'.charCodeAt(),Z = A + 26;
+            while (i--) {
+                c = s.charCodeAt(i);
+                if (c >= a && c < z) { b[i] = String.fromCharCode(((c - a + 13) % (26)) + a); }
+                else if (c >= A && c < Z) { b[i] = String.fromCharCode(((c - A + 13) % (26)) + A); }
+                else { b[i] = s.charAt(i); }
+            }
+            return b.join('');
+        }
+        
+        c = $('#c');
+        t = 'znvygb:'
+        m = 'ookqrfvta@tznvy.pbz';
+        a = $('<a/>', {
+          href: R(t+m),
+          title: 'Contact me',
+          text: R(m)
+        });
+        c.html(a);
+
+        i = $('section:first-child p a');
+        i.hover(
+          function() {
+            $(this).data('title', $(this).attr('title')).removeAttr('title');
+            n = $(this).data('title');
+            s = $('<strong/>', {
+              text: n
+            });
+            h = $(this).parent().parent().find('h3');
+            h.html(s);
+          }, function() {
+            h.html('Portfolio');
+          }
+        );
+        
+    });
+    </script>
+  </body>
+</html>

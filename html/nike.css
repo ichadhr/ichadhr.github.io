@@ -1,0 +1,45 @@
+body{ background:#013445; color:#75b9b8; font-size:13px;}
+h2{ color:#e4f9fa; font-size:20px;}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{ background:#e4f9fa; border-color:#e4f9fa; box-shadow:none; color:#75b9b8; font-size:12px;}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus{ border-color:#75b9b8; box-shadow:none; color:#75b9b8;}
+hr{ border:none;}
+
+/* Buttons */
+.btn{ background:#bad48d; border:none; box-shadow:none; color:#013445; font-size:12px; font-weight:bold; text-shadow:none;}
+.btn:hover{ background:#75b9b8;}
+.btn-primary,
+.btn-primary:hover{ background:#bad48d; color:#017081; font-size:16px; padding:11px 24px;}
+.navbar .btn{ background:#75b9b8; color:#fff;}
+.navbar .btn:hover{ background:#017081;}
+
+/* Container */
+.container, .navbar .container, .navbar-static-top .container{ width:940px;}
+
+/* Nav */
+.navbar{ font-size:12px; margin-bottom:0;}
+.navbar .brand{ color:#75b9b8; font-size:16px; font-weight:bold; text-shadow:none;}
+.navbar .navbar-inner{ background:#fff; border:none; border-radius:0; box-shadow:none;}
+.navbar .nav > li > a{ color:#75b9b8; text-shadow:none;}
+.navbar .brand:hover,
+.navbar-inverse .nav > li > a:hover,
+.navbar .nav > li > a:focus,
+.navbar .nav > li > a:hover{ color:#017081;}
+.navbar .nav li.dropdown.open > .dropdown-toggle{ color:#017081;}
+.navbar .nav .active > a,
+.navbar .nav .active > a:hover,
+.navbar .nav .active > a:focus{ background:none; box-shadow:none; color:#017081;}
+/* Caret */
+.navbar .nav li.dropdown > .dropdown-toggle .caret{ border-top-color:#75b9b8;}
+.navbar .nav li.dropdown > a:hover .caret,
+.navbar-inverse .nav li.dropdown.open > .dropdown-toggle .caret{ border-top-color:#017081;}
+/* Dropdown */
+.navbar .nav li.dropdown.open > .dropdown-toggle{ background:#fdf6e3;}
+.dropdown-menu li > a:hover{ background:#e63a3a;}
+.dropdown-menu .divider{ background:#75b9b8;}
+.nav-header{ color:#e4f9fa;}
+
+/* Hero */
+.hero-unit{ background:#75b9b8; border-bottom:1px solid #002b36; border-radius:0; color:#017081; padding:0;}
+.hero-unit h1{ color:#fff; font-size:52px; margin-bottom:10px;}
+.hero-unit .container{ background:url(/images/firefox-logo.png) no-repeat right bottom; padding:80px 420px 79px 0; width:520px;}
+

@@ -1,0 +1,61 @@
+---
+layout: default
+title: Ideas - J. Thomas
+nav: ideas
+---
+
+<div class="ideas">
+  <h1 class="title">Random <strong>thoughts</strong> about <a href="#design">design</a>, <a href="#technology">technology</a>, and <a href="#css">CSS</a>.<br>
+    Most of them are past <a href="https://twitter.com/jgthms">tweets</a>.</h1>
+  <h2 id="design" class="subtitle">Design</h2>
+  <p>A <strong>mobile-last</strong> approach will prevent boring designs.</p>
+  <p>Sometimes, the <strong>address bar</strong> is the best user interface of a website.</p>
+  <p>When designing <strong>symmetrical Retina icons</strong>, use only multiples of 4.</p>
+  <p>Working on <strong>visual consistency</strong> is a designer's premature optimization.</p>
+  <p>I don't mind making a design visually unappealing as long as it was both usable and memorable.</p>
+  <p>Some products have such terrible websites that I rather head towards their Wikipedia entry to actually learn what they do.</p>
+  <p>The perfect visual <strong>toggle switch</strong> conveys its current state without requiring any interaction.</p>
+  <p>Differentiating <strong>visited links</strong> is one of the most basic web features but nobody seems to give a shit about it anymore.</p>
+  <p>Icons are overrated.</p>
+  <p>Designers who can't code don't know how to <strong>iterate</strong>.</p>
+  <p>Design consistency has more to do with laziness than reasoning.</p>
+  <p><em>"Often designers who can code are considered 'unicorns' because of their rarity."</em></p>
+  <h2 id="technology" class="subtitle">Technology</h2>
+  <p><strong>Recommendation</strong> is like <strong>Go</strong>: humans are infinitely better at it. A successful algorithm would need to be able to detect <strong>patterns</strong>.</p>
+  <p>Mobile interfaces rely more and more upon <strong>swipes</strong> rather than taps, which confirms the laziness trend that technology generally embraces.</p>
+  <p>Not a fan of <strong>Basecamp</strong> or <strong>Trello</strong>. Pretty sure there's something better to be built. Or maybe I'm using it wrong.</p>
+  <p>The kind of people who think that <strong>IRC</strong> is obsolete are the same that mistake the Web for the Internet.</p>
+  <p><em>"Touchscreen"</em> has become a synonym for <em>"Smartphone"</em>, although I can think of a touchscreen phone with limited abilities (not having an app store being one) that would suit the non tech-savvy.</p>
+  <p>I'd love to design hardware.</p>
+  <h2 id="css" class="subtitle">CSS</h2>
+  <p>I write my <strong>CSS in line</strong>. So having a git diff of 15 lines can mean having changed 100+ properties.</p>
+  <p>My biggest issue with CSS is <strong>namespacing</strong>.</p>
+  <p>You should write CSS by <strong>contextualizing</strong> your selectors.</p>
+  <p><strong>Transform</strong> is not a shorthand property, although <code>transform-origin</code> and <code>transform-style</code> exist.</p>
+  <p>You can't make <strong>tables responsive</strong> without duplicate content or JavaScript.</p>
+  <p>Don't use id's in your CSS. You'll end up with nonsense such as <code>#nav #nav-home{ }</code> which disrupts the uniqueness of the selector.</p>
+  <p>CSS <strong>priority</strong> is like a flock of pigeons fighting over the same breadcrumb.</p>
+  <p>I'd love to have a tool that, for a given CSS property, retrieves all the <em>selectors</em> to which it's applied.</p>
+  <p>Use CSS <em>transitions</em> when your <em>animations</em> only comprise <strong>2 keyframes</strong>.</p>
+  <p>Too bad CSS animations only provide <em>time</em> but not <em>speed</em>. I'd love to have pixels/second.</p>
+  <p>Hard crop and soft crop become almost irrelevant with <code>background-size: cover</code> and contain.</p>
+  <p><strong>Minifying</strong> a CSS file won't remove unused styles or unoptimized definitions.</p>
+  <p>A higher <code>z-index</code> value of a child element will become irrelevant if its parent already has one.</p>
+  <p>Animations should have a <strong>snapping threshold</strong> (like 3px) below which it reaches its final state instead of moving by 3px for 1 second.</p>
+  <p>With a body at <code>height: 100%</code>, position <code>absolute</code> and <code>fixed</code> act the same for a child element.</p>
+  <p>One reason why W3Schools is a better resource than Mozilla for CSS properties: it actually tells what the <strong>default value</strong> is.</p>
+  <p>Switching from <code>position: relative</code> to <code>position: absolute</code> triggers a scroll to top.</p>
+  <p>It's easier to position <strong>background images</strong> rather than inline ones.</p>
+  <p>The annoying thing with <code>box-sizing: border-box</code> is that you have to change your <code>min-height</code> every time you change a <code>padding</code> value.</p>
+  <p>The <code>margin</code> of a child element will be part of its parent only if the parent has <code>padding</code>.</p>
+  <p>Applying <code>transform: translate3d</code> actually kills the children's <strong>fixed</strong> positioning.</p>
+  <p>Applying <code>position: absolute</code> actually cancels the <code>display: table-cell</code>.</p>
+  <p><code>ul{ font-size: 15px; line-height: 1;}</code> will render differently than <code>ul{ line-height: 1;} li{ font-size: 15px:}</code>.</p>
+  <p>If you use <code>display: inline-block</code>, you're gonna have unpredictable vertical margins that are only manageable with <code>vertical-align</code>.</p>
+  <p>Ordering your CSS properties <strong>alphabetically</strong> is the only future-proff best practice.</p>
+  <p>Having a <code>.list-products</code> selector is a better abstraction than <code>.list-grid</code>.</p>
+  <p>Keeping track of <strong>line heights</strong> is probably one of the trickiest challenges of CSS.</p>
+  <p>I wish you could define <code>transition-duration</code> <em>per</em> property.</p>
+  <h2 class="subtitle">Bonus</h2>
+  <p>In jQuery, <code>$(this).index()</code> and <code>$collection.index(this)</code> can return different values.</p>
+</div>

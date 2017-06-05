@@ -1,0 +1,54 @@
+---
+layout: default
+title: Articles - J. Thomas
+nav: articles
+---
+
+<div id="articles" class="wrap" data-title="Articles - J. Thomas">
+  <article id="list">
+    {% for post in site.posts %}
+      <section class="post {{ post.category | downcase }}{% if post.recommended == true %} recommended{% endif %}">
+        <p class="post-info">
+          <time class="post-date">{{ post.date | date_to_string }}</time>
+          <strong class="post-category"><span>#</span> {{ post.category }}</strong>
+        </p>
+        <h3 class="post-title">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </h3>
+        <p class="post-format"></p>
+        {% if post.introduction %}
+          <p class="post-introduction">{{ post.introduction }}</p>
+        {% endif %}
+      </section>
+    {% endfor %}
+  </article>
+  <aside id="side">
+    <section>
+      <p>Posts:</p>
+      <ul id="filters">
+        <li><a data-view="post" class="on">All</a></li>
+        <li><a data-view="recommended">Recommended</a></li>
+      </ul>
+    </section>
+    <section>
+      <p>Categories:</p>
+      <ul id="categories">
+        <li><a class="on">All</a></li>
+        <li><a data-view="design">Design</a></li>
+        <li><a data-view="interface">Interface</a></li>
+        <li><a data-view="thoughts">Thoughts</a></li>
+      </ul>
+    </section>
+    <section>
+      <p>Introductions:</p>
+      <a id="introductions" class="on"></a>
+    </section>
+    <section>
+      <em>
+        Powered by <a href="http://jekyllrb.com/">Jekyll</a>.<br>
+        Hosted on <a href="https://github.com/jgthms/jgthms.github.io">GitHub</a>.
+      </em>
+    </section>
+  </aside>
+  <div style="clear: both;"></div>
+</div>

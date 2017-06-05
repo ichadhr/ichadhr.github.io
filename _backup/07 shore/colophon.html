@@ -1,0 +1,18 @@
+---
+layout: default
+title: Colophon - J. Thomas
+nav: colophon
+---
+
+<div id="colophon" class="wrap">
+	<h1 class="title">Colophon</h1>
+	<p>This website is powered by <a href="http://jekyllrb.com/">Jekyll</a>, hosted on <a href="http://help.github.com/pages/">GitHub</a>, and always subject to radical UI changes.</p>
+	<p>You're currently browsing the 7th version of this website. The titles are set in Bitter, the body text in Open Sans.</p>
+	<p>All source code, for this version as well as for the previous ones, is available on my <a href="https://github.com/jgthms/jgthms.github.io">jgthms.github.io</a>  repository.</p>
+	{% for version in site.versions %}
+		<a class="version" href="/v/jgthms-{{ version.slug }}.png">
+			<h2 class="version-name"><em class="version-number">v{{ forloop.rindex }}</em> {{ version.name }}</h2>
+			<img class="version-image" src="/v/{{ version.slug }}.png" alt="{{ version.name }}">
+		</a>
+	{% endfor %}
+</div>

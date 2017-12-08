@@ -2,5 +2,5 @@
 
 Create new post :
 ```console
-$ thor jekyll:new The title of the new post
+$ bash jekyll.sh
 ```

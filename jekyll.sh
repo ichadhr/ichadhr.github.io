@@ -1,7 +1,7 @@
 #!/bin/bash
 # coded : @ichadhr
 
-# coloring
+# config color
 #normal=$(tput sgr0)                      # normal text
 normal=$'\e[0m'                           # (works better sometimes)
 bold=$(tput bold)                         # make colors bold/bright
@@ -9,6 +9,10 @@ red="$bold$(tput setaf 1)"                # bright red text
 green=$(tput setaf 2)                     # dim green text
 fawn=$(tput setaf 3); beige="$fawn"       # dark yellow text
 yellow="$bold$fawn"                       # bright yellow text
+
+# config
+EDITOR=" "
+FORMAT="md"
 
 # make clean
 echo -en "\e[H\e[J\e[3J"
@@ -24,7 +28,7 @@ echo -en '\n'
 DATE=`date +%Y-%m-%d`
 
 # get input from user
-read -p 'Title Post: ' TITLEPOST
+read -p 'Enter the title: ' TITLEPOST
 # make sure input user not empty
 while [[ -z "${TITLEPOST}" ]]; do
     echo "That was empty, do it again!"
@@ -35,11 +39,12 @@ read -p 'Category: ' CATPOST
 
 # formated post title
 FIL_TITLEPOST="${TITLEPOST//[^[:alnum:][:space:]]/}"
+URL_TITLEPOST="`echo ${FIL_TITLEPOST} | tr '[A-Z]' '[a-z]'`"
 URL_TITLEPOST="$(echo $FIL_TITLEPOST)"
 URL_TITLEPOST="${URL_TITLEPOST// /-}"
 URL_TITLEPOST="${DATE}-${URL_TITLEPOST}"
 
-FILENAME="_posts/${URL_TITLEPOST}.md"
+FILENAME="_posts/${URL_TITLEPOST}.${FORMAT}"
 
 echo -en '\n'
 echo -en '\n'
@@ -66,7 +71,11 @@ if [ -d "_posts" ]; then
         echo "recomended: false" >> ${FILENAME}
         echo "published: true" >> ${FILENAME}
         echo "---" >> ${FILENAME}
+        echo "" >> ${FILENAME}
     fi
 else
     echo "is it root directory of Jekyll ? can't find folder ${yellow}_post"
 fi
+
+# open in editor
+# ${EDITOR} ${FILENAME}

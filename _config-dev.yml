@@ -22,7 +22,7 @@ sass:
 timezone: Asia/Jakarta
 
 # Gems Plugin
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
   - jekyll-feed
@@ -32,8 +32,8 @@ gems:
   - jemoji
 
 # Setting jemoji path
-emoji:
-  src: "/assets/img"
+# emoji:
+#   src: "/assets/img"
 
 # Build Settings
 markdown: kramdown
@@ -51,3 +51,4 @@ exclude:
   - README.md
   - gulpfile.js
   - package.json
+  - jekyll.thor

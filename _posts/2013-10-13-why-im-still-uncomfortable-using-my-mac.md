@@ -62,7 +62,7 @@ Considering the amount of keyboard shortcuts available in more advanced software
 * 3 shortcut keys + 1 letter: Cmd + Alt + Shift + S ('Save for the web' in Photoshop)
 * 4 shortcut keys + 1 letter (very rare though)
 
-Because there are 4 shortcut keys, and because you can press a different combination for each level (besides the 4th level), you can for example in the 2nd level, have either Cmd + Alt or Cmd + Shift or Cmd +  Ctrl. If you then attach a letter to each of these combinations, you have multiple shortcuts for the *same* letter. In the end, there are *a lot* of keyboard shortcuts available.
+Because there are 4 shortcut keys, and because you can press a different combination for each level (besides the 4th level), you can for example in the 2nd level, have either Cmd + Alt or Cmd + Shift or <kbd>Cmd</kbd> +  Ctrl. If you then attach a letter to each of these combinations, you have multiple shortcuts for the *same* letter. In the end, there are *a lot* of keyboard shortcuts available.
 
 Well then, what's the problem with combinations?
 

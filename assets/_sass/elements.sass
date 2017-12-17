@@ -36,8 +36,8 @@
       padding: 4px
 
 .content
-  color: #4a4a4a
-  line-height: 1.4
+  color: #444444
+  line-height: 1.5
   a
     border-bottom: 1px dotted currentColor
     &:hover
@@ -60,6 +60,9 @@
       +on($desktop)
         position: absolute
         right: 100%
+      &:hover
+        &.anchor
+          border-bottom: none
   h3
     font-size: $size-h3
     a
@@ -70,13 +73,14 @@
     margin: 20px 0
     padding: 10px
     text-align: center
-  h2
+  h2,
+  h3
     a
       &:visited
         color: $link
   p
     margin: 20px 0
-    line-height: 1.7
+    line-height: 1.5
     &:last-child
       margin-bottom: 0
     &.note
@@ -97,6 +101,7 @@
     list-style: disc outside
     margin: 20px
     line-height: 27px
+    padding-left: 17px
   figure:not(.highlight)
     // background: $white
     background: transprent
@@ -113,11 +118,12 @@
     margin-top: 20px
   blockquote
     background: $white
-    border-left: 4px solid #d0d0d0
+    border-left: 4px solid #d8e4ec
     color: #7a7a7a
     font-style: italic
-    margin: 40px 0
-    padding: 20px 40px
+    margin: 30px 0
+    padding: 15px 30px
+    font-size: 16px
     p
       margin: 0
   table
@@ -150,6 +156,18 @@
   code
     position: relative
     top: -2px
+  kbd
+    display: inline-block
+    margin: 0 2px
+    padding: 0 6px
+    border: 1px solid #d7e2e8
+    border-radius: 3px
+    background-color: $simple-code
+    text-shadow: 0 1px 0 #ffffff
+    box-shadow: 0 .8px 0 rgba(148, 165, 181, 0.2), 0 0 0 0.8px #fff inset
+    white-space: nowrap
+    font-size: $size-small
+    font-weight: 600
   pre
     padding: 10px
   .highlight
@@ -458,7 +476,7 @@ a.cover
     display: inline-block
     line-height: 20px
     margin-top: 10px
-    padding: 5px 10px
+    padding: 3px 10px
     vertical-align: top
     &:hover
       background: $twitter
@@ -472,4 +490,4 @@ a.cover
       padding: 6px 0
       vertical-align: top
     a
-      margin: 0 0 0 10px
+      margin: 2px 0 0 10px

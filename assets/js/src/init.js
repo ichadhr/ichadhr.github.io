@@ -79,7 +79,7 @@ jQuery(document).ready(function($) {
         } else {
             return false;
         }
-    }
+    };
 
     /*
      *  Define variables
@@ -94,7 +94,7 @@ jQuery(document).ready(function($) {
     var $headings = $('#content h2, #content h3');
 
     // encrypt email
-    var t = 'znvygb:'
+    var t = 'znvygb:';
     var m = 'vpunque@tznvy.pbz';
 
     /*

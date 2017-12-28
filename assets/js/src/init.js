@@ -46,6 +46,31 @@ jQuery(document).ready(function($) {
 
         return b.join('');
     }
+    /*
+     *  End add link email to contact
+     */
+
+    // function keyboard shortcut previous (left) and next (right) navigation
+    function leftKeyPressed() {
+        document.getElementById("pgprev").click();
+    }
+
+    function rightKeyPressed() {
+        document.getElementById("pgnext").click();
+    }
+
+    function checkShortcuts(event) {
+        switch (event.keyCode) {
+            case 37:
+                leftKeyPressed();
+                break;
+            case 39:
+                rightKeyPressed();
+                break;
+            default:
+                break;
+        }
+    }
 
     // function check document and all sub-resources have finished loading
     var docReady = function() {
@@ -55,6 +80,31 @@ jQuery(document).ready(function($) {
             return false;
         }
     }
+
+    /*
+     *  Define variables
+     */
+
+    // responsive menu
+    var $toggle = $('.toggle');
+    var $dropdown = $('.dropdown-menu li a');
+    var $overlay = $('#overlay');
+
+    // for hash link
+    var $headings = $('#content h2, #content h3');
+
+    // encrypt email
+    var t = 'znvygb:'
+    var m = 'vpunque@tznvy.pbz';
+
+    /*
+     *  End define variables
+     */
+
+    /*
+     *  Executed function on first landing
+     */
+
 
     // loading bar
     var nanobar = new Nanobar({
@@ -66,14 +116,6 @@ jQuery(document).ready(function($) {
         nanobar.go(100);
     }
 
-    /*
-     *  End add link email to contact
-     */
-
-    // encrypt email
-    var t = 'znvygb:'
-    var m = 'vpunque@tznvy.pbz';
-    // end encrypt email
 
     // remove active menu
     $('a.rc').click(function() {
@@ -86,8 +128,79 @@ jQuery(document).ready(function($) {
         $(this).attr('class', 'active');
     });
 
-    var lastElementClicked;
+    // add email on menu
+    $('li#contact a').attr('href', R(t + m));
 
+    // responsive menu
+    $toggle.click(function() {
+        var target = $(this).data('target');
+        $('html').addClass(target + '-open');
+    });
+
+    $dropdown.click(function() {
+        $('html').removeClass('menu-open elsewhere-open');
+    });
+
+    $overlay.click(function() {
+        $('html').removeClass('menu-open elsewhere-open');
+    });
+    // end responsive menu
+
+    // affix year, season & periods
+    $('.year, .season').each(function() {
+        $(this).affix({
+            offset: {
+                top: $(this).offset().top
+            }
+        });
+    });
+
+    $('.period').each(function() {
+        $(this).affix({
+            offset: {
+                top: $(this).offset().top
+            }
+        });
+    });
+
+    // iframe responsive
+    reframe('iframe');
+
+    // lazy load
+    $('img.lazy').unveil();
+
+    // hash link for h2 & h3
+    $headings.each(function() {
+        var $el = $(this);
+        var id = $el.attr('id');
+        if (id) {
+            $el.prepend(
+                $('<a />')
+                .addClass('anchor')
+                .attr('href', '#' + id)
+                .html('#')
+            );
+        }
+    });
+
+    // scroll top for post page
+    $('#top').on('click', function(e) {
+        e.preventDefault();
+        $('body,html').animate({
+            scrollTop: 0
+        }, 700);
+    });
+
+    // keyboard shortcut previous (left) and next (right) navigation
+    document.onkeydown = checkShortcuts;
+
+
+    /*
+     *  End executed function on first landing
+     */
+
+
+    // barba js
     Barba.Pjax.Dom.wrapperId = 'main-container';
     Barba.Pjax.Dom.containerClass = 'wrap-container';
     Barba.Pjax.ignoreClassLink = 'nopjax';
@@ -95,9 +208,6 @@ jQuery(document).ready(function($) {
 
 
     Barba.Pjax.init();
-    // Barba.Prefetch.init();
-
-    // Barba.Pjax.start();
 
     var LetsMove = Barba.BaseTransition.extend({
         start: function() {
@@ -110,9 +220,6 @@ jQuery(document).ready(function($) {
         letProgress: function() {
 
             nanobar.auto();
-            // $(this.oldContainer).animate({
-            //     opacity: 0
-            // }).promise();
 
         },
 
@@ -151,10 +258,7 @@ jQuery(document).ready(function($) {
             // scroll page to top
             window.scroll(0, 0);
 
-        },
-        // getNewPageFile: function() {
-        //     return Barba.HistoryManager.currentStatus().url.split('/').pop();
-        // }
+        }
     });
 
 
@@ -164,10 +268,6 @@ jQuery(document).ready(function($) {
         $('li#contact a').attr('href', R(t + m));
 
         // responsive menu
-        var $toggle = $('.toggle');
-        var $dropdown = $('.dropdown-menu li a');
-        var $overlay = $('#overlay');
-
         $toggle.click(function() {
             var target = $(this).data('target');
             $('html').addClass(target + '-open');
@@ -207,7 +307,8 @@ jQuery(document).ready(function($) {
 
         },
         onEnterCompleted: function() {
-            // Periods
+
+            // affix year, season & periods
             $('.year, .season').each(function() {
                 $(this).affix({
                     offset: {
@@ -250,8 +351,8 @@ jQuery(document).ready(function($) {
 
         },
         onEnterCompleted: function() {
-            var $headings = $('#content h2, #content h3');
 
+            // hash link for h2 & h3
             $headings.each(function() {
                 var $el = $(this);
                 var id = $el.attr('id');
@@ -265,6 +366,7 @@ jQuery(document).ready(function($) {
                 }
             });
 
+            // scroll top
             $('#top').on('click', function(e) {
                 e.preventDefault();
                 $('body,html').animate({
@@ -275,26 +377,6 @@ jQuery(document).ready(function($) {
             // keyboard shortcut previous (left) and next (right) navigation
             document.onkeydown = checkShortcuts;
 
-            function checkShortcuts(event) {
-                switch (event.keyCode) {
-                    case 37:
-                        leftKeyPressed();
-                        break;
-                    case 39:
-                        rightKeyPressed();
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            function leftKeyPressed() {
-                document.getElementById("pgprev").click();
-            }
-
-            function rightKeyPressed() {
-                document.getElementById("pgnext").click();
-            }
         }
     });
 

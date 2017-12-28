@@ -2,7 +2,7 @@
 # Site Settings
 name:           "ichadhr"
 description:    "Personal blog of ichadhr"
-url:            "http://localhost:3000"
+url:            "//ichadhr.tk"
 
 # Social Settings
 twitter_url:        "//twitter.com/ichadhr"

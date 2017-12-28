@@ -151,7 +151,7 @@ gulp.task('browser-sync', ['generate-jekyll'], function() {
  */
 gulp.task('watch', function() {
     gulp.watch(['assets/js/src/core/**/*.js'], ['corejs-reload']);
-    gulp.watch(['assets/js/src/*.js'], ['pagejs-reload']);
+    gulp.watch(['assets/js/src/init.js'], ['pagejs-reload']);
     gulp.watch(['_config-dev.yml', '*.html', '_layouts/*.html', '_includes/*.html', '_posts/*', 'assets/css/*.sass', 'assets/_sass/**/*', 'media/posts/*'], ['jekyll-rebuild']);
 });
 

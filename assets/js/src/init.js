@@ -167,7 +167,7 @@ jQuery(document).ready(function($) {
     reframe('iframe');
 
     // lazy load
-    $('img.lazy').unveil();
+    $('img.lazy').lazy();
 
     // hash link for h2 & h3
     $headings.each(function() {
@@ -286,7 +286,7 @@ jQuery(document).ready(function($) {
         reframe('iframe');
 
         // lazy load
-        $('img.lazy').unveil();
+        $('img.lazy').lazy();
 
         // finish loading bar
         nanobar.go(100);

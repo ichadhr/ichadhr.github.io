@@ -47,4 +47,7 @@ jQuery(document).ready(function ($) {
     document.getElementById("pgnext").click();
   }
 
+  // iframe responsive
+  reframe('iframe');
+
 });

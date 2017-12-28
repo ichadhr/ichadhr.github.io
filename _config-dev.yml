@@ -41,7 +41,7 @@ kramdown:
   input: GFM
   highlighter: rouge
 
-permalink: :title.html
+permalink: /articles/:title.html
 
 exclude:
   - node_modules

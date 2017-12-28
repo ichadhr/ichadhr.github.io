@@ -31,4 +31,21 @@ jQuery(document).ready(function ($) {
     setRecommended();
   })
 
+  // Periods
+  $('.year, .season').each(function() {
+    $(this).affix({
+      offset: {
+        top: $(this).offset().top
+      }
+    });
+  });
+
+  $('.period').each( function() {
+    $(this).affix({
+      offset: {
+        top: $(this).offset().top
+      }
+    });
+  });
+
 });

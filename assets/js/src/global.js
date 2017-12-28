@@ -10,7 +10,6 @@ jQuery(document).ready(function ($) {
   $('.css-years').text(todayYear - 2007);
 
   // Filters
-
   var $posts = $('.list article');
   var $filters = $('.filters li a');
   var $categories = $('.categories li a');
@@ -49,18 +48,7 @@ jQuery(document).ready(function ($) {
     Sort($(this));
   });
 
-  // Periods
-
-  $('.year, .season').each(function() {
-    $(this).affix({
-      offset: {
-        top: $(this).offset().top
-      }
-    });
-  });
-
   // Favorites
-
   var $favorites_controls = $('#favorites-controls ul a');
   var $favorites_lists = $('.favorites-list');
   var current_favorites_list = Cookies.get('favorites_list') ? Cookies.get('favorites_list') : 'gameboy';

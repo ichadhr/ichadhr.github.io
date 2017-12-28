@@ -6,10 +6,19 @@ layout: compress
 <html lang="en">
   {% include head.html %}
   <body>
-    {% include header.html %}
-    <main id="{{ page.route }}" class="main {{ page.route }}{% if page.layout %} {{ page.layout}}{% endif %}{% if page.state %} {{ page.state}}{% endif %}">
-      {{ content }}
-    </main>
-    {% include scripts.html %}
+    <div id="main-container">
+        {% include header.html %}
+        {% if page.route %}
+        <div class="wrap-container" data-namespace="{{ page.route }}">
+        {% endif %}
+        {% if page.layout != 'default' %}
+        <div class="wrap-container" data-namespace="{% if page.layout %}{{ page.layout }}{% endif %}{% if page.state %}{{ page.state }}{% endif %}">
+        {% endif %}
+            <main id="{{ page.route }}" class="main {{ page.route }}{% if page.layout %} {{ page.layout }}{% endif %}{% if page.state %} {{ page.state }}{% endif %}">
+                    {{ content }}
+                </main>
+        {% include scripts.html %}
+        </div>
+    </div>
   </body>
 </html>

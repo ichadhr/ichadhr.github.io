@@ -91,7 +91,7 @@
       border-radius: 2px
       code
         background: none
-        color: #e0033f
+        color: $pre-color
   ol
     list-style: decimal outside
     margin: 20px
@@ -148,11 +148,11 @@
         background: hsl(0, 0%, 100%)
   code,
   pre
-    background: $simple-code
-    color: $black-soft
+    //background: $simple-code
+    color: $pre-color
     font-size: $size-small
     padding: 2px 4px
-    border-radius: 3px
+    //border-radius: 3px
   code
     position: relative
     top: -2px
@@ -479,7 +479,7 @@ a.cover
     line-height: 20px
     margin-top: 10px
     padding: 3px 10px
-    vertical-align: top
+    vertical-align: middle
     &:hover
       background: $twitter
       color: white

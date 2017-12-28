@@ -11,18 +11,18 @@
 
   {% if currentyear != year %}
     {% if rainyseason %}
-      <section class="period year">{{ currentyear }}</section>
+      <section class="period year" data-target="#period" data-offset-top="0">{{ currentyear }}</section>
       {% capture year %}{{ currentyear }}{% endcapture %}
     {% endif %}
       {% if rainyseason != '' %}
-        <section class="period season season-{{ rainyseason }}">{{ rainyseason }}</section>
+        <section class="period season season-{{ rainyseason }}" data-target="#period" data-offset-top="0">{{ rainyseason }}</section>
         <hr>
       {% endif %}
   {% endif %}
 
   {% if dryseason != seasondry %}
     {% if dryseason != '' %}
-      <section class="period season season-{{ dryseason }}">{{ dryseason }}</section>
+      <section class="period season season-{{ dryseason }}" data-target="#period" data-offset-top="0">{{ dryseason }}</section>
       <hr>
     {% endif %}
     {% capture seasondry %}{{ dryseason }}{% endcapture %}
@@ -30,7 +30,7 @@
 
   {% if rainyseason != seasonrainy %}
     {% if rainyseason != '' %}
-      <section class="period season season-{{ rainyseason }}">{{ rainyseason }}</section>
+      <section class="period season season-{{ rainyseason }}" data-target="#period" data-offset-top="0">{{ rainyseason }}</section>
       <hr>
     {% endif %}
     {% capture seasonrainy %}{{ rainyseason }}{% endcapture %}

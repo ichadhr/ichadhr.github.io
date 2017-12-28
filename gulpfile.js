@@ -40,11 +40,17 @@ gulp.task('generate-jekyll', ['pagejs', 'corejs'], function (done) {
         .on('close', done);
 });
 
+var core_src = [
+    'assets/js/src/core/vendor/*.js',
+    'assets/js/src/core/affix.js',
+    'assets/js/src/core/reframe.js'
+];
+
 /**
  * Uglfiy JS source
  */
 gulp.task('corejs', function () {
-    return gulp.src(['assets/js/src/core/vendor/*.js', 'assets/js/src/core/*.js'], { base: 'assets/js/src' })
+    return gulp.src(core_src, { base: 'assets/js/src' })
         .pipe(sourcemaps.init())
         .pipe(concat('core.js'))
         .pipe(uglify())
@@ -56,7 +62,7 @@ gulp.task('corejs', function () {
 });
 
 gulp.task('pagejs', function () {
-    return gulp.src('assets/js/src/*.js')
+    return gulp.src('assets/js/src/init.js')
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(rename({

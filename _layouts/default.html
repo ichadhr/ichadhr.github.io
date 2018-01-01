@@ -15,8 +15,8 @@ layout: compress
         <div class="wrap-container" data-namespace="{% if page.layout %}{{ page.layout }}{% endif %}{% if page.state %}{{ page.state }}{% endif %}">
         {% endif %}
             <main id="{{ page.route }}" class="main {{ page.route }}{% if page.layout %} {{ page.layout }}{% endif %}{% if page.state %} {{ page.state }}{% endif %}">
-                    {{ content }}
-                </main>
+                {{ content }}
+            </main>
         {% include scripts.html %}
         </div>
     </div>

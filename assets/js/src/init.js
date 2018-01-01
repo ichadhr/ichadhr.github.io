@@ -265,7 +265,7 @@ jQuery(document).ready(function($) {
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
 
         // add email on menu
-        $('li#contact a').attr('href', R(t + m));
+        // $('li#contact a').attr('href', R(t + m));
 
         // responsive menu
         $toggle.click(function() {
@@ -353,6 +353,8 @@ jQuery(document).ready(function($) {
         onEnterCompleted: function() {
 
             // hash link for h2 & h3
+            $headings = $('#content h2, #content h3');
+
             $headings.each(function() {
                 var $el = $(this);
                 var id = $el.attr('id');

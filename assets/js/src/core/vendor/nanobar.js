@@ -113,7 +113,7 @@
                     }
                 },
                 auto: function() {
-                    var p = ((.05 * Math.pow(1 - Math.sqrt(0 / 100), 2)) * 100)
+                    var p = ((.05 * Math.pow(1 - Math.sqrt(30 / 100), 2)) * 100)
                         // periodic nanobar
                     applyGo(p)
                         // create new bar when progress reaches 100%

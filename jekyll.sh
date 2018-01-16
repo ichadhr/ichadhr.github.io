@@ -46,7 +46,7 @@ URL_TITLEPOST="${URL_TITLEPOST// /-}"
 URL_TITLEPOST="${DATE}-${URL_TITLEPOST}"
 
 FILENAME="_posts/${URL_TITLEPOST}.${FORMAT}"
-DIRIMG="_images/${DATE}"
+DIRIMG="images/${DATE}"
 
 echo -en '\n'
 echo -en '\n'
@@ -75,11 +75,11 @@ if [ -d "_posts" ]; then
         echo "---" >> ${FILENAME}
         echo "" >> ${FILENAME}
 
-        if [ -d ${DIRIMG} ]; then
-            mkdir images/${DATE}
+        if [ ! -d ${DIRIMG} ]; then
+            mkdir "${DIRIMG}"
         fi
 
-        echo "Your images folder for this post images/${DATE}"
+        echo "Your images folder for this post ${DIRIMG}"
     fi
 else
     echo "is it root directory of Jekyll ? can't find folder ${yellow}_post"

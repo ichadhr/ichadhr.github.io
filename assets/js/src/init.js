@@ -3,11 +3,14 @@ jQuery(document).ready(function($) {
     /*
      *  Begin add link email to contact (biar gaak kena spam)
      */
-    function R(s) {
+
+    var R = function(s) {
+
         return R13(R5(s));
+
     }
 
-    function R5(s) {
+    var R5 = function(s) {
         var b = [],
             c, i = s.length,
             a = '0'.charCodeAt(),
@@ -25,41 +28,41 @@ jQuery(document).ready(function($) {
         return b.join('');
     }
 
-    function R13(s) {
-        var b = [],
-            c, i = s.length,
-            a = 'a'.charCodeAt(),
-            z = a + 26,
-            A = 'A'.charCodeAt(),
-            Z = A + 26;
+    var R13 = function(s) {
+            var b = [],
+                c, i = s.length,
+                a = 'a'.charCodeAt(),
+                z = a + 26,
+                A = 'A'.charCodeAt(),
+                Z = A + 26;
 
-        while (i--) {
-            c = s.charCodeAt(i);
-            if (c >= a && c < z) {
-                b[i] = String.fromCharCode(((c - a + 13) % (26)) + a);
-            } else if (c >= A && c < Z) {
-                b[i] = String.fromCharCode(((c - A + 13) % (26)) + A);
-            } else {
-                b[i] = s.charAt(i);
+            while (i--) {
+                c = s.charCodeAt(i);
+                if (c >= a && c < z) {
+                    b[i] = String.fromCharCode(((c - a + 13) % (26)) + a);
+                } else if (c >= A && c < Z) {
+                    b[i] = String.fromCharCode(((c - A + 13) % (26)) + A);
+                } else {
+                    b[i] = s.charAt(i);
+                }
             }
-        }
 
-        return b.join('');
-    }
-    /*
-     *  End add link email to contact
-     */
+            return b.join('');
+        }
+        /*
+         *  End add link email to contact
+         */
 
     // function keyboard shortcut previous (left) and next (right) navigation
-    function leftKeyPressed() {
+    var leftKeyPressed = function() {
         document.getElementById("pgprev").click();
     }
 
-    function rightKeyPressed() {
+    var rightKeyPressed = function() {
         document.getElementById("pgnext").click();
     }
 
-    function checkShortcuts(event) {
+    var checkShortcuts = function(events) {
         switch (event.keyCode) {
             case 37:
                 leftKeyPressed();
@@ -90,9 +93,6 @@ jQuery(document).ready(function($) {
     var $dropdown = $('.dropdown-menu li a');
     var $overlay = $('#overlay');
 
-    // for hash link
-    var $headings = $('#content h2, #content h3');
-
     // encrypt email
     var t = 'znvygb:';
     var m = 'vpunque@tznvy.pbz';
@@ -106,16 +106,9 @@ jQuery(document).ready(function($) {
      */
 
 
-    // loading bar
-    var nanobar = new Nanobar({
-        autoRun: true
-    });
-
-    // finish loading ?
-    if (docReady) {
-        nanobar.go(100);
-    }
-
+    // init nano bar
+    var nanobar = new Nanobar();
+    nanobar.auto();
 
     // remove active menu
     $('a.rc').click(function() {
@@ -132,68 +125,92 @@ jQuery(document).ready(function($) {
     $('li#contact a').attr('href', R(t + m));
 
     // responsive menu
-    $toggle.click(function() {
-        var target = $(this).data('target');
-        $('html').addClass(target + '-open');
-    });
+    var responsiveMenu = function() {
+        // responsive menu
+        $toggle.click(function() {
+            var target = $(this).data('target');
+            $('html').addClass(target + '-open');
+        });
 
-    $dropdown.click(function() {
-        $('html').removeClass('menu-open elsewhere-open');
-    });
+        $dropdown.click(function() {
+            $('html').removeClass('menu-open elsewhere-open');
+        });
 
-    $overlay.click(function() {
-        $('html').removeClass('menu-open elsewhere-open');
-    });
-    // end responsive menu
+        $overlay.click(function() {
+            $('html').removeClass('menu-open elsewhere-open');
+        });
+        // end responsive menu
+    }
 
     // affix year, season & periods
-    $('.year, .season').each(function() {
-        $(this).affix({
-            offset: {
-                top: $(this).offset().top
-            }
+    var period_sesion = function() {
+        $('.year, .season').each(function() {
+            $(this).affix({
+                offset: {
+                    top: $(this).offset().top
+                }
+            });
         });
-    });
 
-    $('.period').each(function() {
-        $(this).affix({
-            offset: {
-                top: $(this).offset().top
-            }
+        $('.period').each(function() {
+            $(this).affix({
+                offset: {
+                    top: $(this).offset().top
+                }
+            });
         });
-    });
-
-    // iframe responsive
-    reframe('iframe');
-
-    // lazy load
-    $('img.lazy').lazy();
+    }
 
     // hash link for h2 & h3
-    $headings.each(function() {
-        var $el = $(this);
-        var id = $el.attr('id');
-        if (id) {
-            $el.prepend(
-                $('<a />')
-                .addClass('anchor')
-                .attr('href', '#' + id)
-                .html('#')
-            );
+    var hashLink = function() {
+        // for hash link
+        var $headings = $('#content h2, #content h3');
+
+        $headings.each(function() {
+            var $el = $(this);
+            var id = $el.attr('id');
+            if (id) {
+                $el.prepend(
+                    $('<a />')
+                    .addClass('anchor')
+                    .attr('href', '#' + id)
+                    .html('#')
+                );
+            }
+        });
+    }
+
+    // scroll to  top
+    var scrollTop = function() {
+        // scroll top for post page
+        $('#top').on('click', function(e) {
+            e.preventDefault();
+            $('body,html').animate({
+                scrollTop: 0
+            }, 700);
+        });
+    }
+
+    // execute function
+    var init = function() {
+
+        // finish loading ?
+        if (docReady) {
+            nanobar.go(100);
         }
-    });
 
-    // scroll top for post page
-    $('#top').on('click', function(e) {
-        e.preventDefault();
-        $('body,html').animate({
-            scrollTop: 0
-        }, 700);
-    });
+        scrollTop(); // Scroll to top
+        hashLink(); // Hashlink
+        period_sesion(); // Period & Session
+        responsiveMenu(); // Responsive Menu
+        reframe('iframe'); // Iframe responsive
+        $('img.lazy').lazy(); // Lazy load
 
-    // keyboard shortcut previous (left) and next (right) navigation
-    document.onkeydown = checkShortcuts;
+        document.onkeydown = checkShortcuts; // keyboard shortcut previous (left) and next (right) navigation
+    }
 
+    // run init
+    init();
 
     /*
      *  End executed function on first landing
@@ -264,23 +281,8 @@ jQuery(document).ready(function($) {
 
     Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
 
-        // add email on menu
-        // $('li#contact a').attr('href', R(t + m));
-
-        // responsive menu
-        $toggle.click(function() {
-            var target = $(this).data('target');
-            $('html').addClass(target + '-open');
-        });
-
-        $dropdown.click(function() {
-            $('html').removeClass('menu-open elsewhere-open');
-        });
-
-        $overlay.click(function() {
-            $('html').removeClass('menu-open elsewhere-open');
-        });
-        // end responsive menu
+        // Responsive menu
+        responsiveMenu();
 
         // iframe responsive
         reframe('iframe');
@@ -304,26 +306,10 @@ jQuery(document).ready(function($) {
         namespace: 'articles',
         onEnter: function() {
 
-
         },
         onEnterCompleted: function() {
 
-            // affix year, season & periods
-            $('.year, .season').each(function() {
-                $(this).affix({
-                    offset: {
-                        top: $(this).offset().top
-                    }
-                });
-            });
-
-            $('.period').each(function() {
-                $(this).affix({
-                    offset: {
-                        top: $(this).offset().top
-                    }
-                });
-            });
+            period_sesion(); // Period & Session
 
         }
     });
@@ -332,14 +318,12 @@ jQuery(document).ready(function($) {
         namespace: 'favourites',
         onEnter: function() {
 
-
         }
     });
 
     var Links = Barba.BaseView.extend({
         namespace: 'links',
         onEnter: function() {
-
 
         }
     });
@@ -348,33 +332,14 @@ jQuery(document).ready(function($) {
         namespace: 'post',
         onEnter: function() {
 
-
         },
         onEnterCompleted: function() {
 
-            // hash link for h2 & h3
-            $headings = $('#content h2, #content h3');
+            //  Hash link
+            hashLink();
 
-            $headings.each(function() {
-                var $el = $(this);
-                var id = $el.attr('id');
-                if (id) {
-                    $el.prepend(
-                        $('<a />')
-                        .addClass('anchor')
-                        .attr('href', '#' + id)
-                        .html('#')
-                    );
-                }
-            });
-
-            // scroll top
-            $('#top').on('click', function(e) {
-                e.preventDefault();
-                $('body,html').animate({
-                    scrollTop: 0
-                }, 700);
-            });
+            // Scroll to top
+            scrollTop();
 
             // keyboard shortcut previous (left) and next (right) navigation
             document.onkeydown = checkShortcuts;
@@ -393,8 +358,5 @@ jQuery(document).ready(function($) {
     // Favorite.init();
     // Links.init();
     Post.init();
-
-
-
 
 });

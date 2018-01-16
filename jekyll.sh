@@ -39,12 +39,14 @@ read -p 'Category: ' CATPOST
 
 # formated post title
 FIL_TITLEPOST="${TITLEPOST//[^[:alnum:][:space:]]/}"
-URL_TITLEPOST="`echo ${FIL_TITLEPOST} | tr '[A-Z]' '[a-z]'`"
+FIL_TITLEPOST=$(echo "${FIL_TITLEPOST}" | awk '{print tolower($0)}')
+# URL_TITLEPOST="`echo ${FIL_TITLEPOST} | tr '[A-Z]' '[a-z]'`"
 URL_TITLEPOST="$(echo $FIL_TITLEPOST)"
 URL_TITLEPOST="${URL_TITLEPOST// /-}"
 URL_TITLEPOST="${DATE}-${URL_TITLEPOST}"
 
 FILENAME="_posts/${URL_TITLEPOST}.${FORMAT}"
+DIRIMG="_images/${DATE}"
 
 echo -en '\n'
 echo -en '\n'
@@ -72,6 +74,12 @@ if [ -d "_posts" ]; then
         echo "published: true" >> ${FILENAME}
         echo "---" >> ${FILENAME}
         echo "" >> ${FILENAME}
+
+        if [ -d ${DIRIMG} ]; then
+            mkdir images/${DATE}
+        fi
+
+        echo "Your images folder for this post images/${DATE}"
     fi
 else
     echo "is it root directory of Jekyll ? can't find folder ${yellow}_post"

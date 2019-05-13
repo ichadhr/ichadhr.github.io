@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 
         return R13(R5(s));
 
-    }
+    };
 
     var R5 = function(s) {
         var b = [],
@@ -26,7 +26,7 @@ jQuery(document).ready(function($) {
         }
 
         return b.join('');
-    }
+    };
 
     var R13 = function(s) {
             var b = [],
@@ -48,19 +48,21 @@ jQuery(document).ready(function($) {
             }
 
             return b.join('');
-        }
-        /*
-         *  End add link email to contact
-         */
+        };
+
+
+    /*
+     *  End add link email to contact
+     */
 
     // function keyboard shortcut previous (left) and next (right) navigation
     var leftKeyPressed = function() {
         document.getElementById("pgprev").click();
-    }
+    };
 
     var rightKeyPressed = function() {
         document.getElementById("pgnext").click();
-    }
+    };
 
     var checkShortcuts = function(events) {
         switch (event.keyCode) {
@@ -73,7 +75,7 @@ jQuery(document).ready(function($) {
             default:
                 break;
         }
-    }
+    };
 
     // function check document and all sub-resources have finished loading
     var docReady = function() {
@@ -140,7 +142,7 @@ jQuery(document).ready(function($) {
             $('html').removeClass('menu-open elsewhere-open');
         });
         // end responsive menu
-    }
+    };
 
     // affix year, season & periods
     var period_sesion = function() {
@@ -159,7 +161,7 @@ jQuery(document).ready(function($) {
                 }
             });
         });
-    }
+    };
 
     // hash link for h2 & h3
     var hashLink = function() {
@@ -178,7 +180,7 @@ jQuery(document).ready(function($) {
                 );
             }
         });
-    }
+    };
 
     // scroll to  top
     var scrollTop = function() {
@@ -189,7 +191,7 @@ jQuery(document).ready(function($) {
                 scrollTop: 0
             }, 700);
         });
-    }
+    };
 
     // execute function
     var init = function() {
@@ -207,7 +209,7 @@ jQuery(document).ready(function($) {
         $('img.lazy').lazy(); // Lazy load
 
         document.onkeydown = checkShortcuts; // keyboard shortcut previous (left) and next (right) navigation
-    }
+    };
 
     // run init
     init();
